@@ -80,6 +80,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Report_OS.rdlc" />
     <None Include="db_manutencaoDataSet.xsc">
       <DependentUpon>db_manutencaoDataSet.xsd</DependentUpon>
     </None>
