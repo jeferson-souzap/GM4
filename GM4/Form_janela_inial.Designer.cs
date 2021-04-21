@@ -32,9 +32,11 @@ namespace GM4
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_inicial));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.panel_esquerda = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button_ordem_serv = new System.Windows.Forms.Button();
             this.panel_central = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.panel_esquerda.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -50,6 +52,8 @@ namespace GM4
             // panel_esquerda
             // 
             this.panel_esquerda.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel_esquerda.Controls.Add(this.button2);
+            this.panel_esquerda.Controls.Add(this.button1);
             this.panel_esquerda.Controls.Add(this.pictureBox1);
             this.panel_esquerda.Controls.Add(this.button_ordem_serv);
             this.panel_esquerda.Dock = System.Windows.Forms.DockStyle.Left;
@@ -57,6 +61,18 @@ namespace GM4
             this.panel_esquerda.Name = "panel_esquerda";
             this.panel_esquerda.Size = new System.Drawing.Size(190, 691);
             this.panel_esquerda.TabIndex = 1;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(-2, -2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(190, 133);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
             // 
             // button_ordem_serv
             // 
@@ -78,17 +94,23 @@ namespace GM4
             this.panel_central.Size = new System.Drawing.Size(1036, 691);
             this.panel_central.TabIndex = 2;
             // 
-            // pictureBox1
+            // button1
             // 
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(-2, -2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(190, 133);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
+            this.button1.Location = new System.Drawing.Point(3, 176);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(179, 33);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "Cadastro Itens";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(3, 215);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(179, 33);
+            this.button2.TabIndex = 4;
+            this.button2.Text = "Cadastro Atividades";
+            this.button2.UseVisualStyleBackColor = true;
             // 
             // Form_inicial
             // 
@@ -118,6 +140,8 @@ namespace GM4
         private System.Windows.Forms.Button button_ordem_serv;
         private System.Windows.Forms.Panel panel_central;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button1;
     }
 }
 

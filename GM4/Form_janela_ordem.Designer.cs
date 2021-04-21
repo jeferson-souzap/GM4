@@ -30,6 +30,7 @@ namespace GM4
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button_preventiva = new System.Windows.Forms.Button();
             this.combo_seleciona_os = new System.Windows.Forms.ComboBox();
             this.label_numero_os = new System.Windows.Forms.Label();
             this.button_sair = new System.Windows.Forms.Button();
@@ -141,15 +142,32 @@ namespace GM4
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.richText_observacao = new System.Windows.Forms.RichTextBox();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.abrirOSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ordensAbertasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tab_ordem_servi = new System.Windows.Forms.TabControl();
+            this.tab_abrir_fechar_os = new System.Windows.Forms.TabPage();
+            this.tab_ordem_aberta = new System.Windows.Forms.TabPage();
+            this.Grid_ordem_serv = new System.Windows.Forms.DataGridView();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.aba_os_pend_combo_status = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
+            this.tab_ordem_servi.SuspendLayout();
+            this.tab_abrir_fechar_os.SuspendLayout();
+            this.tab_ordem_aberta.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Grid_ordem_serv)).BeginInit();
+            this.groupBox6.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.button_preventiva);
             this.groupBox1.Controls.Add(this.combo_seleciona_os);
             this.groupBox1.Controls.Add(this.label_numero_os);
             this.groupBox1.Controls.Add(this.button_sair);
@@ -159,37 +177,47 @@ namespace GM4
             this.groupBox1.Controls.Add(this.button_encerrar);
             this.groupBox1.Controls.Add(this.button_fechar_os);
             this.groupBox1.Controls.Add(this.button_abrir_os);
-            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupBox1.Location = new System.Drawing.Point(0, 0);
+            this.groupBox1.Location = new System.Drawing.Point(6, 6);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(967, 70);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Menu";
             // 
+            // button_preventiva
+            // 
+            this.button_preventiva.Location = new System.Drawing.Point(406, 19);
+            this.button_preventiva.Name = "button_preventiva";
+            this.button_preventiva.Size = new System.Drawing.Size(94, 32);
+            this.button_preventiva.TabIndex = 34;
+            this.button_preventiva.Text = "Salvar Prev.";
+            this.button_preventiva.UseVisualStyleBackColor = true;
+            this.button_preventiva.Click += new System.EventHandler(this.button_preventiva_Click);
+            // 
             // combo_seleciona_os
             // 
             this.combo_seleciona_os.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
             this.combo_seleciona_os.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.combo_seleciona_os.FormattingEnabled = true;
-            this.combo_seleciona_os.Location = new System.Drawing.Point(706, 26);
+            this.combo_seleciona_os.Location = new System.Drawing.Point(838, 12);
             this.combo_seleciona_os.Name = "combo_seleciona_os";
             this.combo_seleciona_os.Size = new System.Drawing.Size(117, 21);
             this.combo_seleciona_os.TabIndex = 7;
+            this.combo_seleciona_os.SelectedIndexChanged += new System.EventHandler(this.combo_seleciona_os_SelectedIndexChanged);
             // 
             // label_numero_os
             // 
             this.label_numero_os.AutoSize = true;
             this.label_numero_os.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_numero_os.Location = new System.Drawing.Point(842, 26);
+            this.label_numero_os.Location = new System.Drawing.Point(838, 36);
             this.label_numero_os.Name = "label_numero_os";
-            this.label_numero_os.Size = new System.Drawing.Size(97, 18);
+            this.label_numero_os.Size = new System.Drawing.Size(17, 18);
             this.label_numero_os.TabIndex = 33;
-            this.label_numero_os.Text = "Numero OS";
+            this.label_numero_os.Text = "0";
             // 
             // button_sair
             // 
-            this.button_sair.Location = new System.Drawing.Point(606, 19);
+            this.button_sair.Location = new System.Drawing.Point(706, 19);
             this.button_sair.Name = "button_sair";
             this.button_sair.Size = new System.Drawing.Size(94, 32);
             this.button_sair.TabIndex = 6;
@@ -199,7 +227,7 @@ namespace GM4
             // 
             // button_excluir
             // 
-            this.button_excluir.Location = new System.Drawing.Point(506, 19);
+            this.button_excluir.Location = new System.Drawing.Point(606, 19);
             this.button_excluir.Name = "button_excluir";
             this.button_excluir.Size = new System.Drawing.Size(94, 32);
             this.button_excluir.TabIndex = 5;
@@ -213,13 +241,13 @@ namespace GM4
             this.button_salvar_os.Name = "button_salvar_os";
             this.button_salvar_os.Size = new System.Drawing.Size(94, 32);
             this.button_salvar_os.TabIndex = 4;
-            this.button_salvar_os.Text = "Salvar";
+            this.button_salvar_os.Text = "Atualizar";
             this.button_salvar_os.UseVisualStyleBackColor = true;
             this.button_salvar_os.Click += new System.EventHandler(this.button_salvar_os_Click);
             // 
             // button_imprimir
             // 
-            this.button_imprimir.Location = new System.Drawing.Point(406, 19);
+            this.button_imprimir.Location = new System.Drawing.Point(506, 19);
             this.button_imprimir.Name = "button_imprimir";
             this.button_imprimir.Size = new System.Drawing.Size(94, 32);
             this.button_imprimir.TabIndex = 3;
@@ -253,7 +281,7 @@ namespace GM4
             this.button_abrir_os.Name = "button_abrir_os";
             this.button_abrir_os.Size = new System.Drawing.Size(94, 32);
             this.button_abrir_os.TabIndex = 0;
-            this.button_abrir_os.Text = "Abrir OS";
+            this.button_abrir_os.Text = "Salvar OS";
             this.button_abrir_os.UseVisualStyleBackColor = true;
             this.button_abrir_os.Click += new System.EventHandler(this.button_abrir_os_Click);
             // 
@@ -267,7 +295,7 @@ namespace GM4
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.combo_equipamento);
             this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Location = new System.Drawing.Point(0, 76);
+            this.groupBox2.Location = new System.Drawing.Point(12, 82);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(476, 107);
             this.groupBox2.TabIndex = 1;
@@ -355,7 +383,7 @@ namespace GM4
             this.groupBox3.Controls.Add(this.check_nao);
             this.groupBox3.Controls.Add(this.check_sim);
             this.groupBox3.Controls.Add(this.text_hr_paradas);
-            this.groupBox3.Location = new System.Drawing.Point(482, 76);
+            this.groupBox3.Location = new System.Drawing.Point(494, 82);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(200, 107);
             this.groupBox3.TabIndex = 2;
@@ -416,7 +444,7 @@ namespace GM4
             this.groupBox4.Controls.Add(this.combo_periodo_anos);
             this.groupBox4.Controls.Add(this.combo_periodicidade);
             this.groupBox4.Controls.Add(this.label4);
-            this.groupBox4.Location = new System.Drawing.Point(688, 76);
+            this.groupBox4.Location = new System.Drawing.Point(700, 82);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(267, 107);
             this.groupBox4.TabIndex = 3;
@@ -461,6 +489,7 @@ namespace GM4
             this.combo_periodo_meses.Size = new System.Drawing.Size(85, 21);
             this.combo_periodo_meses.TabIndex = 15;
             this.combo_periodo_meses.Text = "0";
+            this.combo_periodo_meses.SelectedIndexChanged += new System.EventHandler(this.combo_periodo_meses_SelectedIndexChanged);
             // 
             // combo_periodo_anos
             // 
@@ -574,7 +603,7 @@ namespace GM4
             this.groupBox5.Controls.Add(this.label7);
             this.groupBox5.Controls.Add(this.label6);
             this.groupBox5.Controls.Add(this.label5);
-            this.groupBox5.Location = new System.Drawing.Point(6, 189);
+            this.groupBox5.Location = new System.Drawing.Point(18, 195);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(946, 375);
             this.groupBox5.TabIndex = 4;
@@ -1128,7 +1157,7 @@ namespace GM4
             this.hr_final_ativ_03.Location = new System.Drawing.Point(815, 104);
             this.hr_final_ativ_03.Name = "hr_final_ativ_03";
             this.hr_final_ativ_03.Size = new System.Drawing.Size(66, 20);
-            this.hr_final_ativ_03.TabIndex = 20;
+            this.hr_final_ativ_03.TabIndex = 33;
             this.hr_final_ativ_03.Value = new System.DateTime(2021, 4, 14, 0, 0, 0, 0);
             // 
             // hr_inicio_ativ_03
@@ -1138,7 +1167,7 @@ namespace GM4
             this.hr_inicio_ativ_03.Location = new System.Drawing.Point(745, 104);
             this.hr_inicio_ativ_03.Name = "hr_inicio_ativ_03";
             this.hr_inicio_ativ_03.Size = new System.Drawing.Size(66, 20);
-            this.hr_inicio_ativ_03.TabIndex = 19;
+            this.hr_inicio_ativ_03.TabIndex = 32;
             this.hr_inicio_ativ_03.Value = new System.DateTime(2021, 4, 14, 0, 0, 0, 0);
             // 
             // combo_executante03
@@ -1149,14 +1178,14 @@ namespace GM4
             this.combo_executante03.Location = new System.Drawing.Point(597, 103);
             this.combo_executante03.Name = "combo_executante03";
             this.combo_executante03.Size = new System.Drawing.Size(142, 21);
-            this.combo_executante03.TabIndex = 18;
+            this.combo_executante03.TabIndex = 31;
             // 
             // text_atividades03
             // 
             this.text_atividades03.Location = new System.Drawing.Point(183, 103);
             this.text_atividades03.Name = "text_atividades03";
             this.text_atividades03.Size = new System.Drawing.Size(408, 20);
-            this.text_atividades03.TabIndex = 17;
+            this.text_atividades03.TabIndex = 30;
             // 
             // combo_componente03
             // 
@@ -1166,7 +1195,7 @@ namespace GM4
             this.combo_componente03.Location = new System.Drawing.Point(7, 102);
             this.combo_componente03.Name = "combo_componente03";
             this.combo_componente03.Size = new System.Drawing.Size(170, 21);
-            this.combo_componente03.TabIndex = 16;
+            this.combo_componente03.TabIndex = 29;
             // 
             // hr_final_ativ_02
             // 
@@ -1309,23 +1338,125 @@ namespace GM4
             // 
             // richText_observacao
             // 
-            this.richText_observacao.Location = new System.Drawing.Point(9, 570);
+            this.richText_observacao.Location = new System.Drawing.Point(21, 576);
             this.richText_observacao.Name = "richText_observacao";
             this.richText_observacao.Size = new System.Drawing.Size(946, 112);
             this.richText_observacao.TabIndex = 5;
             this.richText_observacao.Text = "";
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.abrirOSToolStripMenuItem,
+            this.ordensAbertasToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1026, 24);
+            this.menuStrip1.TabIndex = 6;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // abrirOSToolStripMenuItem
+            // 
+            this.abrirOSToolStripMenuItem.Name = "abrirOSToolStripMenuItem";
+            this.abrirOSToolStripMenuItem.Size = new System.Drawing.Size(51, 20);
+            this.abrirOSToolStripMenuItem.Text = "Iniciar";
+            this.abrirOSToolStripMenuItem.Click += new System.EventHandler(this.abrirOSToolStripMenuItem_Click);
+            // 
+            // ordensAbertasToolStripMenuItem
+            // 
+            this.ordensAbertasToolStripMenuItem.Name = "ordensAbertasToolStripMenuItem";
+            this.ordensAbertasToolStripMenuItem.Size = new System.Drawing.Size(100, 20);
+            this.ordensAbertasToolStripMenuItem.Text = "Ordens Abertas";
+            this.ordensAbertasToolStripMenuItem.Click += new System.EventHandler(this.ordensAbertasToolStripMenuItem_Click);
+            // 
+            // tab_ordem_servi
+            // 
+            this.tab_ordem_servi.Controls.Add(this.tab_abrir_fechar_os);
+            this.tab_ordem_servi.Controls.Add(this.tab_ordem_aberta);
+            this.tab_ordem_servi.Location = new System.Drawing.Point(12, 27);
+            this.tab_ordem_servi.Name = "tab_ordem_servi";
+            this.tab_ordem_servi.SelectedIndex = 0;
+            this.tab_ordem_servi.Size = new System.Drawing.Size(1000, 726);
+            this.tab_ordem_servi.TabIndex = 7;
+            // 
+            // tab_abrir_fechar_os
+            // 
+            this.tab_abrir_fechar_os.Controls.Add(this.groupBox1);
+            this.tab_abrir_fechar_os.Controls.Add(this.richText_observacao);
+            this.tab_abrir_fechar_os.Controls.Add(this.groupBox2);
+            this.tab_abrir_fechar_os.Controls.Add(this.groupBox5);
+            this.tab_abrir_fechar_os.Controls.Add(this.groupBox3);
+            this.tab_abrir_fechar_os.Controls.Add(this.groupBox4);
+            this.tab_abrir_fechar_os.Location = new System.Drawing.Point(4, 22);
+            this.tab_abrir_fechar_os.Name = "tab_abrir_fechar_os";
+            this.tab_abrir_fechar_os.Padding = new System.Windows.Forms.Padding(3);
+            this.tab_abrir_fechar_os.Size = new System.Drawing.Size(992, 700);
+            this.tab_abrir_fechar_os.TabIndex = 0;
+            this.tab_abrir_fechar_os.Text = "Abrir / Fechar OS";
+            this.tab_abrir_fechar_os.UseVisualStyleBackColor = true;
+            // 
+            // tab_ordem_aberta
+            // 
+            this.tab_ordem_aberta.Controls.Add(this.groupBox6);
+            this.tab_ordem_aberta.Controls.Add(this.Grid_ordem_serv);
+            this.tab_ordem_aberta.Location = new System.Drawing.Point(4, 22);
+            this.tab_ordem_aberta.Name = "tab_ordem_aberta";
+            this.tab_ordem_aberta.Padding = new System.Windows.Forms.Padding(3);
+            this.tab_ordem_aberta.Size = new System.Drawing.Size(992, 700);
+            this.tab_ordem_aberta.TabIndex = 1;
+            this.tab_ordem_aberta.Text = "Ordens Abertas";
+            this.tab_ordem_aberta.UseVisualStyleBackColor = true;
+            // 
+            // Grid_ordem_serv
+            // 
+            this.Grid_ordem_serv.AllowUserToAddRows = false;
+            this.Grid_ordem_serv.AllowUserToDeleteRows = false;
+            this.Grid_ordem_serv.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            this.Grid_ordem_serv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Grid_ordem_serv.Location = new System.Drawing.Point(6, 129);
+            this.Grid_ordem_serv.Name = "Grid_ordem_serv";
+            this.Grid_ordem_serv.ReadOnly = true;
+            this.Grid_ordem_serv.Size = new System.Drawing.Size(980, 565);
+            this.Grid_ordem_serv.TabIndex = 3;
+            this.Grid_ordem_serv.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Grid_ordem_serv_CellDoubleClick);
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.Controls.Add(this.aba_os_pend_combo_status);
+            this.groupBox6.Controls.Add(this.label16);
+            this.groupBox6.Location = new System.Drawing.Point(6, 6);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(980, 100);
+            this.groupBox6.TabIndex = 4;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "---";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(6, 16);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(40, 13);
+            this.label16.TabIndex = 0;
+            this.label16.Text = "Status:";
+            // 
+            // aba_os_pend_combo_status
+            // 
+            this.aba_os_pend_combo_status.FormattingEnabled = true;
+            this.aba_os_pend_combo_status.Location = new System.Drawing.Point(52, 13);
+            this.aba_os_pend_combo_status.Name = "aba_os_pend_combo_status";
+            this.aba_os_pend_combo_status.Size = new System.Drawing.Size(244, 21);
+            this.aba_os_pend_combo_status.TabIndex = 1;
+            this.aba_os_pend_combo_status.Text = "Programada";
+            this.aba_os_pend_combo_status.SelectedIndexChanged += new System.EventHandler(this.aba_os_pend_combo_status_SelectedIndexChanged);
+            // 
             // Form_janela_ordem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(967, 694);
-            this.Controls.Add(this.richText_observacao);
-            this.Controls.Add(this.groupBox5);
-            this.Controls.Add(this.groupBox4);
-            this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
+            this.ClientSize = new System.Drawing.Size(1026, 768);
+            this.Controls.Add(this.tab_ordem_servi);
+            this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form_janela_ordem";
             this.Text = "Form_janela_ordem";
@@ -1339,7 +1470,16 @@ namespace GM4
             this.groupBox4.PerformLayout();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
+            this.tab_ordem_servi.ResumeLayout(false);
+            this.tab_abrir_fechar_os.ResumeLayout(false);
+            this.tab_ordem_aberta.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.Grid_ordem_serv)).EndInit();
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox6.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -1457,5 +1597,16 @@ namespace GM4
         private System.Windows.Forms.ComboBox combo_seleciona_os;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.ComboBox combo_empresa;
+        private System.Windows.Forms.Button button_preventiva;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem abrirOSToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ordensAbertasToolStripMenuItem;
+        private System.Windows.Forms.TabControl tab_ordem_servi;
+        private System.Windows.Forms.TabPage tab_abrir_fechar_os;
+        private System.Windows.Forms.TabPage tab_ordem_aberta;
+        private System.Windows.Forms.DataGridView Grid_ordem_serv;
+        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.ComboBox aba_os_pend_combo_status;
     }
 }
