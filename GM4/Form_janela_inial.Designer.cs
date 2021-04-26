@@ -32,11 +32,12 @@ namespace GM4
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_inicial));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.panel_esquerda = new System.Windows.Forms.Panel();
+            this.button_cad_equipamento = new System.Windows.Forms.Button();
+            this.button_cad_ativ_preventiva = new System.Windows.Forms.Button();
+            this.button_cad_componentes = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button_ordem_serv = new System.Windows.Forms.Button();
             this.panel_central = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.panel_esquerda.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -52,15 +53,49 @@ namespace GM4
             // panel_esquerda
             // 
             this.panel_esquerda.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel_esquerda.Controls.Add(this.button2);
-            this.panel_esquerda.Controls.Add(this.button1);
+            this.panel_esquerda.Controls.Add(this.button_cad_equipamento);
+            this.panel_esquerda.Controls.Add(this.button_cad_ativ_preventiva);
+            this.panel_esquerda.Controls.Add(this.button_cad_componentes);
             this.panel_esquerda.Controls.Add(this.pictureBox1);
             this.panel_esquerda.Controls.Add(this.button_ordem_serv);
             this.panel_esquerda.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel_esquerda.Location = new System.Drawing.Point(0, 24);
             this.panel_esquerda.Name = "panel_esquerda";
-            this.panel_esquerda.Size = new System.Drawing.Size(190, 691);
+            this.panel_esquerda.Size = new System.Drawing.Size(190, 750);
             this.panel_esquerda.TabIndex = 1;
+            // 
+            // button_cad_equipamento
+            // 
+            this.button_cad_equipamento.Location = new System.Drawing.Point(4, 254);
+            this.button_cad_equipamento.Name = "button_cad_equipamento";
+            this.button_cad_equipamento.Size = new System.Drawing.Size(179, 33);
+            this.button_cad_equipamento.TabIndex = 5;
+            this.button_cad_equipamento.Text = "Cadastro Equipamentos";
+            this.button_cad_equipamento.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button_cad_equipamento.UseVisualStyleBackColor = true;
+            this.button_cad_equipamento.Click += new System.EventHandler(this.button_cad_equipamento_Click);
+            // 
+            // button_cad_ativ_preventiva
+            // 
+            this.button_cad_ativ_preventiva.Location = new System.Drawing.Point(3, 215);
+            this.button_cad_ativ_preventiva.Name = "button_cad_ativ_preventiva";
+            this.button_cad_ativ_preventiva.Size = new System.Drawing.Size(179, 33);
+            this.button_cad_ativ_preventiva.TabIndex = 4;
+            this.button_cad_ativ_preventiva.Text = "Cadastro Atividade Preventivas";
+            this.button_cad_ativ_preventiva.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button_cad_ativ_preventiva.UseVisualStyleBackColor = true;
+            this.button_cad_ativ_preventiva.Click += new System.EventHandler(this.button_cad_ativ_preventiva_Click);
+            // 
+            // button_cad_componentes
+            // 
+            this.button_cad_componentes.Location = new System.Drawing.Point(3, 176);
+            this.button_cad_componentes.Name = "button_cad_componentes";
+            this.button_cad_componentes.Size = new System.Drawing.Size(179, 33);
+            this.button_cad_componentes.TabIndex = 3;
+            this.button_cad_componentes.Text = "Cadastro Componentes";
+            this.button_cad_componentes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button_cad_componentes.UseVisualStyleBackColor = true;
+            this.button_cad_componentes.Click += new System.EventHandler(this.button_cad_componentes_Click);
             // 
             // pictureBox1
             // 
@@ -81,6 +116,7 @@ namespace GM4
             this.button_ordem_serv.Size = new System.Drawing.Size(179, 33);
             this.button_ordem_serv.TabIndex = 1;
             this.button_ordem_serv.Text = "Abrir / Fechar OS";
+            this.button_ordem_serv.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button_ordem_serv.UseVisualStyleBackColor = true;
             this.button_ordem_serv.Click += new System.EventHandler(this.button_ordem_serv_Click);
             // 
@@ -91,33 +127,15 @@ namespace GM4
             this.panel_central.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_central.Location = new System.Drawing.Point(190, 24);
             this.panel_central.Name = "panel_central";
-            this.panel_central.Size = new System.Drawing.Size(1036, 691);
+            this.panel_central.Size = new System.Drawing.Size(1036, 750);
             this.panel_central.TabIndex = 2;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(3, 176);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(179, 33);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Cadastro Itens";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(3, 215);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(179, 33);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "Cadastro Atividades";
-            this.button2.UseVisualStyleBackColor = true;
             // 
             // Form_inicial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1226, 715);
+            this.ClientSize = new System.Drawing.Size(1226, 774);
             this.Controls.Add(this.panel_central);
             this.Controls.Add(this.panel_esquerda);
             this.Controls.Add(this.menuStrip1);
@@ -140,8 +158,9 @@ namespace GM4
         private System.Windows.Forms.Button button_ordem_serv;
         private System.Windows.Forms.Panel panel_central;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button_cad_ativ_preventiva;
+        private System.Windows.Forms.Button button_cad_componentes;
+        private System.Windows.Forms.Button button_cad_equipamento;
     }
 }
 

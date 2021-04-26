@@ -34,5 +34,20 @@ namespace GM4
         {
             abrir_janelas(new Form_janela_ordem());
         }
+
+        private void button_cad_ativ_preventiva_Click(object sender, EventArgs e)
+        {
+            abrir_janelas(new Form_janela_cad_preventiva());
+        }
+
+        private void button_cad_componentes_Click(object sender, EventArgs e)
+        {
+            abrir_janelas(new Form_cad_componentes());
+        }
+
+        private void button_cad_equipamento_Click(object sender, EventArgs e)
+        {
+            abrir_janelas(new Form_cad_equipamento());
+        }
     }
 }
