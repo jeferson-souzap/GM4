@@ -140,8 +140,6 @@ namespace GM4
             }
         }
 
-
-
         private void button_salvar_Click(object sender, EventArgs e)
         {
             Salvar_componente(textBox_componente.Text);

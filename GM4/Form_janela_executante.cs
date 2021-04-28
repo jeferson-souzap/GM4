@@ -11,21 +11,14 @@ using System.Windows.Forms;
 
 namespace GM4
 {
-    public partial class Form_cad_equipamento : Form
+    public partial class Form_janela_executante : Form
     {
-        public Form_cad_equipamento()
+        public Form_janela_executante()
         {
             InitializeComponent();
 
             Carregar_grid();
-        }
 
-
-        private void limpar_campos()
-        {
-            text_equipamento.Text = string.Empty;
-            text_descri_equipamento.Text = string.Empty;
-            label_id_equipamento.Text = "---";
         }
 
         private void Carregar_grid()
@@ -33,18 +26,18 @@ namespace GM4
             try
             {
                 string conecta_string = Properties.Settings.Default.db_manutencaoConnectionString;
-                string comando_sql = "select id_equipa, empresa, nome_equipamento, descri_equipamento from db_equipamento";
+                string comando_sql = "select * from db_executante";
 
                 OleDbConnection connection = new OleDbConnection(conecta_string);
                 OleDbDataAdapter myadapter = new OleDbDataAdapter(comando_sql, connection);
-                DataTable dt = new DataTable("db_equipamento");
+                DataTable dt = new DataTable("db_executante");
 
                 myadapter.Fill(dt);
 
                 DataView dv = dt.DefaultView;
 
                 //dv.RowFilter = string.Format("status like '%{0}%'", status);
-                Grid_cad_equipamento.DataSource = dv.ToTable();
+                Grid_cad_executante.DataSource = dv.ToTable();
 
                 connection.Close();
             }
@@ -52,14 +45,14 @@ namespace GM4
             {
                 MessageBox.Show(erro.Message);
             }
-
         }
-        private void Carregar_equipamento(string id_componentes)
+
+        private void Carregar_executante(string id_executante)
         {
             try
             {
                 string conecta_string = Properties.Settings.Default.db_manutencaoConnectionString;
-                string comando_sql = "select * from db_equipamento where id_equipa = " + Convert.ToInt32(id_componentes) + "";
+                string comando_sql = "select * from db_executante where id_executante = " + Convert.ToInt32(id_executante) + "";
 
                 OleDbConnection conexao = new OleDbConnection(conecta_string);
                 OleDbCommand cmd = new OleDbCommand(comando_sql, conexao);
@@ -70,9 +63,8 @@ namespace GM4
 
                 while (myreader.Read())
                 {
-                    text_equipamento.Text = myreader["nome_equipamento"].ToString();
-                    text_descri_equipamento.Text = myreader["descri_equipamento"].ToString();
-
+                    text_cod_executante.Text = myreader["cod_executante"].ToString();
+                    text_executante.Text = myreader["nome_executante"].ToString();
                 }
                 conexao.Close();
 
@@ -82,7 +74,8 @@ namespace GM4
                 MessageBox.Show(erro.Message);
             }
         }
-        private void Salvar_componente(string nome_equipamento, string descri_equipamento)
+
+        public void Salvar_executante_terceiros(string nome_executante, string cod_executante = "10")
         {
             try
             {
@@ -92,29 +85,7 @@ namespace GM4
 
                 string comando_sql;
 
-                comando_sql = "INSERT INTO db_equipamento(nome_equipamento, descri_equipamento) VALUES('" + nome_equipamento + "','"+ descri_equipamento + "')";
-
-                OleDbCommand cmd = new OleDbCommand(comando_sql, conexao);
-                cmd.ExecuteNonQuery();
-                conexao.Close();
-            }
-            catch (Exception erro)
-            {
-                MessageBox.Show(erro.Message);
-            }
-        }
-        private void Atualizar_equipamento(string nome_equipamento, string descri_equipamento, string id_equipa)
-        {
-            try
-            {
-                string comando_sql;
-
-                string conecta_string = Properties.Settings.Default.db_manutencaoConnectionString;
-                OleDbConnection conexao = new OleDbConnection(conecta_string);
-                conexao.Open();
-
-                comando_sql = "UPDATE db_equipamento SET nome_equipamento='" + nome_equipamento + "', descri_equipamento='" + descri_equipamento + "' WHERE id_equipa=" + id_equipa + "";
-                
+                comando_sql = "INSERT INTO db_executante(cod_executante,nome_executante ) VALUES('" + cod_executante + "','" + nome_executante + "')";
 
                 OleDbCommand cmd = new OleDbCommand(comando_sql, conexao);
                 cmd.ExecuteNonQuery();
@@ -126,7 +97,58 @@ namespace GM4
             }
         }
 
-        private void deletar_equipamento(string id_equipa)
+        private void Salvar_executante()
+        {
+            string cod_executante = text_cod_executante.Text;
+            string nome_executante = text_executante.Text;
+
+            try
+            {
+                string conecta_string = Properties.Settings.Default.db_manutencaoConnectionString;
+                OleDbConnection conexao = new OleDbConnection(conecta_string);
+                conexao.Open();
+
+                string comando_sql;
+
+                comando_sql = "INSERT INTO db_executante(cod_executante,nome_executante ) VALUES('" + cod_executante + "','"+ nome_executante + "')";
+
+                OleDbCommand cmd = new OleDbCommand(comando_sql, conexao);
+                cmd.ExecuteNonQuery();
+                conexao.Close();
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show(erro.Message);
+            }
+        }
+
+        private void Atualizar_executante(string id_executante)
+        {
+
+            string cod_executante = text_cod_executante.Text;
+            string nome_executante = text_executante.Text;
+
+            try
+            {
+                string comando_sql;
+
+                string conecta_string = Properties.Settings.Default.db_manutencaoConnectionString;
+                OleDbConnection conexao = new OleDbConnection(conecta_string);
+                conexao.Open();
+
+                comando_sql = "UPDATE db_executante SET cod_executante='" + cod_executante + "', nome_executante='"+ nome_executante + "'  WHERE id_executante=" + Convert.ToInt32(id_executante) + "";
+
+                OleDbCommand cmd = new OleDbCommand(comando_sql, conexao);
+                cmd.ExecuteNonQuery();
+                conexao.Close();
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show(erro.Message);
+            }
+        }
+
+        private void Deletar_executante(string id_executante)
         {
             try
             {
@@ -136,7 +158,7 @@ namespace GM4
 
                 string comando_sql;
 
-                comando_sql = "DELETE FROM db_equipamento WHERE id_equipa = " + Convert.ToInt32(id_equipa) + "";
+                comando_sql = "DELETE FROM db_executante WHERE id_executante = " + id_executante + "";
 
                 OleDbCommand cmd = new OleDbCommand(comando_sql, conexao);
                 cmd.ExecuteNonQuery();
@@ -150,26 +172,23 @@ namespace GM4
 
         private void button_salvar_Click(object sender, EventArgs e)
         {
-            Salvar_componente(text_equipamento.Text, text_descri_equipamento.Text);
-            MessageBox.Show("Salvo com sucesso");
+            Salvar_executante();
+            MessageBox.Show("Salvo com sucesso!");
             Carregar_grid();
-            limpar_campos();
         }
 
         private void button_atualizar_Click(object sender, EventArgs e)
         {
-            Atualizar_equipamento(text_equipamento.Text, text_descri_equipamento.Text, label_id_equipamento.Text);
-            MessageBox.Show("Atualiado Com sucesso!");
+            Atualizar_executante(label_id_executante.Text);
+            MessageBox.Show("Atualizado com sucesso!");
             Carregar_grid();
-            limpar_campos();
         }
 
-        private void button_deletar_Click(object sender, EventArgs e)
+        private void button_excluir_Click(object sender, EventArgs e)
         {
-            deletar_equipamento(label_id_equipamento.Text);
+            Deletar_executante(label_id_executante.Text);
             MessageBox.Show("Deletado com sucesso!");
             Carregar_grid();
-            limpar_campos();
         }
 
         private void button_sair_Click(object sender, EventArgs e)
@@ -177,10 +196,10 @@ namespace GM4
             this.Close();
         }
 
-        private void Grid_cad_equipamento_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void Grid_cad_executante_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            label_id_equipamento.Text = Grid_cad_equipamento.CurrentRow.Cells[0].Value.ToString();
-            Carregar_equipamento(label_id_equipamento.Text);
+            label_id_executante.Text = Grid_cad_executante.CurrentRow.Cells[0].Value.ToString();
+            Carregar_executante(label_id_executante.Text);
         }
     }
 }
