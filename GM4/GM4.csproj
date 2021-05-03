@@ -101,6 +101,12 @@
     <Compile Include="Form_cad_equipamento.Designer.cs">
       <DependentUpon>Form_cad_equipamento.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form_janela_baixa_peca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_janela_baixa_peca.Designer.cs">
+      <DependentUpon>Form_janela_baixa_peca.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form_janela_cad_peca.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -137,11 +143,11 @@
     <Compile Include="Form_janela_imprimir_os.Designer.cs">
       <DependentUpon>Form_janela_imprimir_os.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form_janela_inial.cs">
+    <Compile Include="Form_janela_inicial.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form_janela_inial.Designer.cs">
-      <DependentUpon>Form_janela_inial.cs</DependentUpon>
+    <Compile Include="Form_janela_inicial.Designer.cs">
+      <DependentUpon>Form_janela_inicial.cs</DependentUpon>
     </Compile>
     <Compile Include="Form_janela_ordem.cs">
       <SubType>Form</SubType>
@@ -164,6 +170,9 @@
     <EmbeddedResource Include="Form_cad_equipamento.resx">
       <DependentUpon>Form_cad_equipamento.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form_janela_baixa_peca.resx">
+      <DependentUpon>Form_janela_baixa_peca.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form_janela_cad_peca.resx">
       <DependentUpon>Form_janela_cad_peca.cs</DependentUpon>
     </EmbeddedResource>
@@ -179,8 +188,8 @@
     <EmbeddedResource Include="Form_janela_imprimir_os.resx">
       <DependentUpon>Form_janela_imprimir_os.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form_janela_inial.resx">
-      <DependentUpon>Form_janela_inial.cs</DependentUpon>
+    <EmbeddedResource Include="Form_janela_inicial.resx">
+      <DependentUpon>Form_janela_inicial.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_janela_ordem.resx">
       <DependentUpon>Form_janela_ordem.cs</DependentUpon>

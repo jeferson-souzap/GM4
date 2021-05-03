@@ -35,18 +35,19 @@ namespace GM4
             this.button_atualizar = new System.Windows.Forms.Button();
             this.button_salvar = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.text_cargo = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.text_email = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.text_nome = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.label_id_prestadores = new System.Windows.Forms.Label();
             this.text_telefone = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.Grid_cad_prestadores = new System.Windows.Forms.DataGridView();
-            this.text_empresa = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.text_nome = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.text_email = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.text_cargo = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
+            this.combo_empresa = new System.Windows.Forms.ComboBox();
+            this.button_cad_empresa = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Grid_cad_prestadores)).BeginInit();
@@ -54,6 +55,7 @@ namespace GM4
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.button_cad_empresa);
             this.groupBox1.Controls.Add(this.button_sair);
             this.groupBox1.Controls.Add(this.button_deletar);
             this.groupBox1.Controls.Add(this.button_atualizar);
@@ -108,6 +110,7 @@ namespace GM4
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.combo_empresa);
             this.groupBox2.Controls.Add(this.text_cargo);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.text_email);
@@ -118,7 +121,6 @@ namespace GM4
             this.groupBox2.Controls.Add(this.text_telefone);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.Grid_cad_prestadores);
-            this.groupBox2.Controls.Add(this.text_empresa);
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox2.Location = new System.Drawing.Point(0, 65);
@@ -127,6 +129,57 @@ namespace GM4
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Cadastro";
+            // 
+            // text_cargo
+            // 
+            this.text_cargo.Location = new System.Drawing.Point(441, 35);
+            this.text_cargo.Name = "text_cargo";
+            this.text_cargo.Size = new System.Drawing.Size(201, 20);
+            this.text_cargo.TabIndex = 11;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(438, 16);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(46, 17);
+            this.label5.TabIndex = 10;
+            this.label5.Text = "Cargo";
+            // 
+            // text_email
+            // 
+            this.text_email.Location = new System.Drawing.Point(226, 78);
+            this.text_email.Name = "text_email";
+            this.text_email.Size = new System.Drawing.Size(416, 20);
+            this.text_email.TabIndex = 9;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(223, 58);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(47, 17);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "E-Mail";
+            // 
+            // text_nome
+            // 
+            this.text_nome.Location = new System.Drawing.Point(226, 35);
+            this.text_nome.Name = "text_nome";
+            this.text_nome.Size = new System.Drawing.Size(201, 20);
+            this.text_nome.TabIndex = 7;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(223, 16);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(45, 17);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Nome";
             // 
             // label_id_prestadores
             // 
@@ -170,13 +223,6 @@ namespace GM4
             this.Grid_cad_prestadores.TabIndex = 2;
             this.Grid_cad_prestadores.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Grid_cad_prestadores_CellClick);
             // 
-            // text_empresa
-            // 
-            this.text_empresa.Location = new System.Drawing.Point(15, 35);
-            this.text_empresa.Name = "text_empresa";
-            this.text_empresa.Size = new System.Drawing.Size(201, 20);
-            this.text_empresa.TabIndex = 1;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -187,56 +233,23 @@ namespace GM4
             this.label1.TabIndex = 0;
             this.label1.Text = "Empresa";
             // 
-            // text_nome
+            // combo_empresa
             // 
-            this.text_nome.Location = new System.Drawing.Point(226, 35);
-            this.text_nome.Name = "text_nome";
-            this.text_nome.Size = new System.Drawing.Size(201, 20);
-            this.text_nome.TabIndex = 7;
+            this.combo_empresa.FormattingEnabled = true;
+            this.combo_empresa.Location = new System.Drawing.Point(15, 34);
+            this.combo_empresa.Name = "combo_empresa";
+            this.combo_empresa.Size = new System.Drawing.Size(201, 21);
+            this.combo_empresa.TabIndex = 4;
             // 
-            // label3
+            // button_cad_empresa
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(223, 16);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(45, 17);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Nome";
-            // 
-            // text_email
-            // 
-            this.text_email.Location = new System.Drawing.Point(226, 78);
-            this.text_email.Name = "text_email";
-            this.text_email.Size = new System.Drawing.Size(416, 20);
-            this.text_email.TabIndex = 9;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(223, 58);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(47, 17);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "E-Mail";
-            // 
-            // text_cargo
-            // 
-            this.text_cargo.Location = new System.Drawing.Point(441, 35);
-            this.text_cargo.Name = "text_cargo";
-            this.text_cargo.Size = new System.Drawing.Size(201, 20);
-            this.text_cargo.TabIndex = 11;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(438, 16);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(46, 17);
-            this.label5.TabIndex = 10;
-            this.label5.Text = "Cargo";
+            this.button_cad_empresa.Location = new System.Drawing.Point(336, 19);
+            this.button_cad_empresa.Name = "button_cad_empresa";
+            this.button_cad_empresa.Size = new System.Drawing.Size(113, 30);
+            this.button_cad_empresa.TabIndex = 4;
+            this.button_cad_empresa.Text = "Cadastro Empresa";
+            this.button_cad_empresa.UseVisualStyleBackColor = true;
+            this.button_cad_empresa.Click += new System.EventHandler(this.button_cad_empresa_Click);
             // 
             // Form_janela_cad_prestadores
             // 
@@ -268,7 +281,6 @@ namespace GM4
         private System.Windows.Forms.TextBox text_telefone;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView Grid_cad_prestadores;
-        private System.Windows.Forms.TextBox text_empresa;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox text_email;
         private System.Windows.Forms.Label label4;
@@ -276,5 +288,7 @@ namespace GM4
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox text_cargo;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox combo_empresa;
+        private System.Windows.Forms.Button button_cad_empresa;
     }
 }

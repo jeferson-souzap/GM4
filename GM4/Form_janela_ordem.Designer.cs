@@ -157,6 +157,7 @@ namespace GM4
             this.label16 = new System.Windows.Forms.Label();
             this.Grid_ordem_serv = new System.Windows.Forms.DataGridView();
             this.label_status_ordem = new System.Windows.Forms.Label();
+            this.baixarPeçasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -1342,7 +1343,8 @@ namespace GM4
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.abrirOSToolStripMenuItem,
-            this.ordensAbertasToolStripMenuItem});
+            this.ordensAbertasToolStripMenuItem,
+            this.baixarPeçasToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1026, 24);
@@ -1521,6 +1523,12 @@ namespace GM4
             this.label_status_ordem.TabIndex = 79;
             this.label_status_ordem.Text = "---";
             // 
+            // baixarPeçasToolStripMenuItem
+            // 
+            this.baixarPeçasToolStripMenuItem.Name = "baixarPeçasToolStripMenuItem";
+            this.baixarPeçasToolStripMenuItem.Size = new System.Drawing.Size(84, 20);
+            this.baixarPeçasToolStripMenuItem.Text = "Baixar Peças";
+            // 
             // Form_janela_ordem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1685,5 +1693,6 @@ namespace GM4
         private System.Windows.Forms.ComboBox aba_ordemAberta_combo_mes;
         private System.Windows.Forms.ComboBox aba_ordemAberta_combo_ano;
         private System.Windows.Forms.Label label_status_ordem;
+        private System.Windows.Forms.ToolStripMenuItem baixarPeçasToolStripMenuItem;
     }
 }

@@ -18,6 +18,9 @@ namespace GM4
         {
             InitializeComponent();
             Carregar_grid();
+
+            carregar_empresa();
+
         }
 
         private void cadastro_executante(string nome)
@@ -25,6 +28,32 @@ namespace GM4
 
         }
 
+        private void carregar_empresa()
+        {
+            try
+            {
+                string conecta_string = Properties.Settings.Default.db_manutencaoConnectionString;
+                string comando_sql = "select * from db_empresa";
+
+                OleDbConnection conexao = new OleDbConnection(conecta_string);
+                OleDbCommand cmd = new OleDbCommand(comando_sql, conexao);
+                OleDbDataReader myreader;
+                conexao.Open();
+
+                myreader = cmd.ExecuteReader();
+
+                while (myreader.Read())
+                {
+                    combo_empresa.Items.Add(myreader["nome_empresa"].ToString());
+                }
+                conexao.Close();
+
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show(erro.Message);
+            }
+        }
 
         private int Validar_telefone(string telefone)
         {
@@ -52,7 +81,7 @@ namespace GM4
         }
         private void Valida_campos()
         {
-            if(text_empresa.Text == string.Empty && text_nome.Text == string.Empty && text_cargo.Text == string.Empty && text_telefone.Text == string.Empty && text_email.Text == string.Empty)
+            if(combo_empresa.Text == string.Empty && text_nome.Text == string.Empty && text_cargo.Text == string.Empty && text_telefone.Text == string.Empty && text_email.Text == string.Empty)
             {
                 MessageBox.Show("Preencher todos os campos!");
                 return;
@@ -78,7 +107,7 @@ namespace GM4
 
                 while (myreader.Read())
                 {
-                    text_empresa.Text = myreader["empresa"].ToString();
+                    combo_empresa.Text = myreader["empresa"].ToString();
                     text_nome.Text = myreader["nome"].ToString();
                     text_telefone.Text = myreader["telefone"].ToString();
                     text_email.Text = myreader["email"].ToString(); ;
@@ -121,7 +150,7 @@ namespace GM4
         private void Salvar_prestador()
         {
 
-            string empresa = text_empresa.Text;
+            string empresa = combo_empresa.Text;
             string nome = text_nome.Text;
             string telefone = text_telefone.Text;
             string email = text_email.Text;
@@ -149,7 +178,7 @@ namespace GM4
         private void Atualizar_prestadores(string id_prestadores)
         {
 
-            string empresa = text_empresa.Text;
+            string empresa = combo_empresa.Text;
             string nome = text_nome.Text;
             string telefone = text_telefone.Text;
             string email = text_email.Text;
@@ -256,6 +285,11 @@ namespace GM4
         {
             label_id_prestadores.Text = Grid_cad_prestadores.CurrentRow.Cells[0].Value.ToString();
             Carregar_prestadores(label_id_prestadores.Text);
+        }
+
+        private void button_cad_empresa_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

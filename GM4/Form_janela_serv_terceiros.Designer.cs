@@ -30,52 +30,54 @@ namespace GM4
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label_id_serv_prestado = new System.Windows.Forms.Label();
+            this.combo_identificacao = new System.Windows.Forms.ComboBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.button_sair = new System.Windows.Forms.Button();
             this.button_excluir = new System.Windows.Forms.Button();
             this.button_atualizar = new System.Windows.Forms.Button();
             this.button_salvar = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.combo_nome = new System.Windows.Forms.ComboBox();
+            this.text_email = new System.Windows.Forms.TextBox();
             this.text_telefone = new System.Windows.Forms.TextBox();
-            this.text_nome = new System.Windows.Forms.TextBox();
             this.combo_empresa = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.richText_serv_prestado = new System.Windows.Forms.RichTextBox();
+            this.text_identifica = new System.Windows.Forms.TextBox();
+            this.text_custo = new System.Windows.Forms.TextBox();
+            this.dt_final = new System.Windows.Forms.DateTimePicker();
+            this.dt_inicio = new System.Windows.Forms.DateTimePicker();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.text_email = new System.Windows.Forms.TextBox();
-            this.dt_inicio = new System.Windows.Forms.DateTimePicker();
-            this.dt_final = new System.Windows.Forms.DateTimePicker();
-            this.text_custo = new System.Windows.Forms.TextBox();
-            this.text_identifica = new System.Windows.Forms.TextBox();
-            this.richText_serv_prestado = new System.Windows.Forms.RichTextBox();
-            this.combo_identificacao = new System.Windows.Forms.ComboBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label_id_serv_prestado = new System.Windows.Forms.Label();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tab_servico_terceiros = new System.Windows.Forms.TabControl();
             this.tab_serv_terceiro = new System.Windows.Forms.TabPage();
             this.tab_relatorio = new System.Windows.Forms.TabPage();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.Grid_relatorio_serv_terceiro = new System.Windows.Forms.DataGridView();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.label11 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.label_id_serv_terceiros = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.button_limpar_filtro_relatorio = new System.Windows.Forms.Button();
+            this.combo_relatorio_nome = new System.Windows.Forms.ComboBox();
+            this.combo_relatorio_empresa = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.label11 = new System.Windows.Forms.Label();
+            this.dt_final_relatorio = new System.Windows.Forms.DateTimePicker();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            this.tabControl1.SuspendLayout();
+            this.tab_servico_terceiros.SuspendLayout();
             this.tab_serv_terceiro.SuspendLayout();
             this.tab_relatorio.SuspendLayout();
-            this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Grid_relatorio_serv_terceiro)).BeginInit();
+            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -95,6 +97,33 @@ namespace GM4
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Menu";
             // 
+            // label_id_serv_prestado
+            // 
+            this.label_id_serv_prestado.AutoSize = true;
+            this.label_id_serv_prestado.Location = new System.Drawing.Point(351, 28);
+            this.label_id_serv_prestado.Name = "label_id_serv_prestado";
+            this.label_id_serv_prestado.Size = new System.Drawing.Size(13, 13);
+            this.label_id_serv_prestado.TabIndex = 7;
+            this.label_id_serv_prestado.Text = "0";
+            // 
+            // combo_identificacao
+            // 
+            this.combo_identificacao.FormattingEnabled = true;
+            this.combo_identificacao.Location = new System.Drawing.Point(560, 25);
+            this.combo_identificacao.Name = "combo_identificacao";
+            this.combo_identificacao.Size = new System.Drawing.Size(181, 21);
+            this.combo_identificacao.TabIndex = 6;
+            this.combo_identificacao.SelectedIndexChanged += new System.EventHandler(this.combo_identificacao_SelectedIndexChanged);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(486, 28);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(68, 13);
+            this.label10.TabIndex = 5;
+            this.label10.Text = "Identificação";
+            // 
             // button_sair
             // 
             this.button_sair.Location = new System.Drawing.Point(255, 19);
@@ -103,6 +132,7 @@ namespace GM4
             this.button_sair.TabIndex = 3;
             this.button_sair.Text = "Sair";
             this.button_sair.UseVisualStyleBackColor = true;
+            this.button_sair.Click += new System.EventHandler(this.button_sair_Click);
             // 
             // button_excluir
             // 
@@ -112,6 +142,7 @@ namespace GM4
             this.button_excluir.TabIndex = 2;
             this.button_excluir.Text = "Exluir";
             this.button_excluir.UseVisualStyleBackColor = true;
+            this.button_excluir.Click += new System.EventHandler(this.button_excluir_Click);
             // 
             // button_atualizar
             // 
@@ -121,6 +152,7 @@ namespace GM4
             this.button_atualizar.TabIndex = 1;
             this.button_atualizar.Text = "Atualizar";
             this.button_atualizar.UseVisualStyleBackColor = true;
+            this.button_atualizar.Click += new System.EventHandler(this.button_atualizar_Click);
             // 
             // button_salvar
             // 
@@ -130,12 +162,13 @@ namespace GM4
             this.button_salvar.TabIndex = 0;
             this.button_salvar.Text = "Salvar";
             this.button_salvar.UseVisualStyleBackColor = true;
+            this.button_salvar.Click += new System.EventHandler(this.button_salvar_Click);
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.combo_nome);
             this.groupBox2.Controls.Add(this.text_email);
             this.groupBox2.Controls.Add(this.text_telefone);
-            this.groupBox2.Controls.Add(this.text_nome);
             this.groupBox2.Controls.Add(this.combo_empresa);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.label3);
@@ -148,20 +181,31 @@ namespace GM4
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Menu";
             // 
+            // combo_nome
+            // 
+            this.combo_nome.FormattingEnabled = true;
+            this.combo_nome.Location = new System.Drawing.Point(322, 12);
+            this.combo_nome.Name = "combo_nome";
+            this.combo_nome.Size = new System.Drawing.Size(166, 21);
+            this.combo_nome.TabIndex = 8;
+            this.combo_nome.SelectedIndexChanged += new System.EventHandler(this.combo_nome_SelectedIndexChanged);
+            // 
+            // text_email
+            // 
+            this.text_email.Enabled = false;
+            this.text_email.Location = new System.Drawing.Point(60, 42);
+            this.text_email.Name = "text_email";
+            this.text_email.Size = new System.Drawing.Size(428, 20);
+            this.text_email.TabIndex = 7;
+            // 
             // text_telefone
             // 
+            this.text_telefone.Enabled = false;
+            this.text_telefone.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.text_telefone.Location = new System.Drawing.Point(548, 13);
             this.text_telefone.Name = "text_telefone";
-            this.text_telefone.Size = new System.Drawing.Size(181, 20);
+            this.text_telefone.Size = new System.Drawing.Size(190, 20);
             this.text_telefone.TabIndex = 6;
-            this.text_telefone.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
-            // 
-            // text_nome
-            // 
-            this.text_nome.Location = new System.Drawing.Point(322, 13);
-            this.text_nome.Name = "text_nome";
-            this.text_nome.Size = new System.Drawing.Size(166, 20);
-            this.text_nome.TabIndex = 5;
             // 
             // combo_empresa
             // 
@@ -170,6 +214,7 @@ namespace GM4
             this.combo_empresa.Name = "combo_empresa";
             this.combo_empresa.Size = new System.Drawing.Size(181, 21);
             this.combo_empresa.TabIndex = 4;
+            this.combo_empresa.SelectedIndexChanged += new System.EventHandler(this.combo_empresa_SelectedIndexChanged);
             // 
             // label4
             // 
@@ -188,7 +233,6 @@ namespace GM4
             this.label3.Size = new System.Drawing.Size(49, 13);
             this.label3.TabIndex = 2;
             this.label3.Text = "Telefone";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label2
             // 
@@ -222,10 +266,49 @@ namespace GM4
             this.groupBox3.Controls.Add(this.label5);
             this.groupBox3.Location = new System.Drawing.Point(6, 160);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(776, 197);
+            this.groupBox3.Size = new System.Drawing.Size(776, 293);
             this.groupBox3.TabIndex = 5;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Detalhe do trabalho";
+            // 
+            // richText_serv_prestado
+            // 
+            this.richText_serv_prestado.Location = new System.Drawing.Point(22, 95);
+            this.richText_serv_prestado.Name = "richText_serv_prestado";
+            this.richText_serv_prestado.Size = new System.Drawing.Size(716, 192);
+            this.richText_serv_prestado.TabIndex = 11;
+            this.richText_serv_prestado.Text = "";
+            // 
+            // text_identifica
+            // 
+            this.text_identifica.Location = new System.Drawing.Point(588, 29);
+            this.text_identifica.Name = "text_identifica";
+            this.text_identifica.Size = new System.Drawing.Size(150, 20);
+            this.text_identifica.TabIndex = 10;
+            // 
+            // text_custo
+            // 
+            this.text_custo.Location = new System.Drawing.Point(396, 28);
+            this.text_custo.Name = "text_custo";
+            this.text_custo.Size = new System.Drawing.Size(112, 20);
+            this.text_custo.TabIndex = 9;
+            this.text_custo.Text = "0";
+            // 
+            // dt_final
+            // 
+            this.dt_final.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dt_final.Location = new System.Drawing.Point(228, 28);
+            this.dt_final.Name = "dt_final";
+            this.dt_final.Size = new System.Drawing.Size(88, 20);
+            this.dt_final.TabIndex = 8;
+            // 
+            // dt_inicio
+            // 
+            this.dt_inicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dt_inicio.Location = new System.Drawing.Point(66, 29);
+            this.dt_inicio.Name = "dt_inicio";
+            this.dt_inicio.Size = new System.Drawing.Size(88, 20);
+            this.dt_inicio.TabIndex = 7;
             // 
             // label9
             // 
@@ -272,86 +355,16 @@ namespace GM4
             this.label5.TabIndex = 2;
             this.label5.Text = "Dt. Inicio";
             // 
-            // text_email
+            // tab_servico_terceiros
             // 
-            this.text_email.Location = new System.Drawing.Point(60, 42);
-            this.text_email.Name = "text_email";
-            this.text_email.Size = new System.Drawing.Size(428, 20);
-            this.text_email.TabIndex = 7;
-            // 
-            // dt_inicio
-            // 
-            this.dt_inicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dt_inicio.Location = new System.Drawing.Point(66, 29);
-            this.dt_inicio.Name = "dt_inicio";
-            this.dt_inicio.Size = new System.Drawing.Size(88, 20);
-            this.dt_inicio.TabIndex = 7;
-            // 
-            // dt_final
-            // 
-            this.dt_final.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dt_final.Location = new System.Drawing.Point(228, 28);
-            this.dt_final.Name = "dt_final";
-            this.dt_final.Size = new System.Drawing.Size(88, 20);
-            this.dt_final.TabIndex = 8;
-            // 
-            // text_custo
-            // 
-            this.text_custo.Location = new System.Drawing.Point(396, 28);
-            this.text_custo.Name = "text_custo";
-            this.text_custo.Size = new System.Drawing.Size(112, 20);
-            this.text_custo.TabIndex = 9;
-            // 
-            // text_identifica
-            // 
-            this.text_identifica.Location = new System.Drawing.Point(588, 29);
-            this.text_identifica.Name = "text_identifica";
-            this.text_identifica.Size = new System.Drawing.Size(141, 20);
-            this.text_identifica.TabIndex = 10;
-            // 
-            // richText_serv_prestado
-            // 
-            this.richText_serv_prestado.Location = new System.Drawing.Point(22, 95);
-            this.richText_serv_prestado.Name = "richText_serv_prestado";
-            this.richText_serv_prestado.Size = new System.Drawing.Size(707, 85);
-            this.richText_serv_prestado.TabIndex = 11;
-            this.richText_serv_prestado.Text = "";
-            // 
-            // combo_identificacao
-            // 
-            this.combo_identificacao.FormattingEnabled = true;
-            this.combo_identificacao.Location = new System.Drawing.Point(560, 25);
-            this.combo_identificacao.Name = "combo_identificacao";
-            this.combo_identificacao.Size = new System.Drawing.Size(181, 21);
-            this.combo_identificacao.TabIndex = 6;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(486, 28);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(68, 13);
-            this.label10.TabIndex = 5;
-            this.label10.Text = "Identificação";
-            // 
-            // label_id_serv_prestado
-            // 
-            this.label_id_serv_prestado.AutoSize = true;
-            this.label_id_serv_prestado.Location = new System.Drawing.Point(351, 28);
-            this.label_id_serv_prestado.Name = "label_id_serv_prestado";
-            this.label_id_serv_prestado.Size = new System.Drawing.Size(13, 13);
-            this.label_id_serv_prestado.TabIndex = 7;
-            this.label_id_serv_prestado.Text = "0";
-            // 
-            // tabControl1
-            // 
-            this.tabControl1.Controls.Add(this.tab_serv_terceiro);
-            this.tabControl1.Controls.Add(this.tab_relatorio);
-            this.tabControl1.Location = new System.Drawing.Point(7, 5);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(802, 394);
-            this.tabControl1.TabIndex = 6;
+            this.tab_servico_terceiros.Controls.Add(this.tab_serv_terceiro);
+            this.tab_servico_terceiros.Controls.Add(this.tab_relatorio);
+            this.tab_servico_terceiros.Location = new System.Drawing.Point(7, 5);
+            this.tab_servico_terceiros.Name = "tab_servico_terceiros";
+            this.tab_servico_terceiros.SelectedIndex = 0;
+            this.tab_servico_terceiros.Size = new System.Drawing.Size(802, 485);
+            this.tab_servico_terceiros.TabIndex = 6;
+            this.tab_servico_terceiros.SelectedIndexChanged += new System.EventHandler(this.tab_servico_terceiros_SelectedIndexChanged);
             // 
             // tab_serv_terceiro
             // 
@@ -361,7 +374,7 @@ namespace GM4
             this.tab_serv_terceiro.Location = new System.Drawing.Point(4, 22);
             this.tab_serv_terceiro.Name = "tab_serv_terceiro";
             this.tab_serv_terceiro.Padding = new System.Windows.Forms.Padding(3);
-            this.tab_serv_terceiro.Size = new System.Drawing.Size(794, 368);
+            this.tab_serv_terceiro.Size = new System.Drawing.Size(794, 459);
             this.tab_serv_terceiro.TabIndex = 0;
             this.tab_serv_terceiro.Text = "Serviço Terceiros";
             this.tab_serv_terceiro.UseVisualStyleBackColor = true;
@@ -373,25 +386,10 @@ namespace GM4
             this.tab_relatorio.Location = new System.Drawing.Point(4, 22);
             this.tab_relatorio.Name = "tab_relatorio";
             this.tab_relatorio.Padding = new System.Windows.Forms.Padding(3);
-            this.tab_relatorio.Size = new System.Drawing.Size(794, 368);
+            this.tab_relatorio.Size = new System.Drawing.Size(794, 459);
             this.tab_relatorio.TabIndex = 1;
             this.tab_relatorio.Text = "Relatorio";
             this.tab_relatorio.UseVisualStyleBackColor = true;
-            // 
-            // groupBox4
-            // 
-            this.groupBox4.Controls.Add(this.button1);
-            this.groupBox4.Controls.Add(this.comboBox2);
-            this.groupBox4.Controls.Add(this.comboBox1);
-            this.groupBox4.Controls.Add(this.label12);
-            this.groupBox4.Controls.Add(this.label11);
-            this.groupBox4.Controls.Add(this.dateTimePicker1);
-            this.groupBox4.Location = new System.Drawing.Point(6, 6);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(782, 70);
-            this.groupBox4.TabIndex = 0;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Menu";
             // 
             // Grid_relatorio_serv_terceiro
             // 
@@ -403,33 +401,73 @@ namespace GM4
             this.Grid_relatorio_serv_terceiro.Location = new System.Drawing.Point(6, 82);
             this.Grid_relatorio_serv_terceiro.Name = "Grid_relatorio_serv_terceiro";
             this.Grid_relatorio_serv_terceiro.ReadOnly = true;
-            this.Grid_relatorio_serv_terceiro.Size = new System.Drawing.Size(782, 280);
+            this.Grid_relatorio_serv_terceiro.Size = new System.Drawing.Size(782, 371);
             this.Grid_relatorio_serv_terceiro.TabIndex = 3;
+            this.Grid_relatorio_serv_terceiro.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Grid_relatorio_serv_terceiro_CellClick);
+            this.Grid_relatorio_serv_terceiro.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Grid_relatorio_serv_terceiro_CellDoubleClick);
             // 
-            // dateTimePicker1
+            // groupBox4
             // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(522, 10);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(103, 20);
-            this.dateTimePicker1.TabIndex = 0;
+            this.groupBox4.Controls.Add(this.label_id_serv_terceiros);
+            this.groupBox4.Controls.Add(this.label13);
+            this.groupBox4.Controls.Add(this.button_limpar_filtro_relatorio);
+            this.groupBox4.Controls.Add(this.combo_relatorio_nome);
+            this.groupBox4.Controls.Add(this.combo_relatorio_empresa);
+            this.groupBox4.Controls.Add(this.label12);
+            this.groupBox4.Controls.Add(this.label11);
+            this.groupBox4.Controls.Add(this.dt_final_relatorio);
+            this.groupBox4.Location = new System.Drawing.Point(6, 6);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(782, 70);
+            this.groupBox4.TabIndex = 0;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Menu";
             // 
-            // label11
+            // label_id_serv_terceiros
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(247, 16);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(59, 13);
-            this.label11.TabIndex = 6;
-            this.label11.Text = "Nome Exe.";
+            this.label_id_serv_terceiros.AutoSize = true;
+            this.label_id_serv_terceiros.Location = new System.Drawing.Point(70, 46);
+            this.label_id_serv_terceiros.Name = "label_id_serv_terceiros";
+            this.label_id_serv_terceiros.Size = new System.Drawing.Size(13, 13);
+            this.label_id_serv_terceiros.TabIndex = 13;
+            this.label_id_serv_terceiros.Text = "0";
             // 
-            // comboBox1
+            // label13
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(73, 13);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(168, 21);
-            this.comboBox1.TabIndex = 9;
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(488, 16);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(46, 13);
+            this.label13.TabIndex = 12;
+            this.label13.Text = "Dt. Final";
+            // 
+            // button_limpar_filtro_relatorio
+            // 
+            this.button_limpar_filtro_relatorio.Location = new System.Drawing.Point(673, 41);
+            this.button_limpar_filtro_relatorio.Name = "button_limpar_filtro_relatorio";
+            this.button_limpar_filtro_relatorio.Size = new System.Drawing.Size(103, 23);
+            this.button_limpar_filtro_relatorio.TabIndex = 11;
+            this.button_limpar_filtro_relatorio.Text = "Limpar Filtros";
+            this.button_limpar_filtro_relatorio.UseVisualStyleBackColor = true;
+            this.button_limpar_filtro_relatorio.Click += new System.EventHandler(this.button_limpar_filtro_relatorio_Click);
+            // 
+            // combo_relatorio_nome
+            // 
+            this.combo_relatorio_nome.FormattingEnabled = true;
+            this.combo_relatorio_nome.Location = new System.Drawing.Point(312, 13);
+            this.combo_relatorio_nome.Name = "combo_relatorio_nome";
+            this.combo_relatorio_nome.Size = new System.Drawing.Size(170, 21);
+            this.combo_relatorio_nome.TabIndex = 10;
+            this.combo_relatorio_nome.SelectedIndexChanged += new System.EventHandler(this.combo_relatorio_nome_SelectedIndexChanged);
+            // 
+            // combo_relatorio_empresa
+            // 
+            this.combo_relatorio_empresa.FormattingEnabled = true;
+            this.combo_relatorio_empresa.Location = new System.Drawing.Point(73, 13);
+            this.combo_relatorio_empresa.Name = "combo_relatorio_empresa";
+            this.combo_relatorio_empresa.Size = new System.Drawing.Size(168, 21);
+            this.combo_relatorio_empresa.TabIndex = 9;
+            this.combo_relatorio_empresa.SelectedIndexChanged += new System.EventHandler(this.combo_relatorio_empresa_SelectedIndexChanged);
             // 
             // label12
             // 
@@ -440,29 +478,30 @@ namespace GM4
             this.label12.TabIndex = 8;
             this.label12.Text = "Empresa";
             // 
-            // comboBox2
+            // label11
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(312, 13);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(170, 21);
-            this.comboBox2.TabIndex = 10;
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(247, 16);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(59, 13);
+            this.label11.TabIndex = 6;
+            this.label11.Text = "Nome Exe.";
             // 
-            // button1
+            // dt_final_relatorio
             // 
-            this.button1.Location = new System.Drawing.Point(673, 41);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(103, 23);
-            this.button1.TabIndex = 11;
-            this.button1.Text = "Limpar Filtros";
-            this.button1.UseVisualStyleBackColor = true;
+            this.dt_final_relatorio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dt_final_relatorio.Location = new System.Drawing.Point(540, 14);
+            this.dt_final_relatorio.Name = "dt_final_relatorio";
+            this.dt_final_relatorio.Size = new System.Drawing.Size(103, 20);
+            this.dt_final_relatorio.TabIndex = 0;
+            this.dt_final_relatorio.ValueChanged += new System.EventHandler(this.dt_final_relatorio_ValueChanged);
             // 
             // Form_janela_serv_terceiros
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(816, 406);
-            this.Controls.Add(this.tabControl1);
+            this.ClientSize = new System.Drawing.Size(816, 502);
+            this.Controls.Add(this.tab_servico_terceiros);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form_janela_serv_terceiros";
             this.Text = "Form_janela_serv_terceiros";
@@ -472,12 +511,12 @@ namespace GM4
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            this.tabControl1.ResumeLayout(false);
+            this.tab_servico_terceiros.ResumeLayout(false);
             this.tab_serv_terceiro.ResumeLayout(false);
             this.tab_relatorio.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.Grid_relatorio_serv_terceiro)).EndInit();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Grid_relatorio_serv_terceiro)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -491,7 +530,6 @@ namespace GM4
         private System.Windows.Forms.Button button_salvar;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TextBox text_telefone;
-        private System.Windows.Forms.TextBox text_nome;
         private System.Windows.Forms.ComboBox combo_empresa;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
@@ -512,16 +550,19 @@ namespace GM4
         private System.Windows.Forms.Label label_id_serv_prestado;
         private System.Windows.Forms.ComboBox combo_identificacao;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabControl tab_servico_terceiros;
         private System.Windows.Forms.TabPage tab_serv_terceiro;
         private System.Windows.Forms.TabPage tab_relatorio;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.DataGridView Grid_relatorio_serv_terceiro;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Button button_limpar_filtro_relatorio;
+        private System.Windows.Forms.ComboBox combo_relatorio_nome;
+        private System.Windows.Forms.ComboBox combo_relatorio_empresa;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dt_final_relatorio;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.ComboBox combo_nome;
+        private System.Windows.Forms.Label label_id_serv_terceiros;
     }
 }

@@ -1,0 +1,16 @@
+ok - Cad equipamento
+ok - Abrir preventiva / OS / Fechar OS
+ok - cad. componentes
+ok - cad. peças
+ok - Cad. prestadores / terceiros
+ok - serviço de terceiros 
+ok - cad. Executantes
+ok - cad. atividades
+
+
+Baixa de material mecanico
+
+
+report
+Ficha de OS pdf
+

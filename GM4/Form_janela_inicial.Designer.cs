@@ -32,6 +32,7 @@ namespace GM4
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_inicial));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.panel_esquerda = new System.Windows.Forms.Panel();
+            this.button_serv_terceiros = new System.Windows.Forms.Button();
             this.button_colaboradores = new System.Windows.Forms.Button();
             this.button_prestadores = new System.Windows.Forms.Button();
             this.button_cad_equipamento = new System.Windows.Forms.Button();
@@ -40,7 +41,7 @@ namespace GM4
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button_ordem_serv = new System.Windows.Forms.Button();
             this.panel_central = new System.Windows.Forms.Panel();
-            this.button_serv_terceiros = new System.Windows.Forms.Button();
+            this.button_cad_pecas = new System.Windows.Forms.Button();
             this.panel_esquerda.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -56,6 +57,7 @@ namespace GM4
             // panel_esquerda
             // 
             this.panel_esquerda.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel_esquerda.Controls.Add(this.button_cad_pecas);
             this.panel_esquerda.Controls.Add(this.button_serv_terceiros);
             this.panel_esquerda.Controls.Add(this.button_colaboradores);
             this.panel_esquerda.Controls.Add(this.button_prestadores);
@@ -69,6 +71,17 @@ namespace GM4
             this.panel_esquerda.Name = "panel_esquerda";
             this.panel_esquerda.Size = new System.Drawing.Size(190, 750);
             this.panel_esquerda.TabIndex = 1;
+            // 
+            // button_serv_terceiros
+            // 
+            this.button_serv_terceiros.Location = new System.Drawing.Point(3, 371);
+            this.button_serv_terceiros.Name = "button_serv_terceiros";
+            this.button_serv_terceiros.Size = new System.Drawing.Size(179, 33);
+            this.button_serv_terceiros.TabIndex = 8;
+            this.button_serv_terceiros.Text = "Serviço Terceiros";
+            this.button_serv_terceiros.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button_serv_terceiros.UseVisualStyleBackColor = true;
+            this.button_serv_terceiros.Click += new System.EventHandler(this.button_serv_terceiros_Click);
             // 
             // button_colaboradores
             // 
@@ -158,16 +171,16 @@ namespace GM4
             this.panel_central.Size = new System.Drawing.Size(1036, 750);
             this.panel_central.TabIndex = 2;
             // 
-            // button_serv_terceiros
+            // button_cad_pecas
             // 
-            this.button_serv_terceiros.Location = new System.Drawing.Point(3, 371);
-            this.button_serv_terceiros.Name = "button_serv_terceiros";
-            this.button_serv_terceiros.Size = new System.Drawing.Size(179, 33);
-            this.button_serv_terceiros.TabIndex = 8;
-            this.button_serv_terceiros.Text = "Serviço Terceiros";
-            this.button_serv_terceiros.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button_serv_terceiros.UseVisualStyleBackColor = true;
-            this.button_serv_terceiros.Click += new System.EventHandler(this.button_serv_terceiros_Click);
+            this.button_cad_pecas.Location = new System.Drawing.Point(4, 410);
+            this.button_cad_pecas.Name = "button_cad_pecas";
+            this.button_cad_pecas.Size = new System.Drawing.Size(179, 33);
+            this.button_cad_pecas.TabIndex = 9;
+            this.button_cad_pecas.Text = "Cadastro Peças";
+            this.button_cad_pecas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button_cad_pecas.UseVisualStyleBackColor = true;
+            this.button_cad_pecas.Click += new System.EventHandler(this.button_cad_pecas_Click);
             // 
             // Form_inicial
             // 
@@ -203,6 +216,7 @@ namespace GM4
         private System.Windows.Forms.Button button_prestadores;
         private System.Windows.Forms.Button button_colaboradores;
         private System.Windows.Forms.Button button_serv_terceiros;
+        private System.Windows.Forms.Button button_cad_pecas;
     }
 }
 

@@ -64,5 +64,10 @@ namespace GM4
         {
             abrir_janelas(new Form_janela_serv_terceiros());
         }
+
+        private void button_cad_pecas_Click(object sender, EventArgs e)
+        {
+            abrir_janelas(new Form_janela_cad_peca());
+        }
     }
 }

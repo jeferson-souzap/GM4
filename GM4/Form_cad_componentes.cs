@@ -20,8 +20,6 @@ namespace GM4
             Carregar_grid();
         }
 
-
-
         private void Carregar_grid()
         {
             try
@@ -117,7 +115,6 @@ namespace GM4
                 MessageBox.Show(erro.Message);
             }
         }
-
         private void deletar_componente(string id_componentes)
         {
             try
@@ -139,21 +136,18 @@ namespace GM4
                 MessageBox.Show(erro.Message);
             }
         }
-
         private void button_salvar_Click(object sender, EventArgs e)
         {
             Salvar_componente(textBox_componente.Text);
             Carregar_grid();
             MessageBox.Show("Salvo Com sucesso!");
         }
-
         private void button_atualizar_Click(object sender, EventArgs e)
         {
             Atualizar_componente(textBox_componente.Text, label_id_componente.Text);
             MessageBox.Show("Atualizado Com sucesso!");
             Carregar_grid();
         }
-
         private void button_excluir_Click(object sender, EventArgs e)
         {
             deletar_componente(label_id_componente.Text);

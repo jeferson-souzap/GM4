@@ -30,18 +30,18 @@ namespace GM4
         private void InitializeComponent()
         {
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.text_cod_executante = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.Grid_cad_executante = new System.Windows.Forms.DataGridView();
             this.text_executante = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label_id_executante = new System.Windows.Forms.Label();
             this.button_sair = new System.Windows.Forms.Button();
             this.button_excluir = new System.Windows.Forms.Button();
             this.button_atualizar = new System.Windows.Forms.Button();
             this.button_salvar = new System.Windows.Forms.Button();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.text_cod_executante = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label_id_executante = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Grid_cad_executante)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -62,11 +62,28 @@ namespace GM4
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Cadastro";
             // 
+            // text_cod_executante
+            // 
+            this.text_cod_executante.Location = new System.Drawing.Point(429, 24);
+            this.text_cod_executante.Name = "text_cod_executante";
+            this.text_cod_executante.Size = new System.Drawing.Size(102, 20);
+            this.text_cod_executante.TabIndex = 4;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(312, 25);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(111, 17);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Cod. Executante";
+            // 
             // Grid_cad_executante
             // 
             this.Grid_cad_executante.AllowUserToAddRows = false;
             this.Grid_cad_executante.AllowUserToDeleteRows = false;
-            this.Grid_cad_executante.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            this.Grid_cad_executante.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCellsExceptHeader;
             this.Grid_cad_executante.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.Grid_cad_executante.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Grid_cad_executante.Location = new System.Drawing.Point(9, 67);
@@ -108,6 +125,16 @@ namespace GM4
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Menu";
             // 
+            // label_id_executante
+            // 
+            this.label_id_executante.AutoSize = true;
+            this.label_id_executante.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_id_executante.Location = new System.Drawing.Point(426, 26);
+            this.label_id_executante.Name = "label_id_executante";
+            this.label_id_executante.Size = new System.Drawing.Size(18, 17);
+            this.label_id_executante.TabIndex = 5;
+            this.label_id_executante.Text = "--";
+            // 
             // button_sair
             // 
             this.button_sair.Location = new System.Drawing.Point(255, 19);
@@ -147,33 +174,6 @@ namespace GM4
             this.button_salvar.Text = "Salvar";
             this.button_salvar.UseVisualStyleBackColor = true;
             this.button_salvar.Click += new System.EventHandler(this.button_salvar_Click);
-            // 
-            // text_cod_executante
-            // 
-            this.text_cod_executante.Location = new System.Drawing.Point(429, 24);
-            this.text_cod_executante.Name = "text_cod_executante";
-            this.text_cod_executante.Size = new System.Drawing.Size(102, 20);
-            this.text_cod_executante.TabIndex = 4;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(312, 25);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(111, 17);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Cod. Executante";
-            // 
-            // label_id_executante
-            // 
-            this.label_id_executante.AutoSize = true;
-            this.label_id_executante.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_id_executante.Location = new System.Drawing.Point(426, 26);
-            this.label_id_executante.Name = "label_id_executante";
-            this.label_id_executante.Size = new System.Drawing.Size(18, 17);
-            this.label_id_executante.TabIndex = 5;
-            this.label_id_executante.Text = "--";
             // 
             // Form_janela_executante
             // 
