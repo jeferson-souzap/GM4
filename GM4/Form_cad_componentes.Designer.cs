@@ -30,6 +30,7 @@ namespace GM4
         private void InitializeComponent()
         {
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label_id_componente = new System.Windows.Forms.Label();
             this.Grid_cad_componentes = new System.Windows.Forms.DataGridView();
             this.textBox_componente = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -38,7 +39,8 @@ namespace GM4
             this.button_excluir = new System.Windows.Forms.Button();
             this.button_atualizar = new System.Windows.Forms.Button();
             this.button_salvar = new System.Windows.Forms.Button();
-            this.label_id_componente = new System.Windows.Forms.Label();
+            this.richText_observacao = new System.Windows.Forms.RichTextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Grid_cad_componentes)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -46,6 +48,8 @@ namespace GM4
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.label2);
+            this.groupBox2.Controls.Add(this.richText_observacao);
             this.groupBox2.Controls.Add(this.label_id_componente);
             this.groupBox2.Controls.Add(this.Grid_cad_componentes);
             this.groupBox2.Controls.Add(this.textBox_componente);
@@ -58,6 +62,16 @@ namespace GM4
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Cadastro";
             // 
+            // label_id_componente
+            // 
+            this.label_id_componente.AutoSize = true;
+            this.label_id_componente.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_id_componente.Location = new System.Drawing.Point(350, 16);
+            this.label_id_componente.Name = "label_id_componente";
+            this.label_id_componente.Size = new System.Drawing.Size(18, 17);
+            this.label_id_componente.TabIndex = 3;
+            this.label_id_componente.Text = "--";
+            // 
             // Grid_cad_componentes
             // 
             this.Grid_cad_componentes.AllowUserToAddRows = false;
@@ -65,10 +79,10 @@ namespace GM4
             this.Grid_cad_componentes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.Grid_cad_componentes.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.Grid_cad_componentes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.Grid_cad_componentes.Location = new System.Drawing.Point(6, 50);
+            this.Grid_cad_componentes.Location = new System.Drawing.Point(6, 127);
             this.Grid_cad_componentes.Name = "Grid_cad_componentes";
             this.Grid_cad_componentes.ReadOnly = true;
-            this.Grid_cad_componentes.Size = new System.Drawing.Size(501, 566);
+            this.Grid_cad_componentes.Size = new System.Drawing.Size(501, 489);
             this.Grid_cad_componentes.TabIndex = 2;
             this.Grid_cad_componentes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Grid_cad_componentes_CellClick);
             // 
@@ -143,15 +157,23 @@ namespace GM4
             this.button_salvar.UseVisualStyleBackColor = true;
             this.button_salvar.Click += new System.EventHandler(this.button_salvar_Click);
             // 
-            // label_id_componente
+            // richText_observacao
             // 
-            this.label_id_componente.AutoSize = true;
-            this.label_id_componente.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_id_componente.Location = new System.Drawing.Point(350, 16);
-            this.label_id_componente.Name = "label_id_componente";
-            this.label_id_componente.Size = new System.Drawing.Size(18, 17);
-            this.label_id_componente.TabIndex = 3;
-            this.label_id_componente.Text = "--";
+            this.richText_observacao.Location = new System.Drawing.Point(106, 41);
+            this.richText_observacao.Name = "richText_observacao";
+            this.richText_observacao.Size = new System.Drawing.Size(401, 80);
+            this.richText_observacao.TabIndex = 4;
+            this.richText_observacao.Text = "";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(12, 69);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(85, 17);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Observação";
             // 
             // Form_cad_componentes
             // 
@@ -183,5 +205,7 @@ namespace GM4
         private System.Windows.Forms.Button button_atualizar;
         private System.Windows.Forms.Button button_salvar;
         private System.Windows.Forms.Label label_id_componente;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.RichTextBox richText_observacao;
     }
 }

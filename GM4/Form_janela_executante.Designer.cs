@@ -83,7 +83,7 @@ namespace GM4
             // 
             this.Grid_cad_executante.AllowUserToAddRows = false;
             this.Grid_cad_executante.AllowUserToDeleteRows = false;
-            this.Grid_cad_executante.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCellsExceptHeader;
+            this.Grid_cad_executante.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.Grid_cad_executante.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.Grid_cad_executante.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Grid_cad_executante.Location = new System.Drawing.Point(9, 67);

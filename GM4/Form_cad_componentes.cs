@@ -25,7 +25,7 @@ namespace GM4
             try
             {
                 string conecta_string = Properties.Settings.Default.db_manutencaoConnectionString;
-                string comando_sql = "select * from db_componentes";
+                string comando_sql = "select id_componentes, nome_componente, observacao from db_componentes";
 
                 OleDbConnection connection = new OleDbConnection(conecta_string);
                 OleDbDataAdapter myadapter = new OleDbDataAdapter(comando_sql, connection);
@@ -63,6 +63,7 @@ namespace GM4
                 while (myreader.Read())
                 {
                     textBox_componente.Text = myreader["nome_componente"].ToString();
+                    richText_observacao.Text = myreader["observacao"].ToString();
                 }
                 conexao.Close();
 
@@ -72,7 +73,7 @@ namespace GM4
                 MessageBox.Show(erro.Message);
             }
         }
-        private void Salvar_componente(string nome_componente)
+        private void Salvar_componente(string nome_componente, string observacao)
         {
             try
             {
@@ -82,19 +83,23 @@ namespace GM4
 
                 string comando_sql;
 
-                comando_sql = "INSERT INTO db_componentes(nome_componente) " +
-                    "VALUES('" + nome_componente + "')";
+                comando_sql = "INSERT INTO db_componentes(nome_componente, observacao) " +
+                    "VALUES('" + nome_componente +"','"+ observacao+ "')";
 
                 OleDbCommand cmd = new OleDbCommand(comando_sql, conexao);
                 cmd.ExecuteNonQuery();
                 conexao.Close();
+                
+                MessageBox.Show("Salvo Com sucesso!");
+                Carregar_grid();
+
             }
             catch (Exception erro)
             {
                 MessageBox.Show(erro.Message);
             }
         }
-        private void Atualizar_componente(string nome_componente, string id_componentes)
+        private void Atualizar_componente(string nome_componente,  string observacao, string id_componentes)
         {
             try
             {
@@ -104,11 +109,20 @@ namespace GM4
                 OleDbConnection conexao = new OleDbConnection(conecta_string);
                 conexao.Open();
 
-                comando_sql = "UPDATE db_componentes SET nome_componente='" + nome_componente + "' WHERE id_componentes=" + id_componentes + "";
+                //comando_sql = "UPDATE db_componentes SET nome_componente='" + nome_componente + ", observacao='"+ observacao + "' WHERE id_componentes=" + id_componentes + "";
+
+                comando_sql = "UPDATE db_ordem_servi SET " +
+                        "nome_componente='" + nome_componente +
+                        "', observacao='" + observacao +
+                        "' WHERE id_componentes=" + Convert.ToDouble(id_componentes) + "";
 
                 OleDbCommand cmd = new OleDbCommand(comando_sql, conexao);
                 cmd.ExecuteNonQuery();
                 conexao.Close();
+
+                MessageBox.Show("Atualizado Com sucesso!");
+                Carregar_grid();
+
             }
             catch (Exception erro)
             {
@@ -138,15 +152,13 @@ namespace GM4
         }
         private void button_salvar_Click(object sender, EventArgs e)
         {
-            Salvar_componente(textBox_componente.Text);
-            Carregar_grid();
-            MessageBox.Show("Salvo Com sucesso!");
+            Salvar_componente(textBox_componente.Text, richText_observacao.Text);
+            
         }
         private void button_atualizar_Click(object sender, EventArgs e)
         {
-            Atualizar_componente(textBox_componente.Text, label_id_componente.Text);
-            MessageBox.Show("Atualizado Com sucesso!");
-            Carregar_grid();
+            Atualizar_componente(textBox_componente.Text, richText_observacao.Text, label_id_componente.Text);
+            
         }
         private void button_excluir_Click(object sender, EventArgs e)
         {

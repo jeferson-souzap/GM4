@@ -144,6 +144,7 @@ namespace GM4
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.abrirOSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ordensAbertasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.baixarPeçasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tab_ordem_servi = new System.Windows.Forms.TabControl();
             this.tab_abrir_fechar_os = new System.Windows.Forms.TabPage();
             this.tab_ordem_aberta = new System.Windows.Forms.TabPage();
@@ -157,7 +158,6 @@ namespace GM4
             this.label16 = new System.Windows.Forms.Label();
             this.Grid_ordem_serv = new System.Windows.Forms.DataGridView();
             this.label_status_ordem = new System.Windows.Forms.Label();
-            this.baixarPeçasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -1365,6 +1365,13 @@ namespace GM4
             this.ordensAbertasToolStripMenuItem.Text = "Editar";
             this.ordensAbertasToolStripMenuItem.Click += new System.EventHandler(this.ordensAbertasToolStripMenuItem_Click);
             // 
+            // baixarPeçasToolStripMenuItem
+            // 
+            this.baixarPeçasToolStripMenuItem.Name = "baixarPeçasToolStripMenuItem";
+            this.baixarPeçasToolStripMenuItem.Size = new System.Drawing.Size(84, 20);
+            this.baixarPeçasToolStripMenuItem.Text = "Baixar Peças";
+            this.baixarPeçasToolStripMenuItem.Click += new System.EventHandler(this.baixarPeçasToolStripMenuItem_Click);
+            // 
             // tab_ordem_servi
             // 
             this.tab_ordem_servi.Controls.Add(this.tab_abrir_fechar_os);
@@ -1522,12 +1529,6 @@ namespace GM4
             this.label_status_ordem.Size = new System.Drawing.Size(23, 18);
             this.label_status_ordem.TabIndex = 79;
             this.label_status_ordem.Text = "---";
-            // 
-            // baixarPeçasToolStripMenuItem
-            // 
-            this.baixarPeçasToolStripMenuItem.Name = "baixarPeçasToolStripMenuItem";
-            this.baixarPeçasToolStripMenuItem.Size = new System.Drawing.Size(84, 20);
-            this.baixarPeçasToolStripMenuItem.Text = "Baixar Peças";
             // 
             // Form_janela_ordem
             // 

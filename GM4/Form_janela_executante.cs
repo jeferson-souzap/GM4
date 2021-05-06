@@ -26,7 +26,7 @@ namespace GM4
             try
             {
                 string conecta_string = Properties.Settings.Default.db_manutencaoConnectionString;
-                string comando_sql = "select * from db_executante";
+                string comando_sql = "select id_executante, cod_executante, nome_executante from db_executante";
 
                 OleDbConnection connection = new OleDbConnection(conecta_string);
                 OleDbDataAdapter myadapter = new OleDbDataAdapter(comando_sql, connection);

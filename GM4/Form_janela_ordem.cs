@@ -3064,7 +3064,6 @@ namespace GM4
             }
 
         }
-
         private void Carregar_equipamentos()
         {
             try
@@ -3092,7 +3091,6 @@ namespace GM4
                 MessageBox.Show(erro.Message);
             }
         }
-
         private void Carregar_tipo_servi()
         {
             try
@@ -3121,7 +3119,6 @@ namespace GM4
             }
 
         }
-
         private void Carregar_periodicidade()
         {
             try
@@ -3149,7 +3146,6 @@ namespace GM4
                 MessageBox.Show(erro.Message);
             }
         }
-
         private void Carregar_componentes()
         {
             try
@@ -3188,7 +3184,6 @@ namespace GM4
                 MessageBox.Show(erro.Message);
             }
         }
-
         private void Carregar_executante()
         {
             try
@@ -3393,7 +3388,6 @@ namespace GM4
         }
 
 
-
         private void Grid_ordem_serv_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             string idCliente = Grid_ordem_serv.CurrentRow.Cells[0].Value.ToString();
@@ -3407,6 +3401,12 @@ namespace GM4
         {
             carregar_grid(aba_os_pend_combo_status.Text);
             MessageBox.Show("Atualizado com Sucesso");
+        }
+
+        private void baixarPeçasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form_janela_baixa_peca mov_materail = new Form_janela_baixa_peca();
+            mov_materail.Show();
         }
     }
 }
