@@ -48,7 +48,7 @@ namespace GM4
             this.ClientSize = new System.Drawing.Size(693, 658);
             this.Controls.Add(this.reportViewer1);
             this.Name = "Form_janela_imprimir_os";
-            this.Text = "Form_janela_imprimir_os";
+            this.Text = "Imprimir ordem serviço";
             this.Load += new System.EventHandler(this.Form_janela_imprimir_os_Load);
             this.ResumeLayout(false);
 

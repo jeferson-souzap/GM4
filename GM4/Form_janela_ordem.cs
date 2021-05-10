@@ -3270,14 +3270,15 @@ namespace GM4
 
         private void button_imprimir_Click(object sender, EventArgs e)
         {
-            string empresa = combo_empresa.Text;
+            //string empresa = combo_empresa.Text;
             string num_os = label_numero_os.Text;
             string equipamento = combo_equipamento.Text;
             string tipo_servico = combo_tipo_serv.Text;
+            
+
+            /*
             DateTime data_solicitacao = dt_solicitacao.Value;
-
             string maquina_parada = " ";
-
             int horas_parada = Convert.ToInt32(text_hr_paradas.Text);
             string periodicidade = combo_periodicidade.Text;
             int periodo_meses = Convert.ToInt32(combo_periodo_meses.Text);
@@ -3292,6 +3293,7 @@ namespace GM4
             string status = "";
             string obs = richText_observacao.Text;
 
+            */
 
             // adicionar o restante dos parametros
             Form_janela_imprimir_os imprimir_os = new Form_janela_imprimir_os(num_os, equipamento, tipo_servico);
