@@ -32,9 +32,10 @@ namespace GM4
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.text_endereco = new System.Windows.Forms.TextBox();
-            this.button_buscar_local = new System.Windows.Forms.Button();
             this.button_salvar_endereco = new System.Windows.Forms.Button();
+            this.button_buscar_local = new System.Windows.Forms.Button();
+            this.text_endereco = new System.Windows.Forms.TextBox();
+            this.label_status_con = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -50,6 +51,7 @@ namespace GM4
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label_status_con);
             this.groupBox1.Controls.Add(this.button_salvar_endereco);
             this.groupBox1.Controls.Add(this.button_buscar_local);
             this.groupBox1.Controls.Add(this.text_endereco);
@@ -62,12 +64,15 @@ namespace GM4
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "--";
             // 
-            // text_endereco
+            // button_salvar_endereco
             // 
-            this.text_endereco.Location = new System.Drawing.Point(9, 62);
-            this.text_endereco.Name = "text_endereco";
-            this.text_endereco.Size = new System.Drawing.Size(644, 20);
-            this.text_endereco.TabIndex = 1;
+            this.button_salvar_endereco.Location = new System.Drawing.Point(90, 97);
+            this.button_salvar_endereco.Name = "button_salvar_endereco";
+            this.button_salvar_endereco.Size = new System.Drawing.Size(75, 23);
+            this.button_salvar_endereco.TabIndex = 3;
+            this.button_salvar_endereco.Text = "Salvar local";
+            this.button_salvar_endereco.UseVisualStyleBackColor = true;
+            this.button_salvar_endereco.Click += new System.EventHandler(this.button_salvar_endereco_Click);
             // 
             // button_buscar_local
             // 
@@ -79,15 +84,22 @@ namespace GM4
             this.button_buscar_local.UseVisualStyleBackColor = true;
             this.button_buscar_local.Click += new System.EventHandler(this.button_buscar_local_Click);
             // 
-            // button_salvar_endereco
+            // text_endereco
             // 
-            this.button_salvar_endereco.Location = new System.Drawing.Point(90, 97);
-            this.button_salvar_endereco.Name = "button_salvar_endereco";
-            this.button_salvar_endereco.Size = new System.Drawing.Size(75, 23);
-            this.button_salvar_endereco.TabIndex = 3;
-            this.button_salvar_endereco.Text = "Salvar local";
-            this.button_salvar_endereco.UseVisualStyleBackColor = true;
-            this.button_salvar_endereco.Click += new System.EventHandler(this.button_salvar_endereco_Click);
+            this.text_endereco.Location = new System.Drawing.Point(9, 62);
+            this.text_endereco.Name = "text_endereco";
+            this.text_endereco.Size = new System.Drawing.Size(644, 20);
+            this.text_endereco.TabIndex = 1;
+            // 
+            // label_status_con
+            // 
+            this.label_status_con.AutoSize = true;
+            this.label_status_con.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_status_con.Location = new System.Drawing.Point(361, 97);
+            this.label_status_con.Name = "label_status_con";
+            this.label_status_con.Size = new System.Drawing.Size(18, 17);
+            this.label_status_con.TabIndex = 2;
+            this.label_status_con.Text = "..";
             // 
             // Form_janela_config
             // 
@@ -112,5 +124,6 @@ namespace GM4
         private System.Windows.Forms.Button button_buscar_local;
         private System.Windows.Forms.TextBox text_endereco;
         private System.Windows.Forms.Button button_salvar_endereco;
+        private System.Windows.Forms.Label label_status_con;
     }
 }

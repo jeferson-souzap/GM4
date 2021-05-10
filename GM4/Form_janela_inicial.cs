@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Data.OleDb;
 using System.Windows.Forms;
 
 namespace GM4
@@ -15,6 +10,38 @@ namespace GM4
         public Form_inicial()
         {
             InitializeComponent();
+            Testar_conecxao();
+        }
+
+        private void Testar_conecxao()
+        {
+
+            try
+            {
+                string conecta_string = Properties.Settings.Default.db_manutencaoConnectionString;
+                OleDbConnection connection = new OleDbConnection(conecta_string);
+                connection.Open();
+
+                if (connection.State == ConnectionState.Open)
+                {
+                    StatusLabel_conexao_db.Text = "Banco de dados Conectado com sucesso!";
+
+                }
+                else
+                {
+                    StatusLabel_conexao_db.Text = "Banco de dados Não conectado!";
+
+                }
+
+
+                connection.Close();
+            }
+            catch (Exception)
+            {
+                //MessageBox.Show(erro.Message);
+            }
+
+
         }
 
         private void abrir_janelas(object formularios)

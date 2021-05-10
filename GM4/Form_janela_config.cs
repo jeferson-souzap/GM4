@@ -1,22 +1,22 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Data.OleDb;
-using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GM4
 {
     public partial class Form_janela_config : Form
     {
+
+
+
+
         public Form_janela_config()
         {
             InitializeComponent();
+
 
             text_endereco.Text = Properties.Settings.Default.db_manutencaoConnectionString;
 
@@ -34,34 +34,35 @@ namespace GM4
 
         // link util >> http://www.macoratti.net/15/03/c_locarq1.htm
 
-        private void Tetar_conecxao()
+        private void Testar_conexao()
         {
 
             try
             {
                 string conecta_string = Properties.Settings.Default.db_manutencaoConnectionString;
                 OleDbConnection connection = new OleDbConnection(conecta_string);
-                
-                if(connection.State == ConnectionState.Open)
+                connection.Open();
+
+                if (connection.State == ConnectionState.Open)
                 {
-                    MessageBox.Show("Conectado com sucesso!");
-                    
+                    label_status_con.Text = "Conectado com sucesso!";
+
                 }
                 else
                 {
-                    MessageBox.Show("Não conectado, verifique o local!");
-                    
+                    label_status_con.Text = "Não conectado, verifique o local!";
+
                 }
-                
+                connection.Close();
+
             }
-            catch (Exception erro)
+            catch (Exception)
             {
-                MessageBox.Show(erro.Message);
+                //MessageBox.Show(erro.Message);
             }
 
-            
+
         }
-        
         private string Procurar_pasta()
         {
             string local_pasta = string.Empty;
@@ -75,7 +76,7 @@ namespace GM4
             folderBrowser.ValidateNames = true;
             folderBrowser.CheckFileExists = false;
             folderBrowser.CheckPathExists = true;
-            
+
             folderBrowser.FileName = "Localizar Arquivo";
             if (folderBrowser.ShowDialog() == DialogResult.OK)
             {
@@ -87,24 +88,31 @@ namespace GM4
 
             return endereco_completo;
         }
-
-        private void salvar_local()
+        private void Salvar_local()
         {
 
             try
             {
-                Properties.Settings.Default.Properties["ConnectionString"].DefaultValue = text_endereco.Text;
-                Properties.Settings.Default.Save();
+                var config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
+                var connectionString = (ConnectionStringsSection)config.GetSection("connectionStrings");
+                connectionString.ConnectionStrings["GM4.Properties.Settings.db_manutencaoConnectionString"].ConnectionString = text_endereco.Text; //"Data Source=NewSource;Initial Catalog=NewCatalog;UID=NewUser;password=NewPassword";
+                config.Save();
+                ConfigurationManager.RefreshSection("connectionStrings");                
 
                 MessageBox.Show("Salvo com sucesso!");
             }
             catch (Exception erro)
             {
                 MessageBox.Show(erro.Message);
-            }           
+            }
 
         }
 
+        private void Reset_aplicativo()
+        {
+            MessageBox.Show("Aplicativo deve ser reiniciado!");
+            Application.Exit();
+        }
 
 
         private void button_buscar_local_Click(object sender, EventArgs e)
@@ -115,11 +123,11 @@ namespace GM4
         private void button_salvar_endereco_Click(object sender, EventArgs e)
         {
 
-            salvar_local();
-            Tetar_conecxao();
-                
-            
-            
+            Salvar_local();
+            Testar_conexao();
+            Reset_aplicativo();
+
+
         }
     }
 }

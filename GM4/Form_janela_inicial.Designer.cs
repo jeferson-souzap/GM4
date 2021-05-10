@@ -32,6 +32,7 @@ namespace GM4
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_inicial));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.panel_esquerda = new System.Windows.Forms.Panel();
+            this.button_configuração = new System.Windows.Forms.Button();
             this.button_cad_pecas = new System.Windows.Forms.Button();
             this.button_serv_terceiros = new System.Windows.Forms.Button();
             this.button_colaboradores = new System.Windows.Forms.Button();
@@ -42,9 +43,12 @@ namespace GM4
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button_ordem_serv = new System.Windows.Forms.Button();
             this.panel_central = new System.Windows.Forms.Panel();
-            this.button_configuração = new System.Windows.Forms.Button();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.StatusLabel_conexao_db = new System.Windows.Forms.ToolStripStatusLabel();
             this.panel_esquerda.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel_central.SuspendLayout();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -73,6 +77,17 @@ namespace GM4
             this.panel_esquerda.Name = "panel_esquerda";
             this.panel_esquerda.Size = new System.Drawing.Size(190, 750);
             this.panel_esquerda.TabIndex = 1;
+            // 
+            // button_configuração
+            // 
+            this.button_configuração.Location = new System.Drawing.Point(4, 449);
+            this.button_configuração.Name = "button_configuração";
+            this.button_configuração.Size = new System.Drawing.Size(179, 33);
+            this.button_configuração.TabIndex = 10;
+            this.button_configuração.Text = "Configuração";
+            this.button_configuração.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button_configuração.UseVisualStyleBackColor = true;
+            this.button_configuração.Click += new System.EventHandler(this.button_configuração_Click);
             // 
             // button_cad_pecas
             // 
@@ -178,22 +193,28 @@ namespace GM4
             // 
             this.panel_central.AutoSize = true;
             this.panel_central.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel_central.Controls.Add(this.statusStrip1);
             this.panel_central.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_central.Location = new System.Drawing.Point(190, 24);
             this.panel_central.Name = "panel_central";
             this.panel_central.Size = new System.Drawing.Size(1036, 750);
             this.panel_central.TabIndex = 2;
             // 
-            // button_configuração
+            // statusStrip1
             // 
-            this.button_configuração.Location = new System.Drawing.Point(4, 449);
-            this.button_configuração.Name = "button_configuração";
-            this.button_configuração.Size = new System.Drawing.Size(179, 33);
-            this.button_configuração.TabIndex = 10;
-            this.button_configuração.Text = "Configuração";
-            this.button_configuração.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button_configuração.UseVisualStyleBackColor = true;
-            this.button_configuração.Click += new System.EventHandler(this.button_configuração_Click);
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.StatusLabel_conexao_db});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 726);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(1034, 22);
+            this.statusStrip1.TabIndex = 3;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // StatusLabel_conexao_db
+            // 
+            this.StatusLabel_conexao_db.Name = "StatusLabel_conexao_db";
+            this.StatusLabel_conexao_db.Size = new System.Drawing.Size(16, 17);
+            this.StatusLabel_conexao_db.Text = "...";
             // 
             // Form_inicial
             // 
@@ -208,9 +229,13 @@ namespace GM4
             this.MaximizeBox = false;
             this.Name = "Form_inicial";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "Gestão de manutenção GM4";
             this.panel_esquerda.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel_central.ResumeLayout(false);
+            this.panel_central.PerformLayout();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -231,6 +256,8 @@ namespace GM4
         private System.Windows.Forms.Button button_serv_terceiros;
         private System.Windows.Forms.Button button_cad_pecas;
         private System.Windows.Forms.Button button_configuração;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel StatusLabel_conexao_db;
     }
 }
 
