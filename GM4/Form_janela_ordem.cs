@@ -3,6 +3,7 @@ using System.Data;
 using System.Data.OleDb;
 using System.Drawing;
 using System.Windows.Forms;
+using Microsoft.Reporting.WinForms;
 
 namespace GM4
 {
@@ -26,7 +27,7 @@ namespace GM4
             carregar_grid("Programada");
             Carregar_filtro_aba_pendente();
 
-            
+
         }
 
 
@@ -189,7 +190,7 @@ namespace GM4
                     return;
                 }
 
-                if(text_hr_paradas.Text == "0")
+                if (text_hr_paradas.Text == "0")
                 {
                     DialogResult resposta = MessageBox.Show(this, "Maquina ficou parada ?", "Fechamento", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
@@ -207,21 +208,21 @@ namespace GM4
                     }
                 }
 
-                if(combo_periodicidade.Text == string.Empty )
+                if (combo_periodicidade.Text == string.Empty)
                 {
                     MessageBox.Show("Obrigatorio preenchimento da metrica de preventiva");
                     combo_periodicidade.Focus();
                     return;
                 }
 
-                if(combo_periodo_meses.Text == "0" && combo_periodo_anos.Text == "0")
+                if (combo_periodo_meses.Text == "0" && combo_periodo_anos.Text == "0")
                 {
                     MessageBox.Show("Informar o tempo da preventiva (Mês ou Ano)");
                     return;
                 }
             }
-            
-            if(
+
+            if (
             combo_componente01.Text == string.Empty &&
             text_atividades01.Text == string.Empty &&
             combo_executante01.Text == string.Empty &&
@@ -356,7 +357,7 @@ namespace GM4
                 while (myreader.Read())
                 {
                     label_status_ordem.Text = myreader["status"].ToString();
-                    if(label_status_ordem.Text == "Encerrada")
+                    if (label_status_ordem.Text == "Encerrada")
                     {
                         label_status_ordem.BackColor = Color.Green;
                     }
@@ -380,7 +381,7 @@ namespace GM4
                     if (myreader["tipo_servico"].ToString() == "Não")
                     {
                         check_sim.Enabled = false;
-                        check_nao.Enabled = true;            
+                        check_nao.Enabled = true;
                     }
 
                     richText_observacao.Text = myreader["obs"].ToString();
@@ -390,16 +391,16 @@ namespace GM4
                     combo_periodo_meses.Text = myreader["periodo_meses"].ToString();
                     combo_periodo_anos.Text = myreader["periodo_anos"].ToString();
 
-                    if(myreader["marcador_campo"].ToString() == combo_componente01.Name)
+                    if (myreader["marcador_campo"].ToString() == combo_componente01.Name)
                     {
                         combo_componente01.Text = myreader["componente"].ToString();
-                        text_atividades01.Text = myreader["atividade"].ToString(); 
+                        text_atividades01.Text = myreader["atividade"].ToString();
                         combo_executante01.Text = myreader["executante"].ToString();
                         hr_inicio_ativ_01.Text = myreader["hora_inicio"].ToString();
                         hr_final_ativ_01.Text = myreader["hora_inicio"].ToString();
                     }
 
-                    
+
                     if (myreader["marcador_campo"].ToString() == combo_componente02.Name)
                     {
                         combo_componente02.Text = myreader["componente"].ToString();
@@ -497,7 +498,7 @@ namespace GM4
                         combo_executante12.Text = myreader["executante"].ToString();
                         hr_inicio_ativ_12.Text = myreader["hora_inicio"].ToString();
                         hr_final_ativ_12.Text = myreader["hora_inicio"].ToString();
-                    } 
+                    }
 
                 }
 
@@ -3005,6 +3006,211 @@ namespace GM4
 
         }
 
+        private void carregar_relatorio()
+        {
+            reportViewer1.RefreshReport();
+
+            //string empresa = combo_empresa.Text;
+
+            try
+            {
+                string num_os = label_numero_os.Text;
+                string equipamento = combo_equipamento.Text;
+                string tipo_servico = combo_tipo_serv.Text;
+
+                string data_solicitacao = dt_solicitacao.Value.ToString("dd/MM/yyyy");
+
+                string componente;
+                string atividade;
+                string executante;
+                string hora_inicio;
+                string hora_final;
+                string obs = richText_observacao.Text;
+
+
+                reportViewer1.LocalReport.DataSources.Clear();
+
+                ReportParameterCollection parametros = new ReportParameterCollection();
+                parametros.Add(new ReportParameter("num_ordem_servi", num_os));
+                parametros.Add(new ReportParameter("equipamento", equipamento));
+                parametros.Add(new ReportParameter("data_lancamento", data_solicitacao));
+
+
+                if(combo_tipo_serv.Text == "Corretiva")
+                    parametros.Add(new ReportParameter("corretiva", "X"));
+
+                if (combo_tipo_serv.Text == "Preventiva")
+                    parametros.Add(new ReportParameter("preventiva", "X"));
+
+                if (combo_tipo_serv.Text == "Programada")
+                    parametros.Add(new ReportParameter("programada", "X"));
+
+
+
+
+                //reportViewer1.LocalReport.SetParameters(parametros);
+                //reportViewer1.RefreshReport();
+
+                
+                
+
+
+                
+
+
+                
+                if (combo_componente01.Text != string.Empty && text_atividades01.Text != string.Empty)
+                {
+                    componente = combo_componente01.Text;
+                    atividade = text_atividades01.Text;
+                    executante = combo_executante01.Text;
+                    hora_inicio = hr_inicio_ativ_01.Value.ToString("hh:mm");
+                    hora_final = hr_final_ativ_01.Value.ToString("hh:mm");
+
+                    parametros.Add(new ReportParameter("componente01", componente));
+                    parametros.Add(new ReportParameter("atividades01", atividade));
+                    parametros.Add(new ReportParameter("executante01", executante));
+                    parametros.Add(new ReportParameter("hr_inicio01", hora_inicio));
+                    parametros.Add(new ReportParameter("hr_final", hora_final));
+
+
+                    
+                }
+                
+                if (combo_componente02.Text != string.Empty && text_atividades02.Text != string.Empty)
+                {
+                    componente = combo_componente02.Text;
+                    atividade = text_atividades02.Text;
+                    executante = combo_executante02.Text;
+                    hora_inicio = hr_inicio_ativ_02.Value.ToString("hh:mm");
+                    hora_final = hr_final_ativ_02.Value.ToString("hh:mm");
+
+                    parametros.Add(new ReportParameter("componente01", componente));
+                    parametros.Add(new ReportParameter("atividades01", atividade));
+                    parametros.Add(new ReportParameter("executante01", executante));
+                    parametros.Add(new ReportParameter("hr_inicio01", hora_inicio));
+                    parametros.Add(new ReportParameter("hr_final", hora_final));
+
+
+                }
+                if (combo_componente03.Text != string.Empty && text_atividades03.Text != string.Empty)
+                {
+                    componente = combo_componente03.Text;
+                    atividade = text_atividades03.Text;
+                    executante = combo_executante03.Text;
+                    hora_inicio = hr_inicio_ativ_03.Value.ToString("hh:mm");
+                    hora_final = hr_final_ativ_03.Value.ToString("hh:mm");
+
+
+
+                }
+                if (combo_componente04.Text != string.Empty && text_atividades04.Text != string.Empty)
+                {
+                    componente = combo_componente04.Text;
+                    atividade = text_atividades04.Text;
+                    executante = combo_executante04.Text;
+                    hora_inicio = hr_inicio_ativ_04.Value.ToString("hh:mm");
+                    hora_final = hr_final_ativ_04.Value.ToString("hh:mm");
+
+
+
+                }
+                if (combo_componente05.Text != string.Empty && text_atividades05.Text != string.Empty)
+                {
+                    componente = combo_componente05.Text;
+                    atividade = text_atividades05.Text;
+                    executante = combo_executante05.Text;
+                    hora_inicio = hr_inicio_ativ_05.Value.ToString("hh:mm");
+                    hora_final = hr_final_ativ_05.Value.ToString("hh:mm");
+                    
+
+                    
+                }
+                if (combo_componente06.Text != string.Empty && text_atividades06.Text != string.Empty)
+                {
+                    componente = combo_componente06.Text;
+                    atividade = text_atividades06.Text;
+                    executante = combo_executante06.Text;
+                    hora_inicio = hr_inicio_ativ_06.Value.ToString("hh:mm");
+                    hora_final = hr_final_ativ_06.Value.ToString("hh:mm");
+                    
+
+                    
+                }
+                if (combo_componente07.Text != string.Empty && text_atividades07.Text != string.Empty)
+                {
+                    componente = combo_componente07.Text;
+                    atividade = text_atividades07.Text;
+                    executante = combo_executante07.Text;
+                    hora_inicio = hr_inicio_ativ_07.Value.ToString("hh:mm");
+                    hora_final = hr_final_ativ_07.Value.ToString("hh:mm");
+                    
+
+                    
+                }
+                if (combo_componente08.Text != string.Empty && text_atividades08.Text != string.Empty)
+                {
+                    componente = combo_componente08.Text;
+                    atividade = text_atividades08.Text;
+                    executante = combo_executante08.Text;
+                    hora_inicio = hr_inicio_ativ_08.Value.ToString("hh:mm");
+                    hora_final = hr_final_ativ_08.Value.ToString("hh:mm");
+
+                   
+                }
+                if (combo_componente09.Text != string.Empty && text_atividades09.Text != string.Empty)
+                {
+                    componente = combo_componente09.Text;
+                    atividade = text_atividades09.Text;
+                    executante = combo_executante09.Text;
+                    hora_inicio = hr_inicio_ativ_09.Value.ToString("hh:mm");
+                    hora_final = hr_final_ativ_09.Value.ToString("hh:mm");
+
+                   
+                }
+                if (combo_componente10.Text != string.Empty && text_atividades10.Text != string.Empty)
+                {
+                    componente = combo_componente10.Text;
+                    atividade = text_atividades10.Text;
+                    executante = combo_executante10.Text;
+                    hora_inicio = hr_inicio_ativ_10.Value.ToString("hh:mm");
+                    hora_final = hr_final_ativ_10.Value.ToString("hh:mm");
+
+                   
+                }
+                if (combo_componente11.Text != string.Empty && text_atividades11.Text != string.Empty)
+                {
+                    componente = combo_componente11.Text;
+                    atividade = text_atividades11.Text;
+                    executante = combo_executante11.Text;
+                    hora_inicio = hr_inicio_ativ_11.Value.ToString("hh:mm");
+                    hora_final = hr_final_ativ_11.Value.ToString("hh:mm");
+
+                   
+                }
+                if (combo_componente12.Text != string.Empty && text_atividades12.Text != string.Empty)
+                {
+                    componente = combo_componente12.Text;
+                    atividade = text_atividades12.Text;
+                    executante = combo_executante12.Text;
+                    hora_inicio = hr_inicio_ativ_12.Value.ToString("hh:mm");
+                    hora_final = hr_final_ativ_12.Value.ToString("hh:mm");
+
+                    
+                }
+                
+
+
+                reportViewer1.LocalReport.SetParameters(parametros);
+                reportViewer1.RefreshReport();
+
+            }
+
+            catch (Exception erro)
+            {
+                MessageBox.Show(erro.Message);
+            }
+        }
 
         #endregion
 
@@ -3270,34 +3476,8 @@ namespace GM4
 
         private void button_imprimir_Click(object sender, EventArgs e)
         {
-            //string empresa = combo_empresa.Text;
-            string num_os = label_numero_os.Text;
-            string equipamento = combo_equipamento.Text;
-            string tipo_servico = combo_tipo_serv.Text;
-            
-
-            /*
-            DateTime data_solicitacao = dt_solicitacao.Value;
-            string maquina_parada = " ";
-            int horas_parada = Convert.ToInt32(text_hr_paradas.Text);
-            string periodicidade = combo_periodicidade.Text;
-            int periodo_meses = Convert.ToInt32(combo_periodo_meses.Text);
-            int periodo_anos = Convert.ToInt32(combo_periodo_anos.Text);
-
-            string componente;
-            string atividade;
-            string executante;
-            DateTime hora_inicio;
-            DateTime hora_final;
-            TimeSpan total_horas;
-            string status = "";
-            string obs = richText_observacao.Text;
-
-            */
-
-            // adicionar o restante dos parametros
-            Form_janela_imprimir_os imprimir_os = new Form_janela_imprimir_os(num_os, equipamento, tipo_servico);
-            imprimir_os.Show();
+            tab_ordem_servi.SelectedTab = tab_imprimir;
+            carregar_relatorio();
 
         }
 
@@ -3340,6 +3520,7 @@ namespace GM4
 
         private void abrirOSToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            tab_ordem_servi.SelectedTab = tab_abrir_fechar_os;
             limpar_campos();
             Desbloc_controles();
         }
@@ -3409,6 +3590,11 @@ namespace GM4
         {
             Form_janela_baixa_peca mov_materail = new Form_janela_baixa_peca();
             mov_materail.Show();
+        }
+
+        private void tab_ordem_servi_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            reportViewer1.RefreshReport();
         }
     }
 }

@@ -158,6 +158,8 @@ namespace GM4
             this.label16 = new System.Windows.Forms.Label();
             this.Grid_ordem_serv = new System.Windows.Forms.DataGridView();
             this.label_status_ordem = new System.Windows.Forms.Label();
+            this.tab_imprimir = new System.Windows.Forms.TabPage();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -169,6 +171,7 @@ namespace GM4
             this.tab_ordem_aberta.SuspendLayout();
             this.groupBox6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Grid_ordem_serv)).BeginInit();
+            this.tab_imprimir.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -1376,11 +1379,13 @@ namespace GM4
             // 
             this.tab_ordem_servi.Controls.Add(this.tab_abrir_fechar_os);
             this.tab_ordem_servi.Controls.Add(this.tab_ordem_aberta);
+            this.tab_ordem_servi.Controls.Add(this.tab_imprimir);
             this.tab_ordem_servi.Location = new System.Drawing.Point(12, 27);
             this.tab_ordem_servi.Name = "tab_ordem_servi";
             this.tab_ordem_servi.SelectedIndex = 0;
             this.tab_ordem_servi.Size = new System.Drawing.Size(1000, 726);
             this.tab_ordem_servi.TabIndex = 7;
+            this.tab_ordem_servi.SelectedIndexChanged += new System.EventHandler(this.tab_ordem_servi_SelectedIndexChanged);
             // 
             // tab_abrir_fechar_os
             // 
@@ -1530,6 +1535,27 @@ namespace GM4
             this.label_status_ordem.TabIndex = 79;
             this.label_status_ordem.Text = "---";
             // 
+            // tab_imprimir
+            // 
+            this.tab_imprimir.Controls.Add(this.reportViewer1);
+            this.tab_imprimir.Location = new System.Drawing.Point(4, 22);
+            this.tab_imprimir.Name = "tab_imprimir";
+            this.tab_imprimir.Padding = new System.Windows.Forms.Padding(3);
+            this.tab_imprimir.Size = new System.Drawing.Size(992, 700);
+            this.tab_imprimir.TabIndex = 2;
+            this.tab_imprimir.Text = "Imprimir OS";
+            this.tab_imprimir.UseVisualStyleBackColor = true;
+            // 
+            // reportViewer1
+            // 
+            this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "GM4.Report_OS.rdlc";
+            this.reportViewer1.Location = new System.Drawing.Point(3, 3);
+            this.reportViewer1.Name = "reportViewer1";
+            this.reportViewer1.ServerReport.BearerToken = null;
+            this.reportViewer1.Size = new System.Drawing.Size(986, 694);
+            this.reportViewer1.TabIndex = 1;
+            // 
             // Form_janela_ordem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1559,6 +1585,7 @@ namespace GM4
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Grid_ordem_serv)).EndInit();
+            this.tab_imprimir.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1695,5 +1722,7 @@ namespace GM4
         private System.Windows.Forms.ComboBox aba_ordemAberta_combo_ano;
         private System.Windows.Forms.Label label_status_ordem;
         private System.Windows.Forms.ToolStripMenuItem baixarPeçasToolStripMenuItem;
+        private System.Windows.Forms.TabPage tab_imprimir;
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
     }
 }

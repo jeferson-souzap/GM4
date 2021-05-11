@@ -38,16 +38,17 @@ namespace GM4
             this.reportViewer1.Location = new System.Drawing.Point(12, 12);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(669, 634);
+            this.reportViewer1.Size = new System.Drawing.Size(889, 791);
             this.reportViewer1.TabIndex = 0;
             // 
             // Form_janela_imprimir_os
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(693, 658);
+            this.ClientSize = new System.Drawing.Size(913, 815);
             this.Controls.Add(this.reportViewer1);
             this.Name = "Form_janela_imprimir_os";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Imprimir ordem serviço";
             this.Load += new System.EventHandler(this.Form_janela_imprimir_os_Load);
             this.ResumeLayout(false);
