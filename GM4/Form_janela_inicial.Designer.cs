@@ -45,6 +45,7 @@ namespace GM4
             this.panel_central = new System.Windows.Forms.Panel();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.StatusLabel_conexao_db = new System.Windows.Forms.ToolStripStatusLabel();
+            this.StripStatus_versao = new System.Windows.Forms.ToolStripStatusLabel();
             this.panel_esquerda.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel_central.SuspendLayout();
@@ -203,9 +204,11 @@ namespace GM4
             // statusStrip1
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.StatusLabel_conexao_db});
+            this.StatusLabel_conexao_db,
+            this.StripStatus_versao});
             this.statusStrip1.Location = new System.Drawing.Point(0, 726);
             this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
             this.statusStrip1.Size = new System.Drawing.Size(1034, 22);
             this.statusStrip1.TabIndex = 3;
             this.statusStrip1.Text = "statusStrip1";
@@ -215,6 +218,14 @@ namespace GM4
             this.StatusLabel_conexao_db.Name = "StatusLabel_conexao_db";
             this.StatusLabel_conexao_db.Size = new System.Drawing.Size(16, 17);
             this.StatusLabel_conexao_db.Text = "...";
+            // 
+            // StripStatus_versao
+            // 
+            this.StripStatus_versao.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.StripStatus_versao.Name = "StripStatus_versao";
+            this.StripStatus_versao.Size = new System.Drawing.Size(41, 17);
+            this.StripStatus_versao.Text = "Versão";
+            this.StripStatus_versao.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // Form_inicial
             // 
@@ -258,6 +269,7 @@ namespace GM4
         private System.Windows.Forms.Button button_configuração;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel StatusLabel_conexao_db;
+        private System.Windows.Forms.ToolStripStatusLabel StripStatus_versao;
     }
 }
 

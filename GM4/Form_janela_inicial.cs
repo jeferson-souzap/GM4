@@ -11,6 +11,10 @@ namespace GM4
         {
             InitializeComponent();
             Testar_conecxao();
+
+            StripStatus_versao.Text = "| Versão do Aplicativo >> " + Application.ProductVersion + " | ";
+
+
         }
 
         private void Testar_conecxao()

@@ -3045,20 +3045,9 @@ namespace GM4
                 if (combo_tipo_serv.Text == "Programada")
                     parametros.Add(new ReportParameter("programada", "X"));
 
-
-
-
                 //reportViewer1.LocalReport.SetParameters(parametros);
                 //reportViewer1.RefreshReport();
 
-                
-                
-
-
-                
-
-
-                
                 if (combo_componente01.Text != string.Empty && text_atividades01.Text != string.Empty)
                 {
                     componente = combo_componente01.Text;
@@ -3071,7 +3060,7 @@ namespace GM4
                     parametros.Add(new ReportParameter("atividades01", atividade));
                     parametros.Add(new ReportParameter("executante01", executante));
                     parametros.Add(new ReportParameter("hr_inicio01", hora_inicio));
-                    parametros.Add(new ReportParameter("hr_final", hora_final));
+                    parametros.Add(new ReportParameter("hr_final01", hora_final));
 
 
                     
@@ -3085,11 +3074,11 @@ namespace GM4
                     hora_inicio = hr_inicio_ativ_02.Value.ToString("hh:mm");
                     hora_final = hr_final_ativ_02.Value.ToString("hh:mm");
 
-                    parametros.Add(new ReportParameter("componente01", componente));
-                    parametros.Add(new ReportParameter("atividades01", atividade));
-                    parametros.Add(new ReportParameter("executante01", executante));
-                    parametros.Add(new ReportParameter("hr_inicio01", hora_inicio));
-                    parametros.Add(new ReportParameter("hr_final", hora_final));
+                    parametros.Add(new ReportParameter("componente02", componente));
+                    parametros.Add(new ReportParameter("atividades02", atividade));
+                    parametros.Add(new ReportParameter("executante02", executante));
+                    parametros.Add(new ReportParameter("hr_inicio02", hora_inicio));
+                    parametros.Add(new ReportParameter("hr_final02", hora_final));
 
 
                 }

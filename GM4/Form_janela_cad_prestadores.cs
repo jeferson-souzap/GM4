@@ -221,11 +221,15 @@ namespace GM4
 
                 string comando_sql;
 
-                comando_sql = "DELETE FROM db_cad_prestadores WHERE id_prestadores = '"+ Convert.ToInt32(id_prestadores) +"'";
+                comando_sql = "DELETE FROM db_cad_prestadores WHERE id_prestadores = " + Convert.ToInt32(id_prestadores);
 
                 OleDbCommand cmd = new OleDbCommand(comando_sql, conexao);
                 cmd.ExecuteNonQuery();
                 conexao.Close();
+
+                MessageBox.Show("Deletado com sucesso!");
+                Carregar_grid();
+
             }
             catch (Exception erro)
             {
@@ -272,8 +276,7 @@ namespace GM4
         private void button_deletar_Click(object sender, EventArgs e)
         {
             Deletar_prestador(label_id_prestadores.Text);
-            MessageBox.Show("Deletado com sucesso!");
-            Carregar_grid();
+            
         }
 
         private void button_sair_Click(object sender, EventArgs e)
