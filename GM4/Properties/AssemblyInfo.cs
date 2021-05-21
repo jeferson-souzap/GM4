@@ -5,8 +5,8 @@ using System.Runtime.InteropServices;
 // As informações gerais sobre um assembly são controladas por
 // conjunto de atributos. Altere estes valores de atributo para modificar as informações
 // associadas a um assembly.
-[assembly: AssemblyTitle("GM4")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("Gestão de manutenção")]
+[assembly: AssemblyDescription("Cria e controla sistemas de abertura de ordem de serviço")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("GM4")]

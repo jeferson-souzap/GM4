@@ -14,6 +14,7 @@ namespace GM4
 
             StripStatus_versao.Text = "| Versão do Aplicativo >> " + Application.ProductVersion + " | ";
 
+            label_titulo_janela.Text = string.Empty;
 
         }
 
@@ -64,41 +65,51 @@ namespace GM4
         private void button_ordem_serv_Click(object sender, EventArgs e)
         {
             abrir_janelas(new Form_janela_ordem());
+            label_titulo_janela.Text = "Janela de Abertura e Fechamento de Ordem!";
+
         }
 
         private void button_cad_ativ_preventiva_Click(object sender, EventArgs e)
         {
             abrir_janelas(new Form_janela_cad_preventiva());
+            label_titulo_janela.Text = "Cadastro de Preventivas";
         }
 
         private void button_cad_componentes_Click(object sender, EventArgs e)
         {
             abrir_janelas(new Form_cad_componentes());
+            label_titulo_janela.Text = "Cadastro de Componentes";
         }
 
         private void button_cad_equipamento_Click(object sender, EventArgs e)
         {
             abrir_janelas(new Form_cad_equipamento());
+            label_titulo_janela.Text = "Cadastro de Equipamentos";
         }
 
         private void button_prestadores_Click(object sender, EventArgs e)
         {
             abrir_janelas(new Form_janela_cad_prestadores());
+            label_titulo_janela.Text = "Cadastro de Prestadores";
         }
 
         private void button_colaboradores_Click(object sender, EventArgs e)
         {
             abrir_janelas(new Form_janela_executante());
+            label_titulo_janela.Text = "Cadastro de Executantes";
         }
 
         private void button_serv_terceiros_Click(object sender, EventArgs e)
         {
             abrir_janelas(new Form_janela_serv_terceiros());
+            label_titulo_janela.Text = "Lançamento de serviço de terceiros";
         }
 
         private void button_cad_pecas_Click(object sender, EventArgs e)
         {
             abrir_janelas(new Form_janela_cad_peca());
+            label_titulo_janela.Text = "Cadastro de Peça";
+
         }
 
         private void button_configuração_Click(object sender, EventArgs e)

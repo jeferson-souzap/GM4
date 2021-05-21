@@ -30,6 +30,8 @@ namespace GM4
         private void InitializeComponent()
         {
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.richText_observacao = new System.Windows.Forms.RichTextBox();
             this.label_id_componente = new System.Windows.Forms.Label();
             this.Grid_cad_componentes = new System.Windows.Forms.DataGridView();
             this.textBox_componente = new System.Windows.Forms.TextBox();
@@ -39,8 +41,7 @@ namespace GM4
             this.button_excluir = new System.Windows.Forms.Button();
             this.button_atualizar = new System.Windows.Forms.Button();
             this.button_salvar = new System.Windows.Forms.Button();
-            this.richText_observacao = new System.Windows.Forms.RichTextBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.button_iniciar_cadastro = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Grid_cad_componentes)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -61,6 +62,24 @@ namespace GM4
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Cadastro";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(12, 69);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(85, 17);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Observação";
+            // 
+            // richText_observacao
+            // 
+            this.richText_observacao.Location = new System.Drawing.Point(106, 41);
+            this.richText_observacao.Name = "richText_observacao";
+            this.richText_observacao.Size = new System.Drawing.Size(401, 80);
+            this.richText_observacao.TabIndex = 4;
+            this.richText_observacao.Text = "";
             // 
             // label_id_componente
             // 
@@ -105,6 +124,7 @@ namespace GM4
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.button_iniciar_cadastro);
             this.groupBox1.Controls.Add(this.button_sair);
             this.groupBox1.Controls.Add(this.button_excluir);
             this.groupBox1.Controls.Add(this.button_atualizar);
@@ -119,7 +139,7 @@ namespace GM4
             // 
             // button_sair
             // 
-            this.button_sair.Location = new System.Drawing.Point(255, 19);
+            this.button_sair.Location = new System.Drawing.Point(336, 19);
             this.button_sair.Name = "button_sair";
             this.button_sair.Size = new System.Drawing.Size(75, 30);
             this.button_sair.TabIndex = 3;
@@ -129,7 +149,7 @@ namespace GM4
             // 
             // button_excluir
             // 
-            this.button_excluir.Location = new System.Drawing.Point(174, 19);
+            this.button_excluir.Location = new System.Drawing.Point(255, 19);
             this.button_excluir.Name = "button_excluir";
             this.button_excluir.Size = new System.Drawing.Size(75, 30);
             this.button_excluir.TabIndex = 2;
@@ -139,7 +159,7 @@ namespace GM4
             // 
             // button_atualizar
             // 
-            this.button_atualizar.Location = new System.Drawing.Point(93, 19);
+            this.button_atualizar.Location = new System.Drawing.Point(174, 19);
             this.button_atualizar.Name = "button_atualizar";
             this.button_atualizar.Size = new System.Drawing.Size(75, 30);
             this.button_atualizar.TabIndex = 1;
@@ -149,7 +169,7 @@ namespace GM4
             // 
             // button_salvar
             // 
-            this.button_salvar.Location = new System.Drawing.Point(12, 19);
+            this.button_salvar.Location = new System.Drawing.Point(93, 19);
             this.button_salvar.Name = "button_salvar";
             this.button_salvar.Size = new System.Drawing.Size(75, 30);
             this.button_salvar.TabIndex = 0;
@@ -157,23 +177,15 @@ namespace GM4
             this.button_salvar.UseVisualStyleBackColor = true;
             this.button_salvar.Click += new System.EventHandler(this.button_salvar_Click);
             // 
-            // richText_observacao
+            // button_iniciar_cadastro
             // 
-            this.richText_observacao.Location = new System.Drawing.Point(106, 41);
-            this.richText_observacao.Name = "richText_observacao";
-            this.richText_observacao.Size = new System.Drawing.Size(401, 80);
-            this.richText_observacao.TabIndex = 4;
-            this.richText_observacao.Text = "";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(12, 69);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(85, 17);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Observação";
+            this.button_iniciar_cadastro.Location = new System.Drawing.Point(12, 19);
+            this.button_iniciar_cadastro.Name = "button_iniciar_cadastro";
+            this.button_iniciar_cadastro.Size = new System.Drawing.Size(75, 30);
+            this.button_iniciar_cadastro.TabIndex = 4;
+            this.button_iniciar_cadastro.Text = "Iniciar";
+            this.button_iniciar_cadastro.UseVisualStyleBackColor = true;
+            this.button_iniciar_cadastro.Click += new System.EventHandler(this.button_iniciar_cadastro_Click);
             // 
             // Form_cad_componentes
             // 
@@ -184,7 +196,7 @@ namespace GM4
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form_cad_componentes";
-            this.Text = "Form_cad_componentes";
+            this.Text = "Cadastro Componentes";
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Grid_cad_componentes)).EndInit();
@@ -207,5 +219,6 @@ namespace GM4
         private System.Windows.Forms.Label label_id_componente;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.RichTextBox richText_observacao;
+        private System.Windows.Forms.Button button_iniciar_cadastro;
     }
 }

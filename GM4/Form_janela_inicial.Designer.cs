@@ -46,6 +46,7 @@ namespace GM4
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.StatusLabel_conexao_db = new System.Windows.Forms.ToolStripStatusLabel();
             this.StripStatus_versao = new System.Windows.Forms.ToolStripStatusLabel();
+            this.label_titulo_janela = new System.Windows.Forms.Label();
             this.panel_esquerda.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel_central.SuspendLayout();
@@ -81,7 +82,7 @@ namespace GM4
             // 
             // button_configuração
             // 
-            this.button_configuração.Location = new System.Drawing.Point(4, 449);
+            this.button_configuração.Location = new System.Drawing.Point(4, 475);
             this.button_configuração.Name = "button_configuração";
             this.button_configuração.Size = new System.Drawing.Size(179, 33);
             this.button_configuração.TabIndex = 10;
@@ -92,7 +93,7 @@ namespace GM4
             // 
             // button_cad_pecas
             // 
-            this.button_cad_pecas.Location = new System.Drawing.Point(4, 410);
+            this.button_cad_pecas.Location = new System.Drawing.Point(4, 436);
             this.button_cad_pecas.Name = "button_cad_pecas";
             this.button_cad_pecas.Size = new System.Drawing.Size(179, 33);
             this.button_cad_pecas.TabIndex = 9;
@@ -103,7 +104,7 @@ namespace GM4
             // 
             // button_serv_terceiros
             // 
-            this.button_serv_terceiros.Location = new System.Drawing.Point(3, 371);
+            this.button_serv_terceiros.Location = new System.Drawing.Point(3, 397);
             this.button_serv_terceiros.Name = "button_serv_terceiros";
             this.button_serv_terceiros.Size = new System.Drawing.Size(179, 33);
             this.button_serv_terceiros.TabIndex = 8;
@@ -114,7 +115,7 @@ namespace GM4
             // 
             // button_colaboradores
             // 
-            this.button_colaboradores.Location = new System.Drawing.Point(3, 332);
+            this.button_colaboradores.Location = new System.Drawing.Point(3, 358);
             this.button_colaboradores.Name = "button_colaboradores";
             this.button_colaboradores.Size = new System.Drawing.Size(179, 33);
             this.button_colaboradores.TabIndex = 7;
@@ -125,7 +126,7 @@ namespace GM4
             // 
             // button_prestadores
             // 
-            this.button_prestadores.Location = new System.Drawing.Point(4, 293);
+            this.button_prestadores.Location = new System.Drawing.Point(4, 319);
             this.button_prestadores.Name = "button_prestadores";
             this.button_prestadores.Size = new System.Drawing.Size(179, 33);
             this.button_prestadores.TabIndex = 6;
@@ -136,7 +137,7 @@ namespace GM4
             // 
             // button_cad_equipamento
             // 
-            this.button_cad_equipamento.Location = new System.Drawing.Point(4, 254);
+            this.button_cad_equipamento.Location = new System.Drawing.Point(4, 280);
             this.button_cad_equipamento.Name = "button_cad_equipamento";
             this.button_cad_equipamento.Size = new System.Drawing.Size(179, 33);
             this.button_cad_equipamento.TabIndex = 5;
@@ -147,7 +148,7 @@ namespace GM4
             // 
             // button_cad_ativ_preventiva
             // 
-            this.button_cad_ativ_preventiva.Location = new System.Drawing.Point(3, 215);
+            this.button_cad_ativ_preventiva.Location = new System.Drawing.Point(3, 241);
             this.button_cad_ativ_preventiva.Name = "button_cad_ativ_preventiva";
             this.button_cad_ativ_preventiva.Size = new System.Drawing.Size(179, 33);
             this.button_cad_ativ_preventiva.TabIndex = 4;
@@ -158,7 +159,7 @@ namespace GM4
             // 
             // button_cad_componentes
             // 
-            this.button_cad_componentes.Location = new System.Drawing.Point(3, 176);
+            this.button_cad_componentes.Location = new System.Drawing.Point(3, 202);
             this.button_cad_componentes.Name = "button_cad_componentes";
             this.button_cad_componentes.Size = new System.Drawing.Size(179, 33);
             this.button_cad_componentes.TabIndex = 3;
@@ -174,14 +175,14 @@ namespace GM4
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(-2, -2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(190, 133);
+            this.pictureBox1.Size = new System.Drawing.Size(190, 159);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
             // button_ordem_serv
             // 
-            this.button_ordem_serv.Location = new System.Drawing.Point(3, 137);
+            this.button_ordem_serv.Location = new System.Drawing.Point(3, 163);
             this.button_ordem_serv.Name = "button_ordem_serv";
             this.button_ordem_serv.Size = new System.Drawing.Size(179, 33);
             this.button_ordem_serv.TabIndex = 1;
@@ -227,15 +228,27 @@ namespace GM4
             this.StripStatus_versao.Text = "Versão";
             this.StripStatus_versao.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // label_titulo_janela
+            // 
+            this.label_titulo_janela.AutoSize = true;
+            this.label_titulo_janela.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_titulo_janela.Location = new System.Drawing.Point(527, -1);
+            this.label_titulo_janela.Name = "label_titulo_janela";
+            this.label_titulo_janela.Size = new System.Drawing.Size(58, 22);
+            this.label_titulo_janela.TabIndex = 4;
+            this.label_titulo_janela.Text = "label1";
+            // 
             // Form_inicial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1226, 774);
+            this.Controls.Add(this.label_titulo_janela);
             this.Controls.Add(this.panel_central);
             this.Controls.Add(this.panel_esquerda);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.Name = "Form_inicial";
@@ -270,6 +283,7 @@ namespace GM4
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel StatusLabel_conexao_db;
         private System.Windows.Forms.ToolStripStatusLabel StripStatus_versao;
+        private System.Windows.Forms.Label label_titulo_janela;
     }
 }
 

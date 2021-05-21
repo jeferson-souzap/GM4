@@ -18,6 +18,22 @@ namespace GM4
             InitializeComponent();
 
             Carregar_grid();
+
+            bloquear_controles();
+        }
+
+        private void bloquear_controles()
+        {
+            textBox_componente.Enabled = false;
+            richText_observacao.Enabled = false;
+            label_id_componente.Enabled = false;
+        }
+
+        private void desbloquear_controles()
+        {
+            textBox_componente.Enabled = true;
+            richText_observacao.Enabled = true;
+            label_id_componente.Enabled = true;
         }
 
         private void Carregar_grid()
@@ -109,12 +125,7 @@ namespace GM4
                 OleDbConnection conexao = new OleDbConnection(conecta_string);
                 conexao.Open();
 
-                //comando_sql = "UPDATE db_componentes SET nome_componente='" + nome_componente + ", observacao='"+ observacao + "' WHERE id_componentes=" + id_componentes + "";
-
-                comando_sql = "UPDATE db_ordem_servi SET " +
-                        "nome_componente='" + nome_componente +
-                        "', observacao='" + observacao +
-                        "' WHERE id_componentes=" + Convert.ToDouble(id_componentes) + "";
+                comando_sql = "UPDATE db_componentes SET nome_componente='" + nome_componente + "', observacao='" + observacao +"' WHERE id_componentes=" + Convert.ToDouble(id_componentes) + "";
 
                 OleDbCommand cmd = new OleDbCommand(comando_sql, conexao);
                 cmd.ExecuteNonQuery();
@@ -153,18 +164,19 @@ namespace GM4
         private void button_salvar_Click(object sender, EventArgs e)
         {
             Salvar_componente(textBox_componente.Text, richText_observacao.Text);
-            
+            bloquear_controles();
         }
         private void button_atualizar_Click(object sender, EventArgs e)
         {
             Atualizar_componente(textBox_componente.Text, richText_observacao.Text, label_id_componente.Text);
-            
+            bloquear_controles();
         }
         private void button_excluir_Click(object sender, EventArgs e)
         {
             deletar_componente(label_id_componente.Text);
             MessageBox.Show("Exluido Sucesso!");
             Carregar_grid();
+            bloquear_controles();
         }
 
         private void button_sair_Click(object sender, EventArgs e)
@@ -176,6 +188,11 @@ namespace GM4
         {
             label_id_componente.Text = Grid_cad_componentes.CurrentRow.Cells[0].Value.ToString();
             carregar_componente(label_id_componente.Text);
+        }
+
+        private void button_iniciar_cadastro_Click(object sender, EventArgs e)
+        {
+            desbloquear_controles();
         }
     }
 }

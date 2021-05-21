@@ -3023,9 +3023,9 @@ namespace GM4
                 string componente;
                 string atividade;
                 string executante;
-                string hora_inicio;
-                string hora_final;
-                string obs = richText_observacao.Text;
+                //string hora_inicio;
+                //string hora_final;
+                string obs = "|" + richText_observacao.Text;
 
 
                 reportViewer1.LocalReport.DataSources.Clear();
@@ -3048,19 +3048,21 @@ namespace GM4
                 //reportViewer1.LocalReport.SetParameters(parametros);
                 //reportViewer1.RefreshReport();
 
+                parametros.Add(new ReportParameter("observacao", obs));
+
+
                 if (combo_componente01.Text != string.Empty && text_atividades01.Text != string.Empty)
                 {
                     componente = combo_componente01.Text;
                     atividade = text_atividades01.Text;
                     executante = combo_executante01.Text;
-                    hora_inicio = hr_inicio_ativ_01.Value.ToString("hh:mm");
-                    hora_final = hr_final_ativ_01.Value.ToString("hh:mm");
+                    //hora_inicio = hr_inicio_ativ_01.Value.ToString("hh:mm");
+                    //hora_final = hr_final_ativ_01.Value.ToString("hh:mm");
 
                     parametros.Add(new ReportParameter("componente01", componente));
                     parametros.Add(new ReportParameter("atividades01", atividade));
                     parametros.Add(new ReportParameter("executante01", executante));
-                    parametros.Add(new ReportParameter("hr_inicio01", hora_inicio));
-                    parametros.Add(new ReportParameter("hr_final01", hora_final));
+                    
 
 
                     
@@ -3071,14 +3073,14 @@ namespace GM4
                     componente = combo_componente02.Text;
                     atividade = text_atividades02.Text;
                     executante = combo_executante02.Text;
-                    hora_inicio = hr_inicio_ativ_02.Value.ToString("hh:mm");
-                    hora_final = hr_final_ativ_02.Value.ToString("hh:mm");
+                    //hora_inicio = hr_inicio_ativ_02.Value.ToString("hh:mm");
+                    //hora_final = hr_final_ativ_02.Value.ToString("hh:mm");
 
                     parametros.Add(new ReportParameter("componente02", componente));
                     parametros.Add(new ReportParameter("atividades02", atividade));
                     parametros.Add(new ReportParameter("executante02", executante));
-                    parametros.Add(new ReportParameter("hr_inicio02", hora_inicio));
-                    parametros.Add(new ReportParameter("hr_final02", hora_final));
+                    
+                    
 
 
                 }
@@ -3087,9 +3089,12 @@ namespace GM4
                     componente = combo_componente03.Text;
                     atividade = text_atividades03.Text;
                     executante = combo_executante03.Text;
-                    hora_inicio = hr_inicio_ativ_03.Value.ToString("hh:mm");
-                    hora_final = hr_final_ativ_03.Value.ToString("hh:mm");
+                    //hora_inicio = hr_inicio_ativ_03.Value.ToString("hh:mm");
+                    //hora_final = hr_final_ativ_03.Value.ToString("hh:mm");
 
+                    parametros.Add(new ReportParameter("componente03", componente));
+                    parametros.Add(new ReportParameter("atividades03", atividade));
+                    parametros.Add(new ReportParameter("executante03", executante));
 
 
                 }
@@ -3098,9 +3103,12 @@ namespace GM4
                     componente = combo_componente04.Text;
                     atividade = text_atividades04.Text;
                     executante = combo_executante04.Text;
-                    hora_inicio = hr_inicio_ativ_04.Value.ToString("hh:mm");
-                    hora_final = hr_final_ativ_04.Value.ToString("hh:mm");
+                    //hora_inicio = hr_inicio_ativ_04.Value.ToString("hh:mm");
+                    //hora_final = hr_final_ativ_04.Value.ToString("hh:mm");
 
+                    parametros.Add(new ReportParameter("componente04", componente));
+                    parametros.Add(new ReportParameter("atividades04", atividade));
+                    parametros.Add(new ReportParameter("executante04", executante));
 
 
                 }
@@ -3109,83 +3117,114 @@ namespace GM4
                     componente = combo_componente05.Text;
                     atividade = text_atividades05.Text;
                     executante = combo_executante05.Text;
-                    hora_inicio = hr_inicio_ativ_05.Value.ToString("hh:mm");
-                    hora_final = hr_final_ativ_05.Value.ToString("hh:mm");
-                    
+                    //hora_inicio = hr_inicio_ativ_05.Value.ToString("hh:mm");
+                    //hora_final = hr_final_ativ_05.Value.ToString("hh:mm");
 
-                    
+                    parametros.Add(new ReportParameter("componente05", componente));
+                    parametros.Add(new ReportParameter("atividades05", atividade));
+                    parametros.Add(new ReportParameter("executante05", executante));
+
+
+
                 }
                 if (combo_componente06.Text != string.Empty && text_atividades06.Text != string.Empty)
                 {
                     componente = combo_componente06.Text;
                     atividade = text_atividades06.Text;
                     executante = combo_executante06.Text;
-                    hora_inicio = hr_inicio_ativ_06.Value.ToString("hh:mm");
-                    hora_final = hr_final_ativ_06.Value.ToString("hh:mm");
-                    
+                    //hora_inicio = hr_inicio_ativ_06.Value.ToString("hh:mm");
+                    //hora_final = hr_final_ativ_06.Value.ToString("hh:mm");
 
-                    
+                    parametros.Add(new ReportParameter("componente06", componente));
+                    parametros.Add(new ReportParameter("atividades06", atividade));
+                    parametros.Add(new ReportParameter("executante06", executante));
+
+
+
                 }
                 if (combo_componente07.Text != string.Empty && text_atividades07.Text != string.Empty)
                 {
                     componente = combo_componente07.Text;
                     atividade = text_atividades07.Text;
                     executante = combo_executante07.Text;
-                    hora_inicio = hr_inicio_ativ_07.Value.ToString("hh:mm");
-                    hora_final = hr_final_ativ_07.Value.ToString("hh:mm");
-                    
+                    //hora_inicio = hr_inicio_ativ_07.Value.ToString("hh:mm");
+                    //hora_final = hr_final_ativ_07.Value.ToString("hh:mm");
 
-                    
+                    parametros.Add(new ReportParameter("componente07", componente));
+                    parametros.Add(new ReportParameter("atividades07", atividade));
+                    parametros.Add(new ReportParameter("executante07", executante));
+
+
+
                 }
                 if (combo_componente08.Text != string.Empty && text_atividades08.Text != string.Empty)
                 {
                     componente = combo_componente08.Text;
                     atividade = text_atividades08.Text;
                     executante = combo_executante08.Text;
-                    hora_inicio = hr_inicio_ativ_08.Value.ToString("hh:mm");
-                    hora_final = hr_final_ativ_08.Value.ToString("hh:mm");
+                    //hora_inicio = hr_inicio_ativ_08.Value.ToString("hh:mm");
+                    //hora_final = hr_final_ativ_08.Value.ToString("hh:mm");
 
-                   
+                    parametros.Add(new ReportParameter("componente08", componente));
+                    parametros.Add(new ReportParameter("atividades08", atividade));
+                    parametros.Add(new ReportParameter("executante08", executante));
+
                 }
                 if (combo_componente09.Text != string.Empty && text_atividades09.Text != string.Empty)
                 {
                     componente = combo_componente09.Text;
                     atividade = text_atividades09.Text;
                     executante = combo_executante09.Text;
-                    hora_inicio = hr_inicio_ativ_09.Value.ToString("hh:mm");
-                    hora_final = hr_final_ativ_09.Value.ToString("hh:mm");
+                    //hora_inicio = hr_inicio_ativ_09.Value.ToString("hh:mm");
+                    //hora_final = hr_final_ativ_09.Value.ToString("hh:mm");
 
-                   
+                    parametros.Add(new ReportParameter("componente09", componente));
+                    parametros.Add(new ReportParameter("atividades09", atividade));
+                    parametros.Add(new ReportParameter("executante09", executante));
+
+
                 }
                 if (combo_componente10.Text != string.Empty && text_atividades10.Text != string.Empty)
                 {
                     componente = combo_componente10.Text;
                     atividade = text_atividades10.Text;
                     executante = combo_executante10.Text;
-                    hora_inicio = hr_inicio_ativ_10.Value.ToString("hh:mm");
-                    hora_final = hr_final_ativ_10.Value.ToString("hh:mm");
+                    //hora_inicio = hr_inicio_ativ_10.Value.ToString("hh:mm");
+                    //hora_final = hr_final_ativ_10.Value.ToString("hh:mm");
 
-                   
+                    parametros.Add(new ReportParameter("componente10", componente));
+                    parametros.Add(new ReportParameter("atividades10", atividade));
+                    parametros.Add(new ReportParameter("executante10", executante));
+
+
                 }
                 if (combo_componente11.Text != string.Empty && text_atividades11.Text != string.Empty)
                 {
                     componente = combo_componente11.Text;
                     atividade = text_atividades11.Text;
                     executante = combo_executante11.Text;
-                    hora_inicio = hr_inicio_ativ_11.Value.ToString("hh:mm");
-                    hora_final = hr_final_ativ_11.Value.ToString("hh:mm");
+                    //hora_inicio = hr_inicio_ativ_11.Value.ToString("hh:mm");
+                    //hora_final = hr_final_ativ_11.Value.ToString("hh:mm");
 
-                   
+                    parametros.Add(new ReportParameter("componente11", componente));
+                    parametros.Add(new ReportParameter("atividades11", atividade));
+                    parametros.Add(new ReportParameter("executante11", executante));
+
+
                 }
                 if (combo_componente12.Text != string.Empty && text_atividades12.Text != string.Empty)
                 {
                     componente = combo_componente12.Text;
                     atividade = text_atividades12.Text;
                     executante = combo_executante12.Text;
-                    hora_inicio = hr_inicio_ativ_12.Value.ToString("hh:mm");
-                    hora_final = hr_final_ativ_12.Value.ToString("hh:mm");
+                    //hora_inicio = hr_inicio_ativ_12.Value.ToString("hh:mm");
+                    //hora_final = hr_final_ativ_12.Value.ToString("hh:mm");
 
-                    
+                    parametros.Add(new ReportParameter("componente12", componente));
+                    parametros.Add(new ReportParameter("atividades12", atividade));
+                    parametros.Add(new ReportParameter("executante12", executante));
+
+
                 }
                 
 
@@ -3445,7 +3484,9 @@ namespace GM4
 
         private void button_salvar_os_Click(object sender, EventArgs e)
         {
-            // botão Atualizar
+            Atualizar_os(label_numero_os.Text);
+            carregar_ordens_progr();
+            limpar_campos();
         }
 
         private void button_preventiva_Click(object sender, EventArgs e)
