@@ -2388,7 +2388,7 @@ namespace GM4
                 hora_inicio = hr_inicio_ativ_01.Value;
                 hora_final = hr_final_ativ_01.Value;
                 total_horas = Calculo_hora(hora_inicio, hora_final);
-                status = "Encerrada";
+                status = label_status_ordem.Text;
 
                 try
                 {
@@ -2440,7 +2440,8 @@ namespace GM4
                 hora_inicio = hr_inicio_ativ_02.Value;
                 hora_final = hr_final_ativ_02.Value;
                 total_horas = Calculo_hora(hora_inicio, hora_final);
-                status = "Encerrada";
+                status = label_status_ordem.Text;
+                
 
                 try
                 {
@@ -2492,7 +2493,7 @@ namespace GM4
                 hora_inicio = hr_inicio_ativ_03.Value;
                 hora_final = hr_final_ativ_03.Value;
                 total_horas = Calculo_hora(hora_inicio, hora_final);
-                status = "Encerrada";
+                status = label_status_ordem.Text;
 
                 try
                 {
@@ -2544,7 +2545,7 @@ namespace GM4
                 hora_inicio = hr_inicio_ativ_04.Value;
                 hora_final = hr_final_ativ_04.Value;
                 total_horas = Calculo_hora(hora_inicio, hora_final);
-                status = "Encerrada";
+                status = label_status_ordem.Text;
 
                 try
                 {
@@ -2596,7 +2597,7 @@ namespace GM4
                 hora_inicio = hr_inicio_ativ_05.Value;
                 hora_final = hr_final_ativ_05.Value;
                 total_horas = Calculo_hora(hora_inicio, hora_final);
-                status = "Encerrada";
+                status = label_status_ordem.Text;
 
                 try
                 {
@@ -2648,7 +2649,7 @@ namespace GM4
                 hora_inicio = hr_inicio_ativ_06.Value;
                 hora_final = hr_final_ativ_06.Value;
                 total_horas = Calculo_hora(hora_inicio, hora_final);
-                status = "Encerrada";
+                status = label_status_ordem.Text;
 
                 try
                 {
@@ -2700,7 +2701,7 @@ namespace GM4
                 hora_inicio = hr_inicio_ativ_07.Value;
                 hora_final = hr_final_ativ_07.Value;
                 total_horas = Calculo_hora(hora_inicio, hora_final);
-                status = "Encerrada";
+                status = label_status_ordem.Text;
 
                 try
                 {
@@ -2752,7 +2753,7 @@ namespace GM4
                 hora_inicio = hr_inicio_ativ_08.Value;
                 hora_final = hr_final_ativ_08.Value;
                 total_horas = Calculo_hora(hora_inicio, hora_final);
-                status = "Encerrada";
+                status = label_status_ordem.Text;
 
                 try
                 {
@@ -2804,7 +2805,7 @@ namespace GM4
                 hora_inicio = hr_inicio_ativ_09.Value;
                 hora_final = hr_final_ativ_09.Value;
                 total_horas = Calculo_hora(hora_inicio, hora_final);
-                status = "Encerrada";
+                status = label_status_ordem.Text;
 
                 try
                 {
@@ -2856,7 +2857,7 @@ namespace GM4
                 hora_inicio = hr_inicio_ativ_10.Value;
                 hora_final = hr_final_ativ_10.Value;
                 total_horas = Calculo_hora(hora_inicio, hora_final);
-                status = "Encerrada";
+                status = label_status_ordem.Text;
 
                 try
                 {
@@ -2908,7 +2909,7 @@ namespace GM4
                 hora_inicio = hr_inicio_ativ_11.Value;
                 hora_final = hr_final_ativ_11.Value;
                 total_horas = Calculo_hora(hora_inicio, hora_final);
-                status = "Encerrada";
+                status = label_status_ordem.Text;
 
                 try
                 {
@@ -2960,7 +2961,7 @@ namespace GM4
                 hora_inicio = hr_inicio_ativ_12.Value;
                 hora_final = hr_final_ativ_12.Value;
                 total_horas = Calculo_hora(hora_inicio, hora_final);
-                status = "Encerrada";
+                status = label_status_ordem.Text;
 
                 try
                 {
