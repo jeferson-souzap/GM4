@@ -157,9 +157,15 @@ namespace GM4
             this.aba_os_pend_combo_status = new System.Windows.Forms.ComboBox();
             this.label16 = new System.Windows.Forms.Label();
             this.Grid_ordem_serv = new System.Windows.Forms.DataGridView();
-            this.label_status_ordem = new System.Windows.Forms.Label();
             this.tab_imprimir = new System.Windows.Forms.TabPage();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.label_status_ordem = new System.Windows.Forms.Label();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.label_statusbar_id_ordem = new System.Windows.Forms.ToolStripStatusLabel();
+            this.label_statusbar_status_ordem = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -172,6 +178,7 @@ namespace GM4
             this.groupBox6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Grid_ordem_serv)).BeginInit();
             this.tab_imprimir.SuspendLayout();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -1338,7 +1345,7 @@ namespace GM4
             // 
             this.richText_observacao.Location = new System.Drawing.Point(6, 576);
             this.richText_observacao.Name = "richText_observacao";
-            this.richText_observacao.Size = new System.Drawing.Size(967, 112);
+            this.richText_observacao.Size = new System.Drawing.Size(967, 76);
             this.richText_observacao.TabIndex = 5;
             this.richText_observacao.Text = "";
             // 
@@ -1525,16 +1532,6 @@ namespace GM4
             this.Grid_ordem_serv.TabIndex = 3;
             this.Grid_ordem_serv.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Grid_ordem_serv_CellDoubleClick);
             // 
-            // label_status_ordem
-            // 
-            this.label_status_ordem.AutoSize = true;
-            this.label_status_ordem.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_status_ordem.Location = new System.Drawing.Point(912, 4);
-            this.label_status_ordem.Name = "label_status_ordem";
-            this.label_status_ordem.Size = new System.Drawing.Size(23, 18);
-            this.label_status_ordem.TabIndex = 79;
-            this.label_status_ordem.Text = "---";
-            // 
             // tab_imprimir
             // 
             this.tab_imprimir.Controls.Add(this.reportViewer1);
@@ -1556,11 +1553,68 @@ namespace GM4
             this.reportViewer1.Size = new System.Drawing.Size(986, 694);
             this.reportViewer1.TabIndex = 1;
             // 
+            // label_status_ordem
+            // 
+            this.label_status_ordem.AutoSize = true;
+            this.label_status_ordem.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_status_ordem.Location = new System.Drawing.Point(912, 4);
+            this.label_status_ordem.Name = "label_status_ordem";
+            this.label_status_ordem.Size = new System.Drawing.Size(23, 18);
+            this.label_status_ordem.TabIndex = 79;
+            this.label_status_ordem.Text = "---";
+            // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabel1,
+            this.label_statusbar_id_ordem,
+            this.toolStripStatusLabel2,
+            this.toolStripStatusLabel3,
+            this.label_statusbar_status_ordem});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 744);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(1026, 24);
+            this.statusStrip1.TabIndex = 80;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // label_statusbar_id_ordem
+            // 
+            this.label_statusbar_id_ordem.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.label_statusbar_id_ordem.Name = "label_statusbar_id_ordem";
+            this.label_statusbar_id_ordem.Size = new System.Drawing.Size(17, 19);
+            this.label_statusbar_id_ordem.Text = "0";
+            // 
+            // label_statusbar_status_ordem
+            // 
+            this.label_statusbar_status_ordem.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.label_statusbar_status_ordem.Name = "label_statusbar_status_ordem";
+            this.label_statusbar_status_ordem.Size = new System.Drawing.Size(25, 19);
+            this.label_statusbar_status_ordem.Text = "00";
+            // 
+            // toolStripStatusLabel1
+            // 
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(24, 19);
+            this.toolStripStatusLabel1.Text = "ID: ";
+            // 
+            // toolStripStatusLabel2
+            // 
+            this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
+            this.toolStripStatusLabel2.Size = new System.Drawing.Size(10, 19);
+            this.toolStripStatusLabel2.Text = "|";
+            // 
+            // toolStripStatusLabel3
+            // 
+            this.toolStripStatusLabel3.Name = "toolStripStatusLabel3";
+            this.toolStripStatusLabel3.Size = new System.Drawing.Size(82, 19);
+            this.toolStripStatusLabel3.Text = "Status Ordem:";
+            // 
             // Form_janela_ordem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1026, 768);
+            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.label_status_ordem);
             this.Controls.Add(this.tab_ordem_servi);
             this.Controls.Add(this.menuStrip1);
@@ -1586,6 +1640,8 @@ namespace GM4
             this.groupBox6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Grid_ordem_serv)).EndInit();
             this.tab_imprimir.ResumeLayout(false);
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1724,5 +1780,11 @@ namespace GM4
         private System.Windows.Forms.ToolStripMenuItem baixarPeçasToolStripMenuItem;
         private System.Windows.Forms.TabPage tab_imprimir;
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel label_statusbar_id_ordem;
+        private System.Windows.Forms.ToolStripStatusLabel label_statusbar_status_ordem;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel3;
     }
 }

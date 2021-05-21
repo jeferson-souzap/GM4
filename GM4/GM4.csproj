@@ -23,7 +23,7 @@
     <InheritWinAppVersionFrom>None</InheritWinAppVersionFrom>
     <AssemblyVersionSettings>
     </AssemblyVersionSettings>
-    <PublishUrl>ftp://ftpupload.net/htdocs/Aplicativo/</PublishUrl>
+    <PublishUrl>ftp://ftpupload.net/htdocs/</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>true</UpdateEnabled>
@@ -31,14 +31,15 @@
     <UpdateInterval>7</UpdateInterval>
     <UpdateIntervalUnits>Days</UpdateIntervalUnits>
     <UpdatePeriodically>false</UpdatePeriodically>
-    <UpdateRequired>false</UpdateRequired>
+    <UpdateRequired>true</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <UpdateUrl>\\185.27.134.11\htdocs\Aplicativo\</UpdateUrl>
+    <UpdateUrl>\\185.27.134.11\htdocs\</UpdateUrl>
+    <MinimumRequiredVersion>11.0.0.20</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
     <AutorunEnabled>true</AutorunEnabled>
-    <ApplicationRevision>19</ApplicationRevision>
-    <ApplicationVersion>10.0.0.%2a</ApplicationVersion>
+    <ApplicationRevision>22</ApplicationRevision>
+    <ApplicationVersion>11.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
     <PublishWizardCompleted>true</PublishWizardCompleted>

@@ -357,6 +357,11 @@ namespace GM4
                 while (myreader.Read())
                 {
                     label_status_ordem.Text = myreader["status"].ToString();
+                    
+                    label_statusbar_status_ordem.Text = myreader["status"].ToString();
+                    label_statusbar_id_ordem.Text = myreader["id_ordem_serv"].ToString();
+
+
                     if (label_status_ordem.Text == "Encerrada")
                     {
                         label_status_ordem.BackColor = Color.Green;
@@ -3006,8 +3011,7 @@ namespace GM4
             }
 
         }
-
-        private void carregar_relatorio()
+        private void Carregar_relatorio()
         {
             reportViewer1.RefreshReport();
 
@@ -3235,6 +3239,31 @@ namespace GM4
 
             }
 
+            catch (Exception erro)
+            {
+                MessageBox.Show(erro.Message);
+            }
+        }
+        private void Deletar_ordem(string id_ordem_serv)
+        {
+            try
+            {
+                string conecta_string = Properties.Settings.Default.db_manutencaoConnectionString;
+                OleDbConnection conexao = new OleDbConnection(conecta_string);
+                conexao.Open();
+
+                string comando_sql;
+
+                comando_sql = "DELETE FROM db_ordem_servi WHERE id_ordem_serv = " + Convert.ToInt32(id_ordem_serv);
+
+                OleDbCommand cmd = new OleDbCommand(comando_sql, conexao);
+                cmd.ExecuteNonQuery();
+                conexao.Close();
+
+                MessageBox.Show("Deletado com sucesso!");
+                
+
+            }
             catch (Exception erro)
             {
                 MessageBox.Show(erro.Message);
@@ -3508,7 +3537,7 @@ namespace GM4
         private void button_imprimir_Click(object sender, EventArgs e)
         {
             tab_ordem_servi.SelectedTab = tab_imprimir;
-            carregar_relatorio();
+            Carregar_relatorio();
 
         }
 
@@ -3516,7 +3545,9 @@ namespace GM4
 
         private void button_excluir_Click(object sender, EventArgs e)
         {
-
+            Deletar_ordem(label_statusbar_id_ordem.Text);
+            carregar_ordens_progr();
+            limpar_campos();
         }
 
         private void button_sair_Click(object sender, EventArgs e)
