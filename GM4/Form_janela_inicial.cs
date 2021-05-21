@@ -12,9 +12,13 @@ namespace GM4
             InitializeComponent();
             Testar_conecxao();
 
-            StripStatus_versao.Text = "| Versão do Aplicativo >> " + Application.ProductVersion + " | ";
+            Version version = new Version(Application.ProductVersion);
+            
 
+
+            StripStatus_versao.Text = "| Versão do Aplicativo >> " + version + " | ";
             label_titulo_janela.Text = string.Empty;
+
 
         }
 

@@ -12,7 +12,7 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
     <ShouldCreateLogs>True</ShouldCreateLogs>
     <AdvancedSettingsExpanded>True</AdvancedSettingsExpanded>
     <UpdateAssemblyVersion>False</UpdateAssemblyVersion>
@@ -23,23 +23,25 @@
     <InheritWinAppVersionFrom>None</InheritWinAppVersionFrom>
     <AssemblyVersionSettings>
     </AssemblyVersionSettings>
+    <AssemblyFileVersionSettings>
+    </AssemblyFileVersionSettings>
     <PublishUrl>ftp://ftpupload.net/htdocs/</PublishUrl>
     <Install>true</Install>
-    <InstallFrom>Disk</InstallFrom>
+    <InstallFrom>Web</InstallFrom>
     <UpdateEnabled>true</UpdateEnabled>
-    <UpdateMode>Foreground</UpdateMode>
+    <UpdateMode>Background</UpdateMode>
     <UpdateInterval>7</UpdateInterval>
     <UpdateIntervalUnits>Days</UpdateIntervalUnits>
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>true</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <UpdateUrl>\\185.27.134.11\htdocs\</UpdateUrl>
+    <InstallUrl>http://paralelo-erp.rf.gd/</InstallUrl>
+    <UpdateUrl>http://paralelo-erp.rf.gd/</UpdateUrl>
     <MinimumRequiredVersion>11.0.0.20</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <AutorunEnabled>true</AutorunEnabled>
-    <ApplicationRevision>22</ApplicationRevision>
-    <ApplicationVersion>11.0.0.%2a</ApplicationVersion>
+    <ApplicationRevision>25</ApplicationRevision>
+    <ApplicationVersion>11.0.100.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
     <PublishWizardCompleted>true</PublishWizardCompleted>
