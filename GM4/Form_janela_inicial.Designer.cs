@@ -32,6 +32,7 @@ namespace GM4
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_inicial));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.panel_esquerda = new System.Windows.Forms.Panel();
+            this.button_baixa_pc = new System.Windows.Forms.Button();
             this.button_configuração = new System.Windows.Forms.Button();
             this.button_cad_pecas = new System.Windows.Forms.Button();
             this.button_serv_terceiros = new System.Windows.Forms.Button();
@@ -64,6 +65,7 @@ namespace GM4
             // panel_esquerda
             // 
             this.panel_esquerda.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel_esquerda.Controls.Add(this.button_baixa_pc);
             this.panel_esquerda.Controls.Add(this.button_configuração);
             this.panel_esquerda.Controls.Add(this.button_cad_pecas);
             this.panel_esquerda.Controls.Add(this.button_serv_terceiros);
@@ -77,12 +79,23 @@ namespace GM4
             this.panel_esquerda.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel_esquerda.Location = new System.Drawing.Point(0, 24);
             this.panel_esquerda.Name = "panel_esquerda";
-            this.panel_esquerda.Size = new System.Drawing.Size(190, 750);
+            this.panel_esquerda.Size = new System.Drawing.Size(190, 725);
             this.panel_esquerda.TabIndex = 1;
+            // 
+            // button_baixa_pc
+            // 
+            this.button_baixa_pc.Location = new System.Drawing.Point(4, 475);
+            this.button_baixa_pc.Name = "button_baixa_pc";
+            this.button_baixa_pc.Size = new System.Drawing.Size(179, 33);
+            this.button_baixa_pc.TabIndex = 11;
+            this.button_baixa_pc.Text = "Baixa de Peça";
+            this.button_baixa_pc.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button_baixa_pc.UseVisualStyleBackColor = true;
+            this.button_baixa_pc.Click += new System.EventHandler(this.button_baixa_pc_Click);
             // 
             // button_configuração
             // 
-            this.button_configuração.Location = new System.Drawing.Point(4, 475);
+            this.button_configuração.Location = new System.Drawing.Point(4, 514);
             this.button_configuração.Name = "button_configuração";
             this.button_configuração.Size = new System.Drawing.Size(179, 33);
             this.button_configuração.TabIndex = 10;
@@ -199,7 +212,7 @@ namespace GM4
             this.panel_central.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_central.Location = new System.Drawing.Point(190, 24);
             this.panel_central.Name = "panel_central";
-            this.panel_central.Size = new System.Drawing.Size(1036, 750);
+            this.panel_central.Size = new System.Drawing.Size(1036, 725);
             this.panel_central.TabIndex = 2;
             // 
             // statusStrip1
@@ -207,7 +220,7 @@ namespace GM4
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.StatusLabel_conexao_db,
             this.StripStatus_versao});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 726);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 701);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
             this.statusStrip1.Size = new System.Drawing.Size(1034, 22);
@@ -243,14 +256,13 @@ namespace GM4
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1226, 774);
+            this.ClientSize = new System.Drawing.Size(1226, 749);
             this.Controls.Add(this.label_titulo_janela);
             this.Controls.Add(this.panel_central);
             this.Controls.Add(this.panel_esquerda);
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
-            this.MaximizeBox = false;
             this.Name = "Form_inicial";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gestão de manutenção GM4";
@@ -284,6 +296,7 @@ namespace GM4
         private System.Windows.Forms.ToolStripStatusLabel StatusLabel_conexao_db;
         private System.Windows.Forms.ToolStripStatusLabel StripStatus_versao;
         private System.Windows.Forms.Label label_titulo_janela;
+        private System.Windows.Forms.Button button_baixa_pc;
     }
 }
 

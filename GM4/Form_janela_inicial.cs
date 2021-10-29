@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data;
 using System.Data.OleDb;
+using System.Reflection;
 using System.Windows.Forms;
 
 namespace GM4
@@ -12,11 +13,12 @@ namespace GM4
             InitializeComponent();
             Testar_conecxao();
 
-            Version version = new Version(Application.ProductVersion);
+
+            string ver = Assembly.GetExecutingAssembly().GetName().Version.ToString();
+
             
 
-
-            StripStatus_versao.Text = "| Versão do Aplicativo >> " + version + " | ";
+            StripStatus_versao.Text = "| Versão do Aplicativo >> " + ver + " | ";
             label_titulo_janela.Text = string.Empty;
 
 
@@ -119,6 +121,11 @@ namespace GM4
         private void button_configuração_Click(object sender, EventArgs e)
         {
             abrir_janelas(new Form_janela_config());
+        }
+
+        private void button_baixa_pc_Click(object sender, EventArgs e)
+        {
+            abrir_janelas(new Form_janela_baixa_peca());
         }
     }
 }

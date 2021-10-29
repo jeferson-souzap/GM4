@@ -111,7 +111,7 @@ namespace GM4
         private void Reset_aplicativo()
         {
             MessageBox.Show("Aplicativo deve ser reiniciado!");
-            Application.Exit();
+            Application.Restart();
         }
 
 

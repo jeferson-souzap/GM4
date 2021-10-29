@@ -59,6 +59,7 @@ namespace GM4
             this.tab_relatorio_peca = new System.Windows.Forms.TabPage();
             this.Grid_relatorio_baixa_peca = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.button_limpar_filtro = new System.Windows.Forms.Button();
             this.label_id_baixa_peca = new System.Windows.Forms.Label();
             this.combo_relatorio_ordem_serv = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -70,7 +71,6 @@ namespace GM4
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.dt_relatorio_data = new System.Windows.Forms.DateTimePicker();
-            this.button_limpar_filtro = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.tab_janela_baixa_peca.SuspendLayout();
             this.tab_baixa_pecas.SuspendLayout();
@@ -258,7 +258,6 @@ namespace GM4
             // 
             // combo_tipo_movimento
             // 
-            this.combo_tipo_movimento.Enabled = false;
             this.combo_tipo_movimento.FormattingEnabled = true;
             this.combo_tipo_movimento.Location = new System.Drawing.Point(151, 88);
             this.combo_tipo_movimento.Name = "combo_tipo_movimento";
@@ -407,6 +406,16 @@ namespace GM4
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Menu";
             // 
+            // button_limpar_filtro
+            // 
+            this.button_limpar_filtro.Location = new System.Drawing.Point(704, 57);
+            this.button_limpar_filtro.Name = "button_limpar_filtro";
+            this.button_limpar_filtro.Size = new System.Drawing.Size(75, 23);
+            this.button_limpar_filtro.TabIndex = 16;
+            this.button_limpar_filtro.Text = "Limpar Filtro";
+            this.button_limpar_filtro.UseVisualStyleBackColor = true;
+            this.button_limpar_filtro.Click += new System.EventHandler(this.button_limpar_filtro_Click);
+            // 
             // label_id_baixa_peca
             // 
             this.label_id_baixa_peca.AutoSize = true;
@@ -537,16 +546,6 @@ namespace GM4
             this.dt_relatorio_data.Size = new System.Drawing.Size(99, 20);
             this.dt_relatorio_data.TabIndex = 5;
             this.dt_relatorio_data.ValueChanged += new System.EventHandler(this.dt_relatorio_data_ValueChanged);
-            // 
-            // button_limpar_filtro
-            // 
-            this.button_limpar_filtro.Location = new System.Drawing.Point(704, 57);
-            this.button_limpar_filtro.Name = "button_limpar_filtro";
-            this.button_limpar_filtro.Size = new System.Drawing.Size(75, 23);
-            this.button_limpar_filtro.TabIndex = 16;
-            this.button_limpar_filtro.Text = "Limpar Filtro";
-            this.button_limpar_filtro.UseVisualStyleBackColor = true;
-            this.button_limpar_filtro.Click += new System.EventHandler(this.button_limpar_filtro_Click);
             // 
             // Form_janela_baixa_peca
             // 
