@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GM4.Configuração;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -32,7 +33,11 @@ namespace GM4
         {
             try
             {
-                string conecta_string = Properties.Settings.Default.db_manutencaoConnectionString;
+                //string conecta_string = Properties.Settings.Default.db_manutencaoConnectionString;
+                IniFile config_ini = new IniFile(@"C:\GM4", "config_app_manutencao");
+                string local_default = @"C:\GM4";
+                string conecta_string = config_ini.IniReadString("STRING_DB", "local_banco", local_default);
+
                 string comando_sql = "select id_equipa, empresa, nome_equipamento, descri_equipamento from db_equipamento";
 
                 OleDbConnection connection = new OleDbConnection(conecta_string);
@@ -58,7 +63,11 @@ namespace GM4
         {
             try
             {
-                string conecta_string = Properties.Settings.Default.db_manutencaoConnectionString;
+                //string conecta_string = Properties.Settings.Default.db_manutencaoConnectionString;
+                IniFile config_ini = new IniFile(@"C:\GM4", "config_app_manutencao");
+                string local_default = @"C:\GM4";
+                string conecta_string = config_ini.IniReadString("STRING_DB", "local_banco", local_default);
+
                 string comando_sql = "select * from db_equipamento where id_equipa = " + Convert.ToInt32(id_componentes) + "";
 
                 OleDbConnection conexao = new OleDbConnection(conecta_string);
@@ -86,7 +95,11 @@ namespace GM4
         {
             try
             {
-                string conecta_string = Properties.Settings.Default.db_manutencaoConnectionString;
+                //string conecta_string = Properties.Settings.Default.db_manutencaoConnectionString;
+                IniFile config_ini = new IniFile(@"C:\GM4", "config_app_manutencao");
+                string local_default = @"C:\GM4";
+                string conecta_string = config_ini.IniReadString("STRING_DB", "local_banco", local_default);
+
                 OleDbConnection conexao = new OleDbConnection(conecta_string);
                 conexao.Open();
 
@@ -109,7 +122,11 @@ namespace GM4
             {
                 string comando_sql;
 
-                string conecta_string = Properties.Settings.Default.db_manutencaoConnectionString;
+                //string conecta_string = Properties.Settings.Default.db_manutencaoConnectionString;
+                IniFile config_ini = new IniFile(@"C:\GM4", "config_app_manutencao");
+                string local_default = @"C:\GM4";
+                string conecta_string = config_ini.IniReadString("STRING_DB", "local_banco", local_default);
+
                 OleDbConnection conexao = new OleDbConnection(conecta_string);
                 conexao.Open();
 
@@ -130,7 +147,11 @@ namespace GM4
         {
             try
             {
-                string conecta_string = Properties.Settings.Default.db_manutencaoConnectionString;
+                //string conecta_string = Properties.Settings.Default.db_manutencaoConnectionString;
+                IniFile config_ini = new IniFile(@"C:\GM4", "config_app_manutencao");
+                string local_default = @"C:\GM4";
+                string conecta_string = config_ini.IniReadString("STRING_DB", "local_banco", local_default);
+
                 OleDbConnection conexao = new OleDbConnection(conecta_string);
                 conexao.Open();
 

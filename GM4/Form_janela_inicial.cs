@@ -1,6 +1,8 @@
-﻿using System;
+﻿using GM4.Configuração;
+using System;
 using System.Data;
 using System.Data.OleDb;
+using System.IO;
 using System.Reflection;
 using System.Windows.Forms;
 
@@ -13,23 +15,32 @@ namespace GM4
             InitializeComponent();
             Testar_conecxao();
 
-
             string ver = Assembly.GetExecutingAssembly().GetName().Version.ToString();
-
             
 
             StripStatus_versao.Text = "| Versão do Aplicativo >> " + ver + " | ";
             label_titulo_janela.Text = string.Empty;
 
+            CONFIG janela_config = new CONFIG();
+            janela_config.fazer_backup();
+            janela_config.criar_pasta_app();
+
+
+
 
         }
-
+        
+        
         private void Testar_conecxao()
         {
 
             try
             {
-                string conecta_string = Properties.Settings.Default.db_manutencaoConnectionString;
+                //string conecta_string = Properties.Settings.Default.db_manutencaoConnectionString;
+                IniFile config_ini = new IniFile(@"C:\GM4", "config_app_manutencao");
+                string local_default = @"C:\GM4";
+                string conecta_string = config_ini.IniReadString("STRING_DB", "local_banco", local_default);
+
                 OleDbConnection connection = new OleDbConnection(conecta_string);
                 connection.Open();
 
@@ -120,7 +131,7 @@ namespace GM4
 
         private void button_configuração_Click(object sender, EventArgs e)
         {
-            abrir_janelas(new Form_janela_config());
+            abrir_janelas(new CONFIG());
         }
 
         private void button_baixa_pc_Click(object sender, EventArgs e)
