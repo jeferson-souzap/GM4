@@ -148,6 +148,7 @@ namespace GM4
             this.tab_ordem_servi = new System.Windows.Forms.TabControl();
             this.tab_abrir_fechar_os = new System.Windows.Forms.TabPage();
             this.tab_ordem_aberta = new System.Windows.Forms.TabPage();
+            this.Grid_ordem_serv = new System.Windows.Forms.DataGridView();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
@@ -156,16 +157,15 @@ namespace GM4
             this.aba_ordenAberta_button_atualizar = new System.Windows.Forms.Button();
             this.aba_os_pend_combo_status = new System.Windows.Forms.ComboBox();
             this.label16 = new System.Windows.Forms.Label();
-            this.Grid_ordem_serv = new System.Windows.Forms.DataGridView();
             this.tab_imprimir = new System.Windows.Forms.TabPage();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.label_status_ordem = new System.Windows.Forms.Label();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.label_statusbar_id_ordem = new System.Windows.Forms.ToolStripStatusLabel();
-            this.label_statusbar_status_ordem = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.label_statusbar_id_ordem = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.label_statusbar_status_ordem = new System.Windows.Forms.ToolStripStatusLabel();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -175,8 +175,8 @@ namespace GM4
             this.tab_ordem_servi.SuspendLayout();
             this.tab_abrir_fechar_os.SuspendLayout();
             this.tab_ordem_aberta.SuspendLayout();
-            this.groupBox6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Grid_ordem_serv)).BeginInit();
+            this.groupBox6.SuspendLayout();
             this.tab_imprimir.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -192,9 +192,10 @@ namespace GM4
             this.groupBox1.Controls.Add(this.button_imprimir);
             this.groupBox1.Controls.Add(this.button_fechar_os);
             this.groupBox1.Controls.Add(this.button_abrir_os);
-            this.groupBox1.Location = new System.Drawing.Point(6, 6);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.groupBox1.Location = new System.Drawing.Point(3, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(967, 70);
+            this.groupBox1.Size = new System.Drawing.Size(1012, 70);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Menu";
@@ -1387,10 +1388,11 @@ namespace GM4
             this.tab_ordem_servi.Controls.Add(this.tab_abrir_fechar_os);
             this.tab_ordem_servi.Controls.Add(this.tab_ordem_aberta);
             this.tab_ordem_servi.Controls.Add(this.tab_imprimir);
-            this.tab_ordem_servi.Location = new System.Drawing.Point(12, 27);
+            this.tab_ordem_servi.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tab_ordem_servi.Location = new System.Drawing.Point(0, 24);
             this.tab_ordem_servi.Name = "tab_ordem_servi";
             this.tab_ordem_servi.SelectedIndex = 0;
-            this.tab_ordem_servi.Size = new System.Drawing.Size(1000, 726);
+            this.tab_ordem_servi.Size = new System.Drawing.Size(1026, 744);
             this.tab_ordem_servi.TabIndex = 7;
             this.tab_ordem_servi.SelectedIndexChanged += new System.EventHandler(this.tab_ordem_servi_SelectedIndexChanged);
             // 
@@ -1405,15 +1407,15 @@ namespace GM4
             this.tab_abrir_fechar_os.Location = new System.Drawing.Point(4, 22);
             this.tab_abrir_fechar_os.Name = "tab_abrir_fechar_os";
             this.tab_abrir_fechar_os.Padding = new System.Windows.Forms.Padding(3);
-            this.tab_abrir_fechar_os.Size = new System.Drawing.Size(992, 700);
+            this.tab_abrir_fechar_os.Size = new System.Drawing.Size(1018, 718);
             this.tab_abrir_fechar_os.TabIndex = 0;
             this.tab_abrir_fechar_os.Text = "Abrir / Fechar OS";
             this.tab_abrir_fechar_os.UseVisualStyleBackColor = true;
             // 
             // tab_ordem_aberta
             // 
-            this.tab_ordem_aberta.Controls.Add(this.groupBox6);
             this.tab_ordem_aberta.Controls.Add(this.Grid_ordem_serv);
+            this.tab_ordem_aberta.Controls.Add(this.groupBox6);
             this.tab_ordem_aberta.Location = new System.Drawing.Point(4, 22);
             this.tab_ordem_aberta.Name = "tab_ordem_aberta";
             this.tab_ordem_aberta.Padding = new System.Windows.Forms.Padding(3);
@@ -1421,6 +1423,20 @@ namespace GM4
             this.tab_ordem_aberta.TabIndex = 1;
             this.tab_ordem_aberta.Text = "Ordens Abertas";
             this.tab_ordem_aberta.UseVisualStyleBackColor = true;
+            // 
+            // Grid_ordem_serv
+            // 
+            this.Grid_ordem_serv.AllowUserToAddRows = false;
+            this.Grid_ordem_serv.AllowUserToDeleteRows = false;
+            this.Grid_ordem_serv.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            this.Grid_ordem_serv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Grid_ordem_serv.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Grid_ordem_serv.Location = new System.Drawing.Point(3, 103);
+            this.Grid_ordem_serv.Name = "Grid_ordem_serv";
+            this.Grid_ordem_serv.ReadOnly = true;
+            this.Grid_ordem_serv.Size = new System.Drawing.Size(986, 594);
+            this.Grid_ordem_serv.TabIndex = 3;
+            this.Grid_ordem_serv.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Grid_ordem_serv_CellDoubleClick);
             // 
             // groupBox6
             // 
@@ -1431,9 +1447,10 @@ namespace GM4
             this.groupBox6.Controls.Add(this.aba_ordenAberta_button_atualizar);
             this.groupBox6.Controls.Add(this.aba_os_pend_combo_status);
             this.groupBox6.Controls.Add(this.label16);
-            this.groupBox6.Location = new System.Drawing.Point(6, 6);
+            this.groupBox6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.groupBox6.Location = new System.Drawing.Point(3, 3);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(980, 100);
+            this.groupBox6.Size = new System.Drawing.Size(986, 100);
             this.groupBox6.TabIndex = 4;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "---";
@@ -1519,19 +1536,6 @@ namespace GM4
             this.label16.TabIndex = 0;
             this.label16.Text = "Status:";
             // 
-            // Grid_ordem_serv
-            // 
-            this.Grid_ordem_serv.AllowUserToAddRows = false;
-            this.Grid_ordem_serv.AllowUserToDeleteRows = false;
-            this.Grid_ordem_serv.BackgroundColor = System.Drawing.Color.WhiteSmoke;
-            this.Grid_ordem_serv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.Grid_ordem_serv.Location = new System.Drawing.Point(6, 129);
-            this.Grid_ordem_serv.Name = "Grid_ordem_serv";
-            this.Grid_ordem_serv.ReadOnly = true;
-            this.Grid_ordem_serv.Size = new System.Drawing.Size(980, 565);
-            this.Grid_ordem_serv.TabIndex = 3;
-            this.Grid_ordem_serv.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Grid_ordem_serv_CellDoubleClick);
-            // 
             // tab_imprimir
             // 
             this.tab_imprimir.Controls.Add(this.reportViewer1);
@@ -1577,25 +1581,18 @@ namespace GM4
             this.statusStrip1.TabIndex = 80;
             this.statusStrip1.Text = "statusStrip1";
             // 
+            // toolStripStatusLabel1
+            // 
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(24, 19);
+            this.toolStripStatusLabel1.Text = "ID: ";
+            // 
             // label_statusbar_id_ordem
             // 
             this.label_statusbar_id_ordem.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.label_statusbar_id_ordem.Name = "label_statusbar_id_ordem";
             this.label_statusbar_id_ordem.Size = new System.Drawing.Size(17, 19);
             this.label_statusbar_id_ordem.Text = "0";
-            // 
-            // label_statusbar_status_ordem
-            // 
-            this.label_statusbar_status_ordem.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.label_statusbar_status_ordem.Name = "label_statusbar_status_ordem";
-            this.label_statusbar_status_ordem.Size = new System.Drawing.Size(25, 19);
-            this.label_statusbar_status_ordem.Text = "00";
-            // 
-            // toolStripStatusLabel1
-            // 
-            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(24, 19);
-            this.toolStripStatusLabel1.Text = "ID: ";
             // 
             // toolStripStatusLabel2
             // 
@@ -1608,6 +1605,13 @@ namespace GM4
             this.toolStripStatusLabel3.Name = "toolStripStatusLabel3";
             this.toolStripStatusLabel3.Size = new System.Drawing.Size(82, 19);
             this.toolStripStatusLabel3.Text = "Status Ordem:";
+            // 
+            // label_statusbar_status_ordem
+            // 
+            this.label_statusbar_status_ordem.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.label_statusbar_status_ordem.Name = "label_statusbar_status_ordem";
+            this.label_statusbar_status_ordem.Size = new System.Drawing.Size(25, 19);
+            this.label_statusbar_status_ordem.Text = "00";
             // 
             // Form_janela_ordem
             // 
@@ -1636,9 +1640,9 @@ namespace GM4
             this.tab_ordem_servi.ResumeLayout(false);
             this.tab_abrir_fechar_os.ResumeLayout(false);
             this.tab_ordem_aberta.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.Grid_ordem_serv)).EndInit();
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Grid_ordem_serv)).EndInit();
             this.tab_imprimir.ResumeLayout(false);
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();

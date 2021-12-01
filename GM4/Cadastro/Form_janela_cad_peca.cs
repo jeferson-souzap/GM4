@@ -240,5 +240,12 @@ namespace GM4
         {
             
         }
+
+        private void button_limpar_campos_Click(object sender, EventArgs e)
+        {
+            text_peca.Text = string.Empty;
+            combo_local_aplicacao.Text = string.Empty;
+            richTex_observacao.Text = "..";
+        }
     }
 }

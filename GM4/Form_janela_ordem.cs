@@ -3030,7 +3030,7 @@ namespace GM4
                 string executante;
                 //string hora_inicio;
                 //string hora_final;
-                string obs = "|" + richText_observacao.Text;
+                string obs = richText_observacao.Text.ToString();
 
 
                 reportViewer1.LocalReport.DataSources.Clear();
@@ -3067,12 +3067,8 @@ namespace GM4
                     parametros.Add(new ReportParameter("componente01", componente));
                     parametros.Add(new ReportParameter("atividades01", atividade));
                     parametros.Add(new ReportParameter("executante01", executante));
-                    
-
-
-                    
-                }
-                
+                                        
+                }                
                 if (combo_componente02.Text != string.Empty && text_atividades02.Text != string.Empty)
                 {
                     componente = combo_componente02.Text;
@@ -3083,8 +3079,7 @@ namespace GM4
 
                     parametros.Add(new ReportParameter("componente02", componente));
                     parametros.Add(new ReportParameter("atividades02", atividade));
-                    parametros.Add(new ReportParameter("executante02", executante));
-                    
+                    parametros.Add(new ReportParameter("executante02", executante));                   
                     
 
 

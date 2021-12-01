@@ -30,6 +30,7 @@ namespace GM4
         private void InitializeComponent()
         {
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.combo_local_aplicacao = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.richTex_observacao = new System.Windows.Forms.RichTextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -44,7 +45,7 @@ namespace GM4
             this.button_salvar = new System.Windows.Forms.Button();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.db_categorias_componenteTableAdapter1 = new GM4.db_manutencaoDataSetTableAdapters.db_categorias_componenteTableAdapter();
-            this.combo_local_aplicacao = new System.Windows.Forms.ComboBox();
+            this.button_limpar_campos = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Grid_cad_pecas)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -52,6 +53,7 @@ namespace GM4
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.button_limpar_campos);
             this.groupBox2.Controls.Add(this.combo_local_aplicacao);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.richTex_observacao);
@@ -66,6 +68,14 @@ namespace GM4
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Cadastro";
+            // 
+            // combo_local_aplicacao
+            // 
+            this.combo_local_aplicacao.FormattingEnabled = true;
+            this.combo_local_aplicacao.Location = new System.Drawing.Point(129, 46);
+            this.combo_local_aplicacao.Name = "combo_local_aplicacao";
+            this.combo_local_aplicacao.Size = new System.Drawing.Size(310, 21);
+            this.combo_local_aplicacao.TabIndex = 8;
             // 
             // label3
             // 
@@ -156,7 +166,7 @@ namespace GM4
             // 
             this.label_id_peca.AutoSize = true;
             this.label_id_peca.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_id_peca.Location = new System.Drawing.Point(364, 26);
+            this.label_id_peca.Location = new System.Drawing.Point(354, 26);
             this.label_id_peca.Name = "label_id_peca";
             this.label_id_peca.Size = new System.Drawing.Size(16, 17);
             this.label_id_peca.TabIndex = 3;
@@ -196,13 +206,15 @@ namespace GM4
             // 
             this.db_categorias_componenteTableAdapter1.ClearBeforeFill = true;
             // 
-            // combo_local_aplicacao
+            // button_limpar_campos
             // 
-            this.combo_local_aplicacao.FormattingEnabled = true;
-            this.combo_local_aplicacao.Location = new System.Drawing.Point(129, 46);
-            this.combo_local_aplicacao.Name = "combo_local_aplicacao";
-            this.combo_local_aplicacao.Size = new System.Drawing.Size(310, 21);
-            this.combo_local_aplicacao.TabIndex = 8;
+            this.button_limpar_campos.Location = new System.Drawing.Point(465, 15);
+            this.button_limpar_campos.Name = "button_limpar_campos";
+            this.button_limpar_campos.Size = new System.Drawing.Size(123, 24);
+            this.button_limpar_campos.TabIndex = 9;
+            this.button_limpar_campos.Text = "Limpar campos";
+            this.button_limpar_campos.UseVisualStyleBackColor = true;
+            this.button_limpar_campos.Click += new System.EventHandler(this.button_limpar_campos_Click);
             // 
             // Form_janela_cad_peca
             // 
@@ -241,5 +253,6 @@ namespace GM4
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.RichTextBox richTex_observacao;
         private System.Windows.Forms.ComboBox combo_local_aplicacao;
+        private System.Windows.Forms.Button button_limpar_campos;
     }
 }

@@ -9,7 +9,7 @@ namespace GM4
         {
             
             InitializeComponent();
-            carregar_relatorio(num_os, equipamento, tipo_servico, data_solicitacao);//, data_solicitacao, tipo_servico);
+            // carregar_relatorio(num_os, equipamento, tipo_servico, data_solicitacao);//, data_solicitacao, tipo_servico);
                                 
         }
 
@@ -20,27 +20,30 @@ namespace GM4
 
         private void carregar_relatorio(string num_os, string equipamento, string tipo_servico, string data_solicitacao)
         {
-            this.reportViewer1.RefreshReport();
-            try
-            {
-                reportViewer1.LocalReport.DataSources.Clear();
-                reportViewer1.LocalReport.ReportEmbeddedResource = "GM4.Report_OS.rdlc";
-                Microsoft.Reporting.WinForms.ReportParameter[] p = new
-                Microsoft.Reporting.WinForms.ReportParameter[3];
+            // sem uso
+
+
+            //this.reportViewer1.RefreshReport();
+            //try
+            //{
+            //    reportViewer1.LocalReport.DataSources.Clear();
+            //    reportViewer1.LocalReport.ReportEmbeddedResource = "GM4.Report_OS.rdlc";
+            //    Microsoft.Reporting.WinForms.ReportParameter[] p = new
+            //    Microsoft.Reporting.WinForms.ReportParameter[3];
                 
-                p[0] = new Microsoft.Reporting.WinForms.ReportParameter("num_ordem_servi", num_os);
-                p[1] = new Microsoft.Reporting.WinForms.ReportParameter("equipamento", equipamento);
-                p[2] = new Microsoft.Reporting.WinForms.ReportParameter("data_lancamento]", data_solicitacao);
+            //    p[0] = new Microsoft.Reporting.WinForms.ReportParameter("num_ordem_servi", num_os);
+            //    p[1] = new Microsoft.Reporting.WinForms.ReportParameter("equipamento", equipamento);
+            //    p[2] = new Microsoft.Reporting.WinForms.ReportParameter("data_lancamento]", data_solicitacao);
 
 
-                reportViewer1.LocalReport.SetParameters(p);
-                reportViewer1.LocalReport.Refresh();
-            }
+            //    reportViewer1.LocalReport.SetParameters(p);
+            //    reportViewer1.LocalReport.Refresh();
+            //}
 
-            catch (Exception erro)
-            {
-                MessageBox.Show(erro.Message);
-            }
+            //catch (Exception erro)
+            //{
+            //    MessageBox.Show(erro.Message);
+            //}
         }
     }
 }
