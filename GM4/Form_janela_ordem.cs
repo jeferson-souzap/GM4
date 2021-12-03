@@ -893,7 +893,6 @@ namespace GM4
                     MessageBox.Show(erro.Message);
                 }
             }
-
             if (combo_componente02.Text != string.Empty && text_atividades02.Text != string.Empty)
             {
                 componente = combo_componente02.Text;
@@ -928,7 +927,6 @@ namespace GM4
                     MessageBox.Show(erro.Message);
                 }
             }
-
             if (combo_componente03.Text != string.Empty && text_atividades03.Text != string.Empty)
             {
                 componente = combo_componente03.Text;
@@ -963,7 +961,6 @@ namespace GM4
                     MessageBox.Show(erro.Message);
                 }
             }
-
             if (combo_componente04.Text != string.Empty && text_atividades04.Text != string.Empty)
             {
                 componente = combo_componente04.Text;
@@ -998,7 +995,6 @@ namespace GM4
                     MessageBox.Show(erro.Message);
                 }
             }
-
             if (combo_componente05.Text != string.Empty && text_atividades05.Text != string.Empty)
             {
                 componente = combo_componente05.Text;
@@ -1033,7 +1029,6 @@ namespace GM4
                     MessageBox.Show(erro.Message);
                 }
             }
-
             if (combo_componente06.Text != string.Empty && text_atividades06.Text != string.Empty)
             {
                 componente = combo_componente06.Text;
@@ -1068,7 +1063,6 @@ namespace GM4
                     MessageBox.Show(erro.Message);
                 }
             }
-
             if (combo_componente07.Text != string.Empty && text_atividades07.Text != string.Empty)
             {
                 componente = combo_componente07.Text;
@@ -1103,7 +1097,6 @@ namespace GM4
                     MessageBox.Show(erro.Message);
                 }
             }
-
             if (combo_componente08.Text != string.Empty && text_atividades08.Text != string.Empty)
             {
                 componente = combo_componente08.Text;
@@ -1138,7 +1131,6 @@ namespace GM4
                     MessageBox.Show(erro.Message);
                 }
             }
-
             if (combo_componente09.Text != string.Empty && text_atividades09.Text != string.Empty)
             {
                 componente = combo_componente09.Text;
@@ -1173,7 +1165,6 @@ namespace GM4
                     MessageBox.Show(erro.Message);
                 }
             }
-
             if (combo_componente10.Text != string.Empty && text_atividades10.Text != string.Empty)
             {
                 componente = combo_componente10.Text;
@@ -1208,7 +1199,6 @@ namespace GM4
                     MessageBox.Show(erro.Message);
                 }
             }
-
             if (combo_componente11.Text != string.Empty && text_atividades11.Text != string.Empty)
             {
                 componente = combo_componente11.Text;
@@ -1243,7 +1233,6 @@ namespace GM4
                     MessageBox.Show(erro.Message);
                 }
             }
-
             if (combo_componente12.Text != string.Empty && text_atividades12.Text != string.Empty)
             {
                 componente = combo_componente12.Text;
@@ -1889,7 +1878,6 @@ namespace GM4
                     MessageBox.Show(erro.Message);
                 }
             }
-
             if (combo_componente02.Text != string.Empty && text_atividades02.Text != string.Empty)
             {
                 componente = combo_componente02.Text;
@@ -1945,7 +1933,6 @@ namespace GM4
                     MessageBox.Show(erro.Message);
                 }
             }
-
             if (combo_componente03.Text != string.Empty && text_atividades03.Text != string.Empty)
             {
                 componente = combo_componente03.Text;
@@ -2001,7 +1988,6 @@ namespace GM4
                     MessageBox.Show(erro.Message);
                 }
             }
-
             if (combo_componente04.Text != string.Empty && text_atividades04.Text != string.Empty)
             {
                 componente = combo_componente04.Text;
@@ -2057,7 +2043,6 @@ namespace GM4
                     MessageBox.Show(erro.Message);
                 }
             }
-
             if (combo_componente05.Text != string.Empty && text_atividades05.Text != string.Empty)
             {
                 componente = combo_componente05.Text;
@@ -2113,7 +2098,6 @@ namespace GM4
                     MessageBox.Show(erro.Message);
                 }
             }
-
             if (combo_componente06.Text != string.Empty && text_atividades06.Text != string.Empty)
             {
                 componente = combo_componente06.Text;
@@ -2169,7 +2153,6 @@ namespace GM4
                     MessageBox.Show(erro.Message);
                 }
             }
-
             if (combo_componente07.Text != string.Empty && text_atividades07.Text != string.Empty)
             {
                 componente = combo_componente07.Text;
@@ -2225,7 +2208,6 @@ namespace GM4
                     MessageBox.Show(erro.Message);
                 }
             }
-
             if (combo_componente08.Text != string.Empty && text_atividades08.Text != string.Empty)
             {
                 componente = combo_componente08.Text;
@@ -2281,7 +2263,6 @@ namespace GM4
                     MessageBox.Show(erro.Message);
                 }
             }
-
             if (combo_componente09.Text != string.Empty && text_atividades09.Text != string.Empty)
             {
                 componente = combo_componente09.Text;
@@ -2337,7 +2318,6 @@ namespace GM4
                     MessageBox.Show(erro.Message);
                 }
             }
-
             if (combo_componente10.Text != string.Empty && text_atividades10.Text != string.Empty)
             {
                 componente = combo_componente10.Text;
@@ -2393,7 +2373,6 @@ namespace GM4
                     MessageBox.Show(erro.Message);
                 }
             }
-
             if (combo_componente11.Text != string.Empty && text_atividades11.Text != string.Empty)
             {
                 componente = combo_componente11.Text;
@@ -2449,7 +2428,6 @@ namespace GM4
                     MessageBox.Show(erro.Message);
                 }
             }
-
             if (combo_componente12.Text != string.Empty && text_atividades12.Text != string.Empty)
             {
                 componente = combo_componente12.Text;
@@ -2601,7 +2579,6 @@ namespace GM4
                     MessageBox.Show(erro.Message);
                 }
             }
-
             if (combo_componente02.Text != string.Empty && text_atividades02.Text != string.Empty)
             {
                 componente = combo_componente02.Text;
@@ -2658,7 +2635,6 @@ namespace GM4
                     MessageBox.Show(erro.Message);
                 }
             }
-
             if (combo_componente03.Text != string.Empty && text_atividades03.Text != string.Empty)
             {
                 componente = combo_componente03.Text;
@@ -2714,7 +2690,6 @@ namespace GM4
                     MessageBox.Show(erro.Message);
                 }
             }
-
             if (combo_componente04.Text != string.Empty && text_atividades04.Text != string.Empty)
             {
                 componente = combo_componente04.Text;
@@ -2770,7 +2745,6 @@ namespace GM4
                     MessageBox.Show(erro.Message);
                 }
             }
-
             if (combo_componente05.Text != string.Empty && text_atividades05.Text != string.Empty)
             {
                 componente = combo_componente05.Text;
@@ -2826,7 +2800,6 @@ namespace GM4
                     MessageBox.Show(erro.Message);
                 }
             }
-
             if (combo_componente06.Text != string.Empty && text_atividades06.Text != string.Empty)
             {
                 componente = combo_componente06.Text;
@@ -2882,7 +2855,6 @@ namespace GM4
                     MessageBox.Show(erro.Message);
                 }
             }
-
             if (combo_componente07.Text != string.Empty && text_atividades07.Text != string.Empty)
             {
                 componente = combo_componente07.Text;
@@ -2938,7 +2910,6 @@ namespace GM4
                     MessageBox.Show(erro.Message);
                 }
             }
-
             if (combo_componente08.Text != string.Empty && text_atividades08.Text != string.Empty)
             {
                 componente = combo_componente08.Text;
@@ -2994,7 +2965,6 @@ namespace GM4
                     MessageBox.Show(erro.Message);
                 }
             }
-
             if (combo_componente09.Text != string.Empty && text_atividades09.Text != string.Empty)
             {
                 componente = combo_componente09.Text;
@@ -3050,7 +3020,6 @@ namespace GM4
                     MessageBox.Show(erro.Message);
                 }
             }
-
             if (combo_componente10.Text != string.Empty && text_atividades10.Text != string.Empty)
             {
                 componente = combo_componente10.Text;
@@ -3106,7 +3075,6 @@ namespace GM4
                     MessageBox.Show(erro.Message);
                 }
             }
-
             if (combo_componente11.Text != string.Empty && text_atividades11.Text != string.Empty)
             {
                 componente = combo_componente11.Text;
@@ -3162,7 +3130,6 @@ namespace GM4
                     MessageBox.Show(erro.Message);
                 }
             }
-
             if (combo_componente12.Text != string.Empty && text_atividades12.Text != string.Empty)
             {
                 componente = combo_componente12.Text;
@@ -3486,13 +3453,15 @@ namespace GM4
         {
             try
             {
-                string status = "Programada";
+                combo_seleciona_os.Items.Clear();
+
+                string status = "Encerrada";
                 //string conecta_string = Properties.Settings.Default.db_manutencaoConnectionString;
                 IniFile config_ini = new IniFile(@"C:\GM4", "config_app_manutencao");
                 string local_default = @"C:\GM4";
                 string conecta_string = config_ini.IniReadString("STRING_DB", "local_banco", local_default);
 
-                string comando_sql = "SELECT DISTINCT  num_os FROM db_ordem_servi where status = '" + status + "'";
+                string comando_sql = "SELECT DISTINCT  num_os FROM db_ordem_servi where status <> '" + status + "'";
 
                 OleDbConnection conexao = new OleDbConnection(conecta_string);
                 OleDbCommand cmd = new OleDbCommand(comando_sql, conexao);
@@ -3732,27 +3701,56 @@ namespace GM4
         private void button_abrir_os_Click(object sender, EventArgs e)
         {
             //desbloc_controles();
-            label_numero_os.Text = Convert.ToString(Gerar_ordem_serv());
-            Salvar_os();
-            MessageBox.Show("Salvo com Sucesso");
+            try
+            {
+                label_numero_os.Text = Convert.ToString(Gerar_ordem_serv());
+                Salvar_os();
+                carregar_ordens_progr();
+                
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Erro ao salvar!");
+            }
+            
 
         }
 
         private void button_fechar_os_Click(object sender, EventArgs e)
         {
-            Fechar_os(label_numero_os.Text);
-            MessageBox.Show("Ordem Encerrada com sucesso!");
-            carregar_ordens_progr();
-            limpar_campos();
+            try
+            {
+                Fechar_os(label_numero_os.Text);
+                MessageBox.Show("Ordem Encerrada com sucesso!");
+                carregar_ordens_progr();
+                limpar_campos();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Erro ao fechar ordem");
+                
+            }
+            
         }
 
         private void button_encerrar_Click(object sender, EventArgs e) { }
 
         private void button_salvar_os_Click(object sender, EventArgs e)
         {
-            Atualizar_os(label_numero_os.Text);
-            carregar_ordens_progr();
-            limpar_campos();
+            // Botão de atualizar ordem
+            try
+            {
+                Atualizar_os(label_numero_os.Text);
+                carregar_ordens_progr();
+                limpar_campos();
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("Erro ao atualizar!");
+            }
+
+            
         }
 
         private void button_preventiva_Click(object sender, EventArgs e)
