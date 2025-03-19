@@ -28,6 +28,3 @@ Este é um aplicativo desenvolvido em C# para gerenciar e controlar a manutenç�
 Desenvolvedor: Jeferson de Souza  
 Email: [jeferson.souza1018@outlook.com.br](mailto:jeferson.souza1018@outlook.com.br)
 
----
-
-Sinta-se à vontade para contribuir ou sugerir melhorias!
